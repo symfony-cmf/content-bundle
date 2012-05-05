@@ -1,0 +1,25 @@
+{
+    "name": "symfony-cmf/content-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony CMF Content Bundle",
+    "keywords": ["Symfony CMF"],
+    "homepage": "http://cmf.symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Symfony CMF Community",
+            "homepage": "https://github.com/symfony-cmf/ContentBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/symfony": "2.1.*",
+        "doctrine/phpcr-odm": "*"
+    },
+    "autoload":{
+        "psr-0":{
+            "Symfony\\Cmf\\Bundle\\ContentBundle": ""
+        }
+    },
+    "target-dir": "Symfony/Cmf/Bundle/ContentBundle"
+}
