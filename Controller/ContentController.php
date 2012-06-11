@@ -37,14 +37,14 @@ class ContentController
      *
      * @return Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction($contentDocument, $path, $_template = null)
+    public function indexAction($contentDocument, $path, $contentTemplate = null)
     {
         if (!$contentDocument) {
             throw new NotFoundHttpException('Content not found: ' . $path);
         }
 
-        if ($_template === null) {
-            $_template = $this->defaultTemplate;
+        if ($contentTemplate === null) {
+            $contentTemplate = $this->defaultTemplate;
         }
 
         $params = array(
@@ -53,6 +53,6 @@ class ContentController
             'url' => $path,
         );
 
-        return $this->templating->renderResponse($_template, $params);
+        return $this->templating->renderResponse($contentTemplate, $params);
     }
 }
