@@ -41,6 +41,15 @@ class StaticContent implements RouteAwareInterface
     public $body;
 
     /**
+     * This will usually be a ContainerBlock but can be any block that will be
+     * rendered in the additionalInfoBlock area.
+     *
+     * @var \Sonata\BlockBundle\Model\BlockInterface
+     * @PHPCRODM\Child()
+     */
+    public $additionalInfoBlock;
+
+    /**
      * @PHPCRODM\Referrers(filter="routeContent")
      */
     protected $routes;
