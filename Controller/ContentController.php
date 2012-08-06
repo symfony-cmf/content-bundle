@@ -28,14 +28,14 @@ class ContentController
     /**
      * Render the provided content
      *
-     * @param StaticContent $contentDocument
+     * @param \Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent $contentDocument
      * @param string $template the template name to be used with this content
      * @param string $path the url path for the current navigation item
      * @param string $template symfony path of the template to render the
      *      content document. if omitted uses the defaultTemplate as injected
      *      in constructor
      *
-     * @return Symfony\Component\HttpFoundation\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction($contentDocument, $path, $contentTemplate = null)
     {
@@ -48,7 +48,8 @@ class ContentController
         }
 
         $params = array(
-            'title' => $contentDocument->title,
+            'title' => $contentDocument->getTitle(),
+            'path' => $contentDocument->getPath(),
             'page' => $contentDocument,
             'url' => $path,
         );

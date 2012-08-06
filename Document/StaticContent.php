@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
 
 /**
- * @PHPCRODM\Document
+ * @PHPCRODM\Document(referenceable=true)
  */
 class StaticContent implements RouteAwareInterface
 {
@@ -25,20 +25,26 @@ class StaticContent implements RouteAwareInterface
 
     /**
      * @Assert\NotBlank
-     * @PHPCRODM\String()
+     * @PHPCRODM\Parentdocument()
      */
-    public $name;
+    protected $parent;
+
+    /**
+     * @Assert\NotBlank
+     * @PHPCRODM\Nodename()
+     */
+    protected $name;
 
     /**
      * @Assert\NotBlank
      * @PHPCRODM\String()
      */
-    public $title;
+    protected $title;
 
     /**
      * @PHPCRODM\String()
      */
-    public $body;
+    protected $body;
 
     /**
      * This will usually be a ContainerBlock but can be any block that will be
@@ -65,6 +71,46 @@ class StaticContent implements RouteAwareInterface
     public function getPath()
     {
       return $this->path;
+    }
+
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function getBody()
+    {
+        return $this->body;
+    }
+
+    public function setBody($body)
+    {
+        $this->body = $body;
     }
 
     /**
