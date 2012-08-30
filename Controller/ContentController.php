@@ -4,6 +4,7 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * The content controller is a simple controller that calls a template with
@@ -28,32 +29,36 @@ class ContentController
     /**
      * Render the provided content
      *
-     * @param \Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent $contentDocument
-     * @param string $template the template name to be used with this content
-     * @param string $path the url path for the current navigation item
-     * @param string $template symfony path of the template to render the
+     * @param Request $request
+     * @param object $contentDocument
+     * @param string $contentTemplate symfony path of the template to render the
      *      content document. if omitted uses the defaultTemplate as injected
      *      in constructor
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction($contentDocument, $path, $contentTemplate = null)
+    public function indexAction(Request $request, $contentDocument, $contentTemplate = null)
     {
         if (!$contentDocument) {
-            throw new NotFoundHttpException('Content not found: ' . $path);
+            throw new NotFoundHttpException('Content not found: ' . $request->getPathInfo());
         }
 
         if ($contentTemplate === null) {
             $contentTemplate = $this->defaultTemplate;
         }
 
-        $params = array(
+        $params = $this->getParams($request, $contentDocument);
+
+        return $this->templating->renderResponse($contentTemplate, $params);
+    }
+
+    protected function getParams(Request $request, $contentDocument)
+    {
+        return array(
             'title' => $contentDocument->getTitle(),
             'path' => $contentDocument->getPath(),
             'page' => $contentDocument,
-            'url' => $path,
+            'url' => $request->getPathInfo(),
         );
-
-        return $this->templating->renderResponse($contentTemplate, $params);
     }
 }
