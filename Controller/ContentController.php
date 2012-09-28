@@ -13,6 +13,15 @@ use Symfony\Component\HttpFoundation\Request;
 class ContentController
 {
     /**
+     * @var EngineInterface
+     */
+    protected $templating;
+
+    /**
+     * @var string
+     */
+    protected $defaultTemplate;
+
      * Instantiate the content controller.
      *
      * @param EngineInterface $templating the templating instance to render the
