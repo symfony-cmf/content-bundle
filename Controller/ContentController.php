@@ -52,9 +52,13 @@ class ContentController
             throw new NotFoundHttpException('Content not found: ' . $request->getPathInfo());
         }
 
-        if ($contentTemplate === null) {
-            $contentTemplate = $this->defaultTemplate;
-        }
+        $contentTemplate = $contentTemplate ?: $this->defaultTemplate;
+
+        $contentTemplate = str_replace(
+            array('{_format}', '{_locale}'),
+            array($request->getRequestFormat(), $request->getLocale()),
+            $contentTemplate
+        );
 
         $params = $this->getParams($request, $contentDocument);
 
