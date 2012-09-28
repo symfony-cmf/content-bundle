@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandlerInterface;
+
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishWorkflowCheckerInterface;
+
 /**
  * The content controller is a simple controller that calls a template with
  * the specified content.
@@ -31,6 +34,11 @@ class ContentController
     protected $viewHandler;
 
     /**
+     * @var PublishWorkflowCheckerInterface
+     */
+    protected $publishWorkflowChecker;
+
+    /**
      * Instantiate the content controller.
      *
      * @param EngineInterface $templating the templating instance to render the
@@ -38,12 +46,14 @@ class ContentController
      * @param string $defaultTemplate default template to use in case none is
      *      specified explicitly
      * @param ViewHandlerInterface $viewHandler optional view handler isntance
+     * @param PublishWorkflowCheckerInterface $publishWorkflowChecker
      */
-    public function __construct(EngineInterface $templating, $defaultTemplate, ViewHandlerInterface $viewHandler = null)
+    public function __construct(EngineInterface $templating, $defaultTemplate, ViewHandlerInterface $viewHandler = null, PublishWorkflowCheckerInterface $publishWorkflowChecker = null)
     {
         $this->templating = $templating;
         $this->defaultTemplate = $defaultTemplate;
         $this->viewHandler = $viewHandler;
+        $this->publishWorkflowChecker = $publishWorkflowChecker;
     }
 
     /**
@@ -59,7 +69,9 @@ class ContentController
      */
     public function indexAction(Request $request, $contentDocument, $contentTemplate = null)
     {
-        if (!$contentDocument) {
+        if (!$contentDocument
+            || ($this->publishWorkflowChecker && !$this->publishWorkflowChecker->checkIsPublished($contentDocument, $request))
+        ) {
             throw new NotFoundHttpException('Content not found: ' . $request->getPathInfo());
         }
 
