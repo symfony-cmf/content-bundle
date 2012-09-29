@@ -22,6 +22,7 @@ class ContentController
      */
     protected $defaultTemplate;
 
+    /**
      * Instantiate the content controller.
      *
      * @param EngineInterface $templating the templating instance to render the
