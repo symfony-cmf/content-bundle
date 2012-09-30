@@ -17,6 +17,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('document_class')->defaultValue('Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent')->end()
                 ->scalarNode('default_template')->defaultValue('SymfonyCmfContentBundle:StaticContent:index.html.twig')->end()
                 ->scalarNode('static_basepath')->defaultValue('/cms/content/static')->end()
+                ->scalarNode('role')->defaultValue('IS_AUTHENTICATED_ANONYMOUSLY')->end()
             ->end()
         ;
 
