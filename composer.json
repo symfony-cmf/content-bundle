@@ -17,6 +17,9 @@
         "doctrine/phpcr-bundle": "1.0.*",
         "doctrine/phpcr-odm": "1.0.*"
     },
+    "suggest": {
+        "friendsofsymfony/rest-bundle": "Improved handling for different output formats"
+    },
     "autoload":{
         "psr-0":{
             "Symfony\\Cmf\\Bundle\\ContentBundle": ""
