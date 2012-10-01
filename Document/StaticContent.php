@@ -50,14 +50,14 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     protected $body;
 
     /**
-     * @PHPCRODM\Boolean()
+     * @PHPCRODM\Date()
      */
-    protected $isPublished = false;
+    protected $publishStartDate;
 
     /**
      * @PHPCRODM\Date()
      */
-    protected $publishDate;
+    protected $publishEndDate;
 
     /**
      * This will usually be a ContainerBlock but can be any block that will be
@@ -127,29 +127,29 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     }
 
     /**
-     * Get the publish state
+     * Get the publish start date
      */
-    public function getIsPublished()
+    public function getPublishStartDate()
     {
-        return $this->isPublished;
+        return $this->publishStartDate;
     }
 
-    public function setIsPublished($isPublished)
+    public function setPublishStartDate(\DateTime $publishStartDate = null)
     {
-        $this->isPublished = $isPublished;
+        $this->publishStartDate = $publishStartDate;
     }
 
     /**
-     * Get the publish date
+     * Get the publish end date
      */
-    public function getPublishDate()
+    public function getPublishEndDate()
     {
-        return $this->publishDate;
+        return $this->publishEndDate;
     }
 
-    public function setPublishDate(\DateTime $publishDate = null)
+    public function setPublishEndDate(\DateTime $publishEndDate = null)
     {
-        $this->publishDate = $publishDate;
+        $this->publishEndDate = $publishEndDate;
     }
 
     /**
