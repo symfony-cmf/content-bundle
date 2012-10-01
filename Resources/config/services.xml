@@ -7,6 +7,8 @@
         <service id="symfony_cmf_content.controller" class="Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController">
             <argument type="service" id="templating" />
             <argument>%symfony_cmf_content.default_template%</argument>
+            <argument type="service" id="fos_rest.view_handler" on-invalid="ignore"/>
+            <argument type="service" id="symfony_cmf_core.publish_workflow_checker" on-invalid="ignore"/>
         </service>
 
     </services>
