@@ -50,6 +50,11 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     protected $body;
 
     /**
+     * @PHPCRODM\String(multivalue=true)
+     */
+    protected $tags = array();
+
+    /**
      * @PHPCRODM\Date()
      */
     protected $publishStartDate;
@@ -124,6 +129,22 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     public function setBody($body)
     {
         $this->body = $body;
+    }
+
+    public function getTags()
+    {
+        if (is_array($this->tags)) {
+            return $this->tags;
+        }
+        if (empty($this->tags)) {
+            return array();
+        }
+        return $this->tags->toArray();
+    }
+
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
     }
 
     /**
