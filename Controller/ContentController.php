@@ -70,7 +70,7 @@ class ContentController
     public function indexAction(Request $request, $contentDocument, $contentTemplate = null)
     {
         if (!$contentDocument
-            || ($this->publishWorkflowChecker && !$this->publishWorkflowChecker->checkIsPublished($contentDocument, $request))
+            || ($this->publishWorkflowChecker && !$this->publishWorkflowChecker->checkIsPublished($contentDocument, false, $request))
         ) {
             throw new NotFoundHttpException('Content not found: ' . $request->getPathInfo());
         }
