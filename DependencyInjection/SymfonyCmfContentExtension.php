@@ -18,6 +18,7 @@ class SymfonyCmfContentExtension extends Extension
 
         $container->setParameter($this->getAlias() . '.document_class', $config['document_class']);
         $container->setParameter($this->getAlias() . '.default_template', $config['default_template']);
+        $container->setParameter($this->getAlias() . '.content_basepath', $config['content_basepath']);
         $container->setParameter($this->getAlias() . '.static_basepath', $config['static_basepath']);
     }
 }

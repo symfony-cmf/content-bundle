@@ -16,6 +16,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('document_class')->defaultValue('Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent')->end()
                 ->scalarNode('default_template')->defaultValue('SymfonyCmfContentBundle:StaticContent:index.html.twig')->end()
+                ->scalarNode('content_basepath')->defaultValue('/cms/content')->end()
                 ->scalarNode('static_basepath')->defaultValue('/cms/content/static')->end()
             ->end()
         ;
