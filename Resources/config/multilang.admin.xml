@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="symfony_cmf_content.multilang.admin_class">Symfony\Cmf\Bundle\ContentBundle\Admin\MultilangStaticContentAdmin</parameter>
+    </parameters>
+
+    <services>
+        <service id="symfony_cmf_content.multilang.admin" class="%symfony_cmf_content.multilang.admin_class%">
+            <tag name="sonata.admin" manager_type="doctrine_phpcr" group="content" label="multilang static content" />
+            <argument/>
+            <argument>%symfony_cmf_content.multilang.document_class%</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+
+            <call method="setRouteBuilder">
+                <argument type="service" id="sonata.admin.route.path_info_slashes" />
+            </call>
+
+            <call method="setContentRoot">
+                <argument>%symfony_cmf_content.content_basepath%</argument>
+            </call>
+        </service>
+    </services>
+</container>
