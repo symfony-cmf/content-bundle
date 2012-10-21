@@ -10,9 +10,8 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('symfony_cmf_content');
 
-        $rootNode
+        $treeBuilder->root('symfony_cmf_content')
             ->children()
                 ->scalarNode('admin_class')->defaultNull()->end()
                 ->scalarNode('document_class')->defaultNull()->end()
@@ -32,10 +31,10 @@ class Configuration implements ConfigurationInterface
                             ->defaultValue('auto')
                         ->end()
                         ->arrayNode('locales')
-                            ->prototype('scalar')
-                        ->end()->end()
+                            ->prototype('scalar')->end()
+                        ->end()
                     ->end()
-                ->end()->end()
+                ->end()
             ->end()
         ;
 
