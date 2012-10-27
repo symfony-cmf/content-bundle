@@ -28,7 +28,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
 
     /**
      * @Assert\NotBlank
-     * @PHPCRODM\Parentdocument()
+     * @PHPCRODM\ParentDocument()
      */
     protected $parent;
 
