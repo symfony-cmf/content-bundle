@@ -97,10 +97,7 @@ class ContentController
     protected function getParams(Request $request, $contentDocument)
     {
         return array(
-            'title' => $contentDocument->getTitle(),
-            'path' => $contentDocument->getPath(),
-            'page' => $contentDocument,
-            'url' => $request->getPathInfo(),
+            'cmfMainContent' => $contentDocument,
         );
     }
 }
