@@ -46,11 +46,11 @@ class SymfonyCmfContentExtension extends Extension
         if ('auto' === $config['use_sonata_admin'] && !isset($bundles['SonataDoctrinePHPCRAdminBundle'])) {
             return;
         }
+        
+        $loader->load($prefix.'admin.xml');
 
         if (isset($config['admin_class'])) {
-            $container->setParameter($this->getAlias() . $prefix. '.admin_class', $config['admin_class']);
+            $container->setParameter($this->getAlias() . '.' . $prefix. 'admin_class', $config['admin_class']);
         }
-
-        $loader->load($prefix.'admin.xml');
     }
 }
