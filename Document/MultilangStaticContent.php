@@ -29,7 +29,7 @@ class MultilangStaticContent extends StaticContent
     /**
      * @PHPCRODM\String(multivalue=true, translated=true)
      */
-    protected $tags;
+    protected $tags = array();
 
     public function getLocale()
     {

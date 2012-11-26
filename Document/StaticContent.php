@@ -133,13 +133,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
 
     public function getTags()
     {
-        if (is_array($this->tags)) {
-            return $this->tags;
-        }
-        if (empty($this->tags)) {
-            return array();
-        }
-        return $this->tags->toArray();
+        return $this->tags;
     }
 
     public function setTags($tags)
