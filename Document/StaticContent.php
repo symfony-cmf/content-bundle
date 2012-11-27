@@ -168,11 +168,11 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     }
 
     /**
-     * @return array of route objects that point to this content
+     * @return \Symfony\Component\Routing\Route[] Route instances that point to this content
      */
     public function getRoutes()
     {
-        return $this->routes->toArray();
+        return $this->routes;
     }
 
     public function __toString()
