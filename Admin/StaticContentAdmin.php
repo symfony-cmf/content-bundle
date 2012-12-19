@@ -22,7 +22,6 @@ class StaticContentAdmin extends Admin
             ->addIdentifier('path', 'text')
             ->add('name', 'text')
             ->add('title', 'text')
-            ->add('body', 'text')
         ;
     }
 
@@ -34,7 +33,7 @@ class StaticContentAdmin extends Admin
                 ->add('path', 'text')
                 ->add('title', 'text')
                 ->add('name', 'text')
-                ->add('body', 'text')
+                ->add('body', 'textarea')
             ->end();
     }
 
