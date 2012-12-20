@@ -11,7 +11,7 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
     {
         parent::configureListFields($listMapper);
         $listMapper
-            ->add('locale', 'text')
+            ->add('locales', 'choice', array('template' => 'SonataDoctrinePHPCRAdminBundle:CRUD:locales.html.twig'))
         ;
     }
 
