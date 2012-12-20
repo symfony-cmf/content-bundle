@@ -20,7 +20,8 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
         $formMapper
             ->with('General')
             ->add('locale', 'text')
-            ->end();
+            ->end()
+        ;
 
         parent::configureFormFields($formMapper);
     }

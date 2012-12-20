@@ -20,7 +20,6 @@ class StaticContentAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('path', 'text')
-            ->add('name', 'text')
             ->add('title', 'text')
         ;
     }
@@ -30,11 +29,11 @@ class StaticContentAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('parent', 'doctrine_phpcr_type_tree_model', array('root_node' => $this->contentRoot, 'choice_list' => array(), 'select_root_node' => true))
-                ->add('path', 'text')
                 ->add('title', 'text')
                 ->add('name', 'text')
                 ->add('body', 'textarea')
-            ->end();
+            ->end()
+        ;
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -42,7 +41,7 @@ class StaticContentAdmin extends Admin
         $datagridMapper
             ->add('title', 'doctrine_phpcr_string')
             ->add('name',  'doctrine_phpcr_string')
-            ;
+        ;
     }
 
     public function getNewInstance()
