@@ -17,9 +17,14 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $locales = $this->getConfigurationPool()->getContainer()->getParameter('symfony_cmf_content.locales');
+
         $formMapper
             ->with('General')
-            ->add('locale', 'text')
+            ->add('locale', 'choice', array(
+                'choices' => array_combine($locales, $locales),
+                'empty_value' => '',
+            ))
             ->end()
         ;
 

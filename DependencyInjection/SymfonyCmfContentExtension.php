@@ -27,6 +27,9 @@ class SymfonyCmfContentExtension extends Extension
             if (isset($config['multilang']['document_class'])) {
                 $container->setParameter($this->getAlias() . '.multilang.document_class', $config['multilang']['document_class']);
             }
+            if (isset($config['multilang']['locales'])) {
+                $container->setParameter($this->getAlias() . '.locales', $config['multilang']['locales']);
+            }
         }
 
         if (isset($config['document_class'])) {
