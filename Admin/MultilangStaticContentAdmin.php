@@ -5,6 +5,8 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
+use Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent;
+
 class MultilangStaticContentAdmin extends StaticContentAdmin
 {
     /**
@@ -45,5 +47,21 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
         ;
 
         parent::configureFormFields($formMapper);
+    }
+
+    public function getNewInstance()
+    {
+        /** @var $new MultilangStaticContent */
+        $new = parent::getNewInstance();
+
+        if ($this->hasRequest()) {
+            $currentLocale = $this->getRequest()->attributes->get('_locale');
+
+            if (in_array($currentLocale, $this->locales)) {
+                $new->setLocale($currentLocale);
+            }
+        }
+
+        return $new;
     }
 }
