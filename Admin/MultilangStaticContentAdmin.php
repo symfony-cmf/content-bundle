@@ -58,7 +58,8 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
             $currentLocale = $this->getRequest()->attributes->get('_locale');
 
             if (in_array($currentLocale, $this->locales)) {
-                $new->setLocale($currentLocale);
+                $meta = $this->getModelManager()->getMetadata(get_class($new));
+                $meta->setFieldValue($new, $meta->localeMapping, $currentLocale);
             }
         }
 
