@@ -7,6 +7,24 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class MultilangStaticContentAdmin extends StaticContentAdmin
 {
+    /**
+     * @var array
+     */
+    protected $locales;
+
+    /**
+     * @param string $code
+     * @param string $class
+     * @param string $baseControllerName
+     * @param array  $locales
+     */
+    public function __construct($code, $class, $baseControllerName, $locales)
+    {
+        parent::__construct($code, $class, $baseControllerName);
+
+        $this->locales = $locales;
+    }
+
     protected function configureListFields(ListMapper $listMapper)
     {
         parent::configureListFields($listMapper);
@@ -17,12 +35,10 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $locales = $this->getConfigurationPool()->getContainer()->getParameter('symfony_cmf_content.locales');
-
         $formMapper
             ->with('General')
             ->add('locale', 'choice', array(
-                'choices' => array_combine($locales, $locales),
+                'choices' => array_combine($this->locales, $this->locales),
                 'empty_value' => '',
             ))
             ->end()
