@@ -1,0 +1,29 @@
+dashboard:
+    group_content: Content
+    label_static_content: Static content
+    label_multilang_static_content: Multilang static content
+
+breadcrumb:
+    link_static_content_list: Static contents
+    link_static_content_create: Create
+    link_static_content_edit: Edit
+    link_multilang_static_content_list: Multilang static contents
+    link_multilang_static_content_create: Create
+    link_multilang_static_content_edit: Edit
+
+filter:
+    label_title: Title
+    label_name: Name
+
+list:
+    label_path: Path
+    label_title: Title
+    label_locales: Locales
+
+form:
+    group_general: General
+    label_locale: Locale
+    label_parent: Parent
+    label_title: Title
+    label_name: Name
+    label_body: Body
