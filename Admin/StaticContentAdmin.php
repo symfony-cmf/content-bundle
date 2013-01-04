@@ -29,9 +29,9 @@ class StaticContentAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('parent', 'doctrine_phpcr_type_tree_model', array('root_node' => $this->contentRoot, 'choice_list' => array(), 'select_root_node' => true))
-                ->add('title', 'text')
                 ->add('name', 'text')
-                ->add('body', 'textarea')
+                ->add('title', 'text')
+                ->add('body', 'textarea', array('required' => false))
             ->end()
         ;
     }
