@@ -3,7 +3,6 @@
 namespace Symfony\Cmf\Bundle\ContentBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @PHPCRODM\Document(translator="child", referenceable=true)
@@ -16,7 +15,6 @@ class MultilangStaticContent extends StaticContent
     protected $locale;
 
     /**
-     * @Assert\NotBlank
      * @PHPCRODM\String(translated=true)
      */
     protected $title;
