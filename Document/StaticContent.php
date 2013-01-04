@@ -4,8 +4,6 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 
-use Symfony\Component\Validator\Constraints as Assert;
-
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishWorkflowInterface;
 
@@ -27,19 +25,16 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     public $node;
 
     /**
-     * @Assert\NotBlank
      * @PHPCRODM\ParentDocument()
      */
     protected $parent;
 
     /**
-     * @Assert\NotBlank
      * @PHPCRODM\Nodename()
      */
     protected $name;
 
     /**
-     * @Assert\NotBlank
      * @PHPCRODM\String()
      */
     protected $title;
