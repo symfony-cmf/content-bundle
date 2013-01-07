@@ -1,13 +1,13 @@
 dashboard:
     group_content: Content
     label_static_content: Static content
-    label_multilang_static_content: Multilang static content
+    label_multilang_static_content: Multilingual static content
 
 breadcrumb:
     link_static_content_list: Static contents
     link_static_content_create: Create
     link_static_content_edit: Edit
-    link_multilang_static_content_list: Multilang static contents
+    link_multilang_static_content_list: Multilingual static contents
     link_multilang_static_content_create: Create
     link_multilang_static_content_edit: Edit
 
