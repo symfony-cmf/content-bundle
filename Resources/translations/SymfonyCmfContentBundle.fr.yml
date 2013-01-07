@@ -1,0 +1,29 @@
+dashboard:
+    group_content: Contenu
+    label_static_content: Contenu statique
+    label_multilang_static_content: Contenu statique multilingue
+
+breadcrumb:
+    link_static_content_list: Contenus statiques
+    link_static_content_create: Créer
+    link_static_content_edit: Éditer
+    link_multilang_static_content_list: Contenus statiques multilingues
+    link_multilang_static_content_create: Créer
+    link_multilang_static_content_edit: Éditer
+
+filter:
+    label_title: Titre
+    label_name: Nom
+
+list:
+    label_path: Chemin
+    label_title: Titre
+    label_locales: Langues
+
+form:
+    group_general: Général
+    label_locale: Langue
+    label_parent: Parent
+    label_title: Titre
+    label_name: Nom
+    label_body: Corps
