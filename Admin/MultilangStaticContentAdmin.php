@@ -38,7 +38,7 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('General')
+            ->with('form.group_general')
             ->add('locale', 'choice', array(
                 'choices' => array_combine($this->locales, $this->locales),
                 'empty_value' => '',
