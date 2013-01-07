@@ -7,9 +7,11 @@ breadcrumb:
     link_static_content_list: Static contents
     link_static_content_create: Create
     link_static_content_edit: Edit
+    link_static_content_delete: Delete
     link_multilang_static_content_list: Multilingual static contents
     link_multilang_static_content_create: Create
     link_multilang_static_content_edit: Edit
+    link_multilang_static_content_delete: Delete
 
 filter:
     label_title: Title
