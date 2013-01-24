@@ -84,7 +84,12 @@ class ContentController
         );
 
         $params = $this->getParams($request, $contentDocument);
+        return $this->renderResponse($contentTemplate, $params);
 
+    }
+
+    protected function renderResponse($contentTemplate, $params)
+    {
         if ($this->viewHandler) {
             $view = new View($params);
             $view->setTemplate($contentTemplate);
