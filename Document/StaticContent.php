@@ -5,6 +5,8 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Document;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Doctrine\Common\Collections\ArrayCollection;
 
+use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
+use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode;
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishWorkflowInterface;
 
@@ -75,10 +77,16 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
      */
     protected $routes;
 
+    /**
+     * \Doctrine\Common\Collections\ArrayCollection
+     * @PHPCRODM\Referrers(filter="strongContent")
+     */
+    protected $menus;
 
     public function __construct()
     {
         $this->routes = new ArrayCollection();
+        $this->menus = new ArrayCollection();
     }
 
     /**
@@ -193,6 +201,30 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     public function getRoutes()
     {
         return $this->routes;
+    }
+
+    /**
+     * @param MenuNode $menus
+     */
+    public function addMenu($menus)
+    {
+        $this->menus->add($menus);
+    }
+
+    /**
+     * @param MenuNode $menus
+     */
+    public function removeMenu($menus)
+    {
+        $this->menus->removeElement($menus);
+    }
+
+    /**
+     * @return MenuNode Menu instances that point to this content
+     */
+    public function getMenus()
+    {
+        return $this->menus;
     }
 
     public function __toString()
