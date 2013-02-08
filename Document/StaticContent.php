@@ -79,7 +79,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
 
     /**
      * \Doctrine\Common\Collections\ArrayCollection
-     * @PHPCRODM\Referrers(filter="strongContent")
+     * @PHPCRODM\Referrers(filter="weakContent")
      */
     protected $menus;
 
