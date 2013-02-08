@@ -204,19 +204,19 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     }
 
     /**
-     * @param MenuNode $menus
+     * @param MenuNode $menu
      */
-    public function addMenu($menus)
+    public function addMenu($menu)
     {
-        $this->menus->add($menus);
+        $this->menus->add($menu);
     }
 
     /**
-     * @param MenuNode $menus
+     * @param MenuNode $menu
      */
-    public function removeMenu($menus)
+    public function removeMenu($menu)
     {
-        $this->menus->removeElement($menus);
+        $this->menus->removeElement($menu);
     }
 
     /**
