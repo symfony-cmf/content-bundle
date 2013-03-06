@@ -71,7 +71,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @PHPCRODM\Referrers(filter="routeContent")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route", referencedBy="routeContent")
      */
     protected $routes;
 
