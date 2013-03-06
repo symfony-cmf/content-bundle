@@ -51,6 +51,16 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     protected $tags = array();
 
     /**
+     * @PHPCRODM\Date()
+     */
+    protected $publishStartDate;
+
+    /**
+     * @PHPCRODM\Date()
+     */
+    protected $publishEndDate;
+
+    /**
      * This will usually be a ContainerBlock but can be any block that will be
      * rendered in the additionalInfoBlock area.
      *
@@ -76,12 +86,12 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
      */
     public function setPath($path)
     {
-      $this->path = $path;
+        $this->path = $path;
     }
 
     public function getPath()
     {
-      return $this->path;
+        return $this->path;
     }
 
     public function setParent($parent)
@@ -159,7 +169,6 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     {
         $this->publishEndDate = $publishEndDate;
     }
-
 
     /**
      * @param \Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route $route
