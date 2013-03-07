@@ -79,7 +79,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
 
     /**
      * \Doctrine\Common\Collections\ArrayCollection
-     * @PHPCRODM\Referrers(filter="weakContent")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode", referencedBy="weakContent")
      */
     protected $menus;
 
