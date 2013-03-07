@@ -86,12 +86,12 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
      */
     public function setPath($path)
     {
-      $this->path = $path;
+        $this->path = $path;
     }
 
     public function getPath()
     {
-      return $this->path;
+        return $this->path;
     }
 
     public function setParent($parent)
@@ -170,6 +170,22 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
         $this->publishEndDate = $publishEndDate;
     }
 
+
+    /**
+     * @param \Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route $route
+     */
+    public function addRoute($route)
+    {
+        $this->routes->add($route);
+    }
+
+    /**
+     * @param \Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route $route
+     */
+    public function removeRoute($route)
+    {
+        $this->routes->removeElement($route);
+    }
 
     /**
      * @param \Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route $route
