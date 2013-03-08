@@ -19,6 +19,8 @@
         "doctrine/phpcr-odm": "1.0.*"
     },
     "suggest": {
+        "symfony-cmf/menu-bundle": "Needed to use the static content document",
+        "symfony-cmf/routing-extra-bundle": "Needed to use the static content document",
         "friendsofsymfony/rest-bundle": "Improved handling for different output formats"
     },
     "autoload":{
