@@ -3,12 +3,15 @@
 namespace Symfony\Cmf\Bundle\ContentBundle\Admin;
 
 use Doctrine\ODM\PHPCR\DocumentManager;
+
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
+
 use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
-use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode;
+use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
+use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route;
 
 class StaticContentAdmin extends Admin
 {
@@ -99,7 +102,7 @@ class StaticContentAdmin extends Admin
 
     public function preUpdate($staticPage)
     {
-        // Still needed to have the reference between route/menu and content
+        // TODO: needed because of a bug in referrers cascade persist, otherwise the reference field is not updated properly
         $this->setRouteContents($staticPage);
         $this->setMenuContents($staticPage);
 
@@ -108,7 +111,7 @@ class StaticContentAdmin extends Admin
 
     public function prePersist($staticPage)
     {
-        // Still needed to have the reference between route/menu and content
+        // TODO: needed because of a bug in referrers cascade persist, otherwise the reference field is not updated properly
         $this->setRouteContents($staticPage);
         $this->setMenuContents($staticPage);
 
@@ -121,7 +124,7 @@ class StaticContentAdmin extends Admin
     protected function setRouteContents($staticPage)
     {
         /**
-         * @var $route \Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route
+         * @var $route Route
          */
         foreach ($staticPage->getRoutes() as $route) {
             $route->setRouteContent($staticPage);
@@ -135,7 +138,7 @@ class StaticContentAdmin extends Admin
     protected function setMenuContents($staticPage)
     {
         /**
-         * @var $menu MultilangMenuNode
+         * @var $menu MenuNode
          */
         foreach ($staticPage->getMenus() as $menu) {
             $menu->setContent($staticPage);
