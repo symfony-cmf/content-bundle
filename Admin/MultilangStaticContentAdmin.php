@@ -37,6 +37,8 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
+        parent::configureFormFields($formMapper);
+        
         $formMapper
             ->with('form.group_general')
             ->add('locale', 'choice', array(
@@ -46,7 +48,6 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
             ->end()
         ;
 
-        parent::configureFormFields($formMapper);
     }
 
     public function getNewInstance()
