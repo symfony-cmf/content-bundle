@@ -72,7 +72,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route", referencedBy="routeContent")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route", referencedBy="routeContent", cascade="persist")
      */
     protected $routes;
 
@@ -80,7 +80,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
      * If the menu is built with hard references, then referencedBy would be "strongContent".
      *
      * \Doctrine\Common\Collections\ArrayCollection
-     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode", referencedBy="weakContent")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode", referencedBy="weakContent", cascade="persist")
      */
     protected $menus;
 
