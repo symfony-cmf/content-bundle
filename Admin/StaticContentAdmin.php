@@ -99,6 +99,7 @@ class StaticContentAdmin extends Admin
 
     public function preUpdate($staticPage)
     {
+        // Still needed to have the reference between route/menu and content
         $this->setRouteContents($staticPage);
         $this->setMenuContents($staticPage);
 
@@ -107,6 +108,7 @@ class StaticContentAdmin extends Admin
 
     public function prePersist($staticPage)
     {
+        // Still needed to have the reference between route/menu and content
         $this->setRouteContents($staticPage);
         $this->setMenuContents($staticPage);
 
