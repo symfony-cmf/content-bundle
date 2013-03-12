@@ -2,11 +2,13 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Admin;
 
-use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
-use Sonata\AdminBundle\Form\FormMapper;
+use Doctrine\ODM\PHPCR\DocumentManager;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
 use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
+use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode;
 
 class StaticContentAdmin extends Admin
 {
@@ -17,6 +19,25 @@ class StaticContentAdmin extends Admin
      * @var string
      */
     protected $contentRoot;
+
+    /**
+     * @var array
+     */
+    protected $locales;
+
+    /**
+     * @param string          $code
+     * @param string          $class
+     * @param string          $baseControllerName
+     * @param array           $locales
+     * @param DocumentManager $dm
+     */
+    public function __construct($code, $class, $baseControllerName, $locales)
+    {
+        $this->locales = $locales;
+
+        parent::__construct($code, $class, $baseControllerName);
+    }
 
     protected function configureListFields(ListMapper $listMapper)
     {
@@ -29,6 +50,33 @@ class StaticContentAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->with('Routes')
+            ->add(
+                'routes',
+                'sonata_type_collection',
+                array(
+                    'by_reference' => false
+                ),
+                array(
+                    'edit' => 'inline',
+                    'inline' => 'table',
+                    'admin_code' => 'symfony_cmf_routing_extra.minimal_route_admin'
+                ))
+            ->end()
+            ->with('Menu')
+            ->add(
+                'menus',
+                'sonata_type_collection',
+                array(
+                    'by_reference' => false
+                ),
+                array(
+                    'edit' => 'inline',
+                    'inline' => 'table',
+                    'admin_code' => 'symfony_cmf_menu.minimal.admin'
+                )
+            )
+            ->end()
             ->with('form.group_general')
                 ->add('parent', 'doctrine_phpcr_odm_tree', array('root_node' => $this->contentRoot, 'choice_list' => array(), 'select_root_node' => true))
                 ->add('name', 'text')
@@ -67,5 +115,48 @@ class StaticContentAdmin extends Admin
     public function getExportFormats()
     {
         return array();
+    }
+
+    public function preUpdate($staticPage)
+    {
+        $this->setRouteContents($staticPage);
+        $this->setMenuContents($staticPage);
+
+        parent::preUpdate($staticPage);
+    }
+
+    public function prePersist($staticPage)
+    {
+        $this->setRouteContents($staticPage);
+        $this->setMenuContents($staticPage);
+
+        parent::prePersist($staticPage);
+    }
+
+    /**
+     * @param $staticPage StaticContent
+     */
+    protected function setRouteContents($staticPage)
+    {
+        /**
+         * @var $route \Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route
+         */
+        foreach ($staticPage->getRoutes() as $route) {
+            $route->setRouteContent($staticPage);
+            $route->setDefault('type', 'static_pages');
+        }
+    }
+
+    /**
+     * @param $staticPage StaticContent
+     */
+    protected function setMenuContents($staticPage)
+    {
+        /**
+         * @var $menu MultilangMenuNode
+         */
+        foreach ($staticPage->getMenus() as $menu) {
+            $menu->setContent($staticPage);
+        }
     }
 }
