@@ -10,6 +10,11 @@ use Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent;
 class MultilangStaticContentAdmin extends StaticContentAdmin
 {
     /**
+     * @var array
+     */
+    protected $locales;
+
+    /**
      * @param string $code
      * @param string $class
      * @param string $baseControllerName
@@ -17,7 +22,9 @@ class MultilangStaticContentAdmin extends StaticContentAdmin
      */
     public function __construct($code, $class, $baseControllerName, $locales)
     {
-        parent::__construct($code, $class, $baseControllerName, $locales);
+        parent::__construct($code, $class, $baseControllerName);
+
+        $this->locales = $locales;
     }
 
     protected function configureListFields(ListMapper $listMapper)

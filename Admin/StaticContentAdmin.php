@@ -20,25 +20,6 @@ class StaticContentAdmin extends Admin
      */
     protected $contentRoot;
 
-    /**
-     * @var array
-     */
-    protected $locales;
-
-    /**
-     * @param string          $code
-     * @param string          $class
-     * @param string          $baseControllerName
-     * @param array           $locales
-     * @param DocumentManager $dm
-     */
-    public function __construct($code, $class, $baseControllerName, $locales)
-    {
-        $this->locales = $locales;
-
-        parent::__construct($code, $class, $baseControllerName);
-    }
-
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
