@@ -32,31 +32,30 @@ class StaticContentAdmin extends Admin
     {
         $formMapper
             ->with('Routes')
-            ->add(
-                'routes',
-                'sonata_type_collection',
-                array(
-                    'by_reference' => false
-                ),
-                array(
-                    'edit' => 'inline',
-                    'inline' => 'table',
-                    'admin_code' => 'symfony_cmf_routing_extra.minimal_route_admin'
-                ))
+                ->add(
+                    'routes',
+                    'sonata_type_collection',
+                    array(
+                        'by_reference' => false
+                    ),
+                    array(
+                        'edit' => 'inline',
+                        'inline' => 'table',
+                        'admin_code' => 'symfony_cmf_routing_extra.minimal_route_admin'
+                    ))
             ->end()
             ->with('Menu')
-            ->add(
-                'menus',
-                'sonata_type_collection',
-                array(
-                    'by_reference' => false
-                ),
-                array(
-                    'edit' => 'inline',
-                    'inline' => 'table',
-                    'admin_code' => 'symfony_cmf_menu.minimal.admin'
-                )
-            )
+                ->add(
+                    'menus',
+                    'sonata_type_collection',
+                    array(
+                        'by_reference' => false
+                    ),
+                    array(
+                        'edit' => 'inline',
+                        'inline' => 'table',
+                        'admin_code' => 'symfony_cmf_menu.minimal.admin'
+                    ))
             ->end()
             ->with('form.group_general')
                 ->add('parent', 'doctrine_phpcr_odm_tree', array('root_node' => $this->contentRoot, 'choice_list' => array(), 'select_root_node' => true))
