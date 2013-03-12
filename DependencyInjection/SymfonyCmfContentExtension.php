@@ -23,9 +23,11 @@ class SymfonyCmfContentExtension extends Extension
         if (isset($config['multilang'])) {
             if ($config['multilang']['use_sonata_admin']) {
                 $this->loadSonataAdmin($config['multilang'], $loader, $container, 'multilang.');
+                $this->loadSonataAdmin($config['multilang'], $loader, $container, 'fullpage.');
             }
             if (isset($config['multilang']['document_class'])) {
                 $container->setParameter($this->getAlias() . '.multilang.document_class', $config['multilang']['document_class']);
+                $container->setParameter($this->getAlias() . '.fullpage.document_class', $config['multilang']['document_class']);
             }
 
             $container->setParameter($this->getAlias() . '.multilang.locales', $config['multilang']['locales']);
