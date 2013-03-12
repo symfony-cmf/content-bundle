@@ -6,7 +6,6 @@ use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
-use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode;
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishWorkflowInterface;
 
