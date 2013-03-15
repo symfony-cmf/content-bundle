@@ -99,49 +99,4 @@ class StaticContentAdmin extends Admin
     {
         return array();
     }
-
-    public function preUpdate($staticPage)
-    {
-        // TODO: needed because of a bug in referrers cascade persist, otherwise the reference field is not updated properly
-        $this->setRouteContents($staticPage);
-        $this->setMenuContents($staticPage);
-
-        parent::preUpdate($staticPage);
-    }
-
-    public function prePersist($staticPage)
-    {
-        // TODO: needed because of a bug in referrers cascade persist, otherwise the reference field is not updated properly
-        $this->setRouteContents($staticPage);
-        $this->setMenuContents($staticPage);
-
-        parent::prePersist($staticPage);
-    }
-
-    /**
-     * @param $staticPage StaticContent
-     */
-    protected function setRouteContents($staticPage)
-    {
-        /**
-         * @var $route Route
-         */
-        foreach ($staticPage->getRoutes() as $route) {
-            $route->setRouteContent($staticPage);
-            $route->setDefault('type', 'static_pages');
-        }
-    }
-
-    /**
-     * @param $staticPage StaticContent
-     */
-    protected function setMenuContents($staticPage)
-    {
-        /**
-         * @var $menu MenuNode
-         */
-        foreach ($staticPage->getMenus() as $menu) {
-            $menu->setContent($staticPage);
-        }
-    }
 }
