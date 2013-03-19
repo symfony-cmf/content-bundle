@@ -179,7 +179,6 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
         $this->publishEndDate = $publishEndDate;
     }
 
-
     /**
      * @param \Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route $route
      */
