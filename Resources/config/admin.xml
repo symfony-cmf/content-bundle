@@ -22,6 +22,10 @@
             <call method="setContentRoot">
                 <argument>%symfony_cmf_content.content_basepath%</argument>
             </call>
+
+            <call method="setEmbeddedMenuAdmin">
+                <argument>symfony_cmf_menu.minimal.admin</argument>
+            </call>
         </service>
     </services>
 </container>
