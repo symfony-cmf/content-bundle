@@ -52,6 +52,15 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     protected $tags = array();
 
     /**
+     * This will usually be a ContainerBlock but can be any block that will be
+     * rendered in the additionalInfoBlock area.
+     *
+     * @var \Sonata\BlockBundle\Model\BlockInterface
+     * @PHPCRODM\Child(cascade="persist")
+     */
+    protected $additionalInfoBlock;
+
+    /**
      * @PHPCRODM\Date()
      */
     protected $publishStartDate;
@@ -60,15 +69,6 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
      * @PHPCRODM\Date()
      */
     protected $publishEndDate;
-
-    /**
-     * This will usually be a ContainerBlock but can be any block that will be
-     * rendered in the additionalInfoBlock area.
-     *
-     * @var \Sonata\BlockBundle\Model\BlockInterface
-     * @PHPCRODM\Child()
-     */
-    public $additionalInfoBlock;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
@@ -151,6 +151,16 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     public function setTags($tags)
     {
         $this->tags = $tags;
+    }
+
+    public function getAdditionalInfoBlock()
+    {
+        return $this->additionalInfoBlock;
+    }
+
+    public function setAdditionalInfoBlock($block)
+    {
+        $this->additionalInfoBlock = $block;
     }
 
     /**
