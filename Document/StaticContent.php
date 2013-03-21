@@ -22,9 +22,10 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     protected $path;
 
     /**
+     * @var \PHPCR\NodeInterface
      * @PHPCRODM\Node
      */
-    public $node;
+    protected $node;
 
     /**
      * @PHPCRODM\ParentDocument()
@@ -235,6 +236,16 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     public function getMenus()
     {
         return $this->menus;
+    }
+
+    /**
+     * Get the underlying PHPCR node of this document
+     *
+     * @return \PHPCR\NodeInterface
+     */
+    public function getNode()
+    {
+        return $this->node;
     }
 
     public function __toString()
