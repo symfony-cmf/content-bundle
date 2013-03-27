@@ -55,7 +55,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     /**
      * Hashmap for application data associated to this document
      *
-     * @PHPCRODM\String(assoc="true")
+     * @PHPCRODM\String(assoc="")
      */
     protected $extras;
 
