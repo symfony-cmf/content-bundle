@@ -53,6 +53,13 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     protected $tags = array();
 
     /**
+     * Hashmap for application data associated to this document
+     *
+     * @PHPCRODM\String(assoc="true")
+     */
+    protected $extras;
+
+    /**
      * This will usually be a ContainerBlock but can be any block that will be
      * rendered in the additionalInfoBlock area.
      *
@@ -188,6 +195,62 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     public function setPublishEndDate(\DateTime $publishEndDate = null)
     {
         $this->publishEndDate = $publishEndDate;
+    }
+
+    /**
+     * Get the application information associated with this document
+     *
+     * @return array
+     */
+    public function getExtras()
+    {
+        return $this->extras;
+    }
+
+    /**
+     * Get a single application information value
+     *
+     * @param string      $name
+     * @param string|null $default
+     *
+     * @return string|null the value at $name if set, null otherwise
+     */
+    public function getExtra($name, $default = null)
+    {
+        return isset($this->extras[$name]) ? $this->extras[$name] : $default;
+    }
+
+    /**
+     * Set the application information
+     *
+     * @param array $extras
+     *
+     * @return StaticContent - this instance
+     */
+    public function setExtras(array $extras)
+    {
+        $this->extras = $extras;
+
+        return $this;
+    }
+
+    /**
+     * Set a single application information value.
+     *
+     * @param string $name
+     * @param string $value the new value, null removes the entry
+     *
+     * @return StaticContent - this instance
+     */
+    public function setExtra($name, $value)
+    {
+        if (is_null($value)) {
+            unset($this->extras[$name]);
+        } else {
+            $this->extras[$name] = $value;
+        }
+
+        return $this;
     }
 
     /**
