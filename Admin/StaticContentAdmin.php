@@ -61,7 +61,7 @@ class StaticContentAdmin extends Admin
                     array(
                         'edit' => 'inline',
                         'inline' => 'table',
-                        'admin_code' => 'symfony_cmf_routing_extra.minimal_route_admin',
+                        'admin_code' => 'symfony_cmf_routing_extra.route_admin',
                     ))
             ->end()
             ->with('Menu')
