@@ -24,7 +24,7 @@
             </call>
 
             <call method="setEmbeddedMenuAdmin">
-                <argument>symfony_cmf_menu.minimal.admin</argument>
+                <argument>symfony_cmf_menu.admin</argument>
             </call>
         </service>
     </services>
