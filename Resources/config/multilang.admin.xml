@@ -25,7 +25,7 @@
             </call>
 
             <call method="setEmbeddedMenuAdmin">
-                <argument>symfony_cmf_menu.multilang.minimal.admin</argument>
+                <argument>symfony_cmf_menu.multilang.admin</argument>
             </call>
         </service>
     </services>
