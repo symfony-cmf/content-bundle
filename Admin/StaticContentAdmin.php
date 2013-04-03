@@ -51,7 +51,7 @@ class StaticContentAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('Routes')
+            ->with('form.group_routes')
                 ->add(
                     'routes',
                     'sonata_type_collection',
@@ -64,7 +64,7 @@ class StaticContentAdmin extends Admin
                         'admin_code' => 'symfony_cmf_routing_extra.route_admin',
                     ))
             ->end()
-            ->with('Menu')
+            ->with('form.group_menus')
                 ->add(
                     'menus',
                     'sonata_type_collection',

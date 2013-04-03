@@ -24,6 +24,10 @@ list:
 
 form:
     group_general: Général
+    group_routes: Routes
+    group_menus: Menu
+    label_routes: Routes
+    label_menus: Menu
     label_locale: Langue
     label_parent: Parent
     label_title: Titre
