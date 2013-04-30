@@ -294,7 +294,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     }
 
     /**
-     * @return MenuNode Menu instances that point to this content
+     * @return ArrayCollection of MenuNode that point to this content
      */
     public function getMenus()
     {
