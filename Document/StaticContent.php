@@ -69,6 +69,11 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     protected $additionalInfoBlock;
 
     /**
+     * @PHPCRODM\Boolean()
+     */
+    protected $publishable;
+
+    /**
      * @PHPCRODM\Date()
      */
     protected $publishStartDate;
@@ -169,6 +174,26 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     public function setAdditionalInfoBlock($block)
     {
         $this->additionalInfoBlock = $block;
+    }
+
+    /**
+     * Set if the content is publishable
+     *
+     * @param boolean $publishable
+     */
+    public function setPublishable($publishable)
+    {
+        return $this->publishable = (bool) $publishable;
+    }
+
+    /**
+     * Is publishable
+     *
+     * @return boolean $publishable
+     */
+    public function isPublishable()
+    {
+        return $this->publishable;
     }
 
     /**
