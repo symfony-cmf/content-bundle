@@ -85,7 +85,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection
-     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route", referencedBy="routeContent", cascade="persist")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Document\Route", referencedBy="routeContent", cascade="persist")
      */
     protected $routes;
 
@@ -279,7 +279,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     }
 
     /**
-     * @param \Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route $route
+     * @param \Symfony\Cmf\Bundle\RoutingBundle\Document\Route $route
      */
     public function addRoute($route)
     {
@@ -287,7 +287,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     }
 
     /**
-     * @param \Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route $route
+     * @param \Symfony\Cmf\Bundle\RoutingBundle\Document\Route $route
      */
     public function removeRoute($route)
     {

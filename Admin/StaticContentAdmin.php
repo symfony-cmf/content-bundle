@@ -11,7 +11,7 @@ use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
 
 use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
-use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route;
+use Symfony\Cmf\Bundle\RoutingBundle\Document\Route;
 
 class StaticContentAdmin extends Admin
 {
@@ -61,7 +61,7 @@ class StaticContentAdmin extends Admin
                     array(
                         'edit' => 'inline',
                         'inline' => 'table',
-                        'admin_code' => 'symfony_cmf_routing_extra.route_admin',
+                        'admin_code' => 'symfony_cmf_routing.route_admin',
                     ))
             ->end()
             ->with('form.group_menus')
