@@ -11,7 +11,7 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
 
-        $treeBuilder->root('symfony_cmf_content')
+        $treeBuilder->root('cmf_content')
             ->children()
                 ->scalarNode('admin_class')->defaultNull()->end()
                 ->scalarNode('document_class')->defaultNull()->end()

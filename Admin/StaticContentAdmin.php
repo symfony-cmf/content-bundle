@@ -15,7 +15,7 @@ use Symfony\Cmf\Bundle\RoutingBundle\Document\Route;
 
 class StaticContentAdmin extends Admin
 {
-    protected $translationDomain = 'SymfonyCmfContentBundle';
+    protected $translationDomain = 'CmfContentBundle';
 
     /**
      * Root path for the route content selection
@@ -61,7 +61,7 @@ class StaticContentAdmin extends Admin
                     array(
                         'edit' => 'inline',
                         'inline' => 'table',
-                        'admin_code' => 'symfony_cmf_routing.route_admin',
+                        'admin_code' => 'cmf_routing.route_admin',
                     ))
             ->end()
             ->with('form.group_menus')
