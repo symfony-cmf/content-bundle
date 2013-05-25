@@ -5,27 +5,27 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="symfony_cmf_content.multilang.admin_class">Symfony\Cmf\Bundle\ContentBundle\Admin\MultilangStaticContentAdmin</parameter>
+        <parameter key="cmf_content.multilang.admin_class">Symfony\Cmf\Bundle\ContentBundle\Admin\MultilangStaticContentAdmin</parameter>
     </parameters>
 
     <services>
-        <service id="symfony_cmf_content.multilang.admin" class="%symfony_cmf_content.multilang.admin_class%">
-            <tag name="sonata.admin" manager_type="doctrine_phpcr" group="dashboard.group_content" label_catalogue="SymfonyCmfContentBundle" label="dashboard.label_multilang_static_content" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+        <service id="cmf_content.multilang.admin" class="%cmf_content.multilang.admin_class%">
+            <tag name="sonata.admin" manager_type="doctrine_phpcr" group="dashboard.group_content" label_catalogue="CmfContentBundle" label="dashboard.label_multilang_static_content" label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%symfony_cmf_content.multilang.document_class%</argument>
+            <argument>%cmf_content.multilang.document_class%</argument>
             <argument>SonataAdminBundle:CRUD</argument>
-            <argument>%symfony_cmf_content.multilang.locales%</argument>
+            <argument>%cmf_content.multilang.locales%</argument>
 
             <call method="setRouteBuilder">
                 <argument type="service" id="sonata.admin.route.path_info_slashes" />
             </call>
 
             <call method="setContentRoot">
-                <argument>%symfony_cmf_content.content_basepath%</argument>
+                <argument>%cmf_content.content_basepath%</argument>
             </call>
 
             <call method="setEmbeddedMenuAdmin">
-                <argument>symfony_cmf_menu.multilang.admin</argument>
+                <argument>cmf_menu.multilang.admin</argument>
             </call>
         </service>
     </services>
