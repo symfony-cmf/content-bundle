@@ -22,10 +22,6 @@
             <call method="setContentRoot">
                 <argument>%cmf_content.content_basepath%</argument>
             </call>
-
-            <call method="setEmbeddedMenuAdmin">
-                <argument>cmf_menu.admin</argument>
-            </call>
         </service>
     </services>
 </container>
