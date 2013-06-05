@@ -23,23 +23,6 @@ class StaticContentAdmin extends Admin
      */
     protected $contentRoot;
 
-    /**
-     * Service name of the sonata_type_collection service to embed
-     *
-     * @var string
-     */
-    protected $menuAdminCode;
-
-    /**
-     * Configure the service name (admin_code) of the admin service for the embedded menu nodes
-     *
-     * @param $adminCode
-     */
-    public function setEmbeddedMenuAdmin($adminCode)
-    {
-        $this->menuAdminCode = $adminCode;
-    }
-
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
@@ -61,7 +44,6 @@ class StaticContentAdmin extends Admin
                     array(
                         'edit' => 'inline',
                         'inline' => 'table',
-                        'admin_code' => 'cmf_routing.route_admin',
                     ))
             ->end()
             ->with('form.group_menus')
@@ -74,7 +56,6 @@ class StaticContentAdmin extends Admin
                     array(
                         'edit' => 'inline',
                         'inline' => 'table',
-                        'admin_code' => $this->menuAdminCode,
                     ))
             ->end()
             ->with('form.group_general')
