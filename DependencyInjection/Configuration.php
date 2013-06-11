@@ -23,6 +23,7 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('auto')
                 ->end()
                 ->arrayNode('multilang')
+                    ->fixXmlConfig('locale')
                     ->children()
                         ->scalarNode('admin_class')->defaultNull()->end()
                         ->scalarNode('document_class')->defaultNull()->end()
