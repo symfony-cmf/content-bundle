@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns="http://cmf.symfony.com/schema/dic/content"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://cmf.symfony.com/schema/dic/content"
+    elementFormDefault="qualified">
+
+    <xsd:element name="config" type="config" />
+
+    <xsd:complexType name="config">
+        <xsd:sequence>
+            <xsd:element name="multilang" type="multilang" minOccurs="0" />
+        </xsd:sequence>
+
+        <xsd:attribute name="admin-class" type="xsd:string" />
+        <xsd:attribute name="document-class" type="xsd:string" />
+        <xsd:attribute name="default-template" type="xsd:string" />
+        <xsd:attribute name="content-basepath" type="xsd:string" />
+        <xsd:attribute name="static-basepath" type="xsd:string" />
+        <xsd:attribute name="use-sonata-admin" type="use_sonata_admin" />
+    </xsd:complexType>
+
+    <xsd:complexType name="search_multilang">
+        <xsd:sequence>
+            <xsd:element name="locale" type="xsd:string" minOccurs="1" />
+        </xsd:sequence>
+
+        <xsd:attribute name="admin-class" type="xsd:string" />
+        <xsd:attribute name="document-class" type="xsd:string" />
+        <xsd:attribute name="use-sonata-admin" type="use_sonata_admin" />
+    </xsd:complexType>
+
+    <xsd:simpleType name="boolean">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="true" />
+            <xsd:enumeration value="false" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="use_sonata_admin">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="true" />
+            <xsd:enumeration value="false" />
+            <xsd:enumeration value="auto" />
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
