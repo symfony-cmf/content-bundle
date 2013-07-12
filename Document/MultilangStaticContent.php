@@ -11,21 +11,6 @@ class MultilangStaticContent extends StaticContent
      */
     protected $locale;
 
-    /**
-     * Title
-     */
-    protected $title;
-
-    /**
-     * Body
-     */
-    protected $body;
-
-    /**
-     * Tags
-     */
-    protected $tags = array();
-
     public function getLocale()
     {
         return $this->locale;

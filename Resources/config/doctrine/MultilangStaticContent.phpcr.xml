@@ -11,8 +11,8 @@
             referenceable="true"
             >
         <locale name="locale"/>
-        <field name="title" type="string"/>
-        <field name="body" type="string"/>
+        <field name="title" type="string" translated="true"/>
+        <field name="body" type="string" translated="true"/>
         <field name="tags" type="string" translated="true" multivalue="true"/>
     </document>
 
