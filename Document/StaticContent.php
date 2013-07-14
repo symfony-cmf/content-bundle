@@ -7,12 +7,19 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
-use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishWorkflowInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodWriteInterface;
 
 /**
  * @PHPCRODM\Document(referenceable=true)
  */
-class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
+class StaticContent implements RouteAwareInterface,
+                                PublishableInterface,
+                                PublishableWriteInterface,
+                                PublishTimePeriodInterface,
+                                PublishTimePeriodWriteInterface
 {
     /**
      * to create the document at the specified location. read only for existing documents.
