@@ -5,57 +5,52 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Document;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Doctrine\Common\Collections\ArrayCollection;
 
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodWriteInterface;
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
-use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishWorkflowInterface;
 
-/**
- * @PHPCRODM\Document(referenceable=true)
- */
-class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
+class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterface, PublishableWriteInterface
 {
     /**
      * to create the document at the specified location. read only for existing documents.
      *
-     * @PHPCRODM\Id
+     * Identifier
      */
     protected $path;
 
     /**
-     * @var \PHPCR\NodeInterface
-     * @PHPCRODM\Node
+     * Node
      */
     protected $node;
 
     /**
-     * @PHPCRODM\ParentDocument()
+     * Parent Document
      */
     protected $parent;
 
     /**
-     * @PHPCRODM\Nodename()
+     * Node Name
      */
     protected $name;
 
     /**
-     * @PHPCRODM\String()
+     * Document Title
      */
     protected $title;
 
     /**
-     * @PHPCRODM\String()
+     * Body Text
      */
     protected $body;
 
     /**
-     * @PHPCRODM\String(multivalue=true)
+     * Tags
      */
     protected $tags = array();
 
     /**
      * Hashmap for application data associated to this document
-     *
-     * @PHPCRODM\String(assoc="")
      */
     protected $extras;
 
@@ -64,36 +59,32 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
      * rendered in the additionalInfoBlock area.
      *
      * @var \Sonata\BlockBundle\Model\BlockInterface
-     * @PHPCRODM\Child(cascade="persist")
      */
     protected $additionalInfoBlock;
 
     /**
-     * @PHPCRODM\Boolean()
+     * If the document should be publishable
      */
-    protected $publishable;
+    protected $publishable = true;
 
     /**
-     * @PHPCRODM\Date()
+     * Date to start publishing from
      */
     protected $publishStartDate;
 
     /**
-     * @PHPCRODM\Date()
+     * Date to stop publishing from
      */
     protected $publishEndDate;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Document\Route", referencedBy="routeContent", cascade="persist")
+     * List of referring routes
      */
     protected $routes;
 
     /**
+     * List of referring menus
      * If the menu is built with hard references, then referencedBy would be "strongContent".
-     *
-     * \Doctrine\Common\Collections\ArrayCollection
-     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode", referencedBy="weakContent", cascade="persist")
      */
     protected $menus;
 

@@ -47,7 +47,12 @@ class ContentController
     }
 
     /**
-     * Render the provided content
+     * Render the provided content.
+     *
+     * When using the publish workflow, enable the publish_workflow.request_listener
+     * of the core bundle to have the contentDocument as well as the route
+     * checked for being published.
+     * We don't need an explicit check in this method.
      *
      * @param Request $request
      * @param object $contentDocument

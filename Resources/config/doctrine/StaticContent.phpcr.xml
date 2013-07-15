@@ -1,0 +1,32 @@
+<doctrine-mapping
+        xmlns="http://doctrine-project.org/schemas/phpcr-odm/phpcr-mapping"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://doctrine-project.org/schemas/phpcr-odm/phpcr-mapping
+        https://github.com/doctrine/phpcr-odm/raw/master/doctrine-phpcr-odm-mapping.xsd"
+        >
+
+    <document
+            name="Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent"
+            referenceable="true"
+            >
+
+        <id name="path">
+            <generator strategy="PARENT"/>
+        </id>
+        <node name="node"/>
+        <nodename name="name"/>
+        <parent-document name="parent"/>
+        <field name="title" type="string"/>
+        <field name="body" type="string"/>
+        <field name="tags" type="string" multivalue="true"/>
+        <field name="extras" type="string" assoc=""/>
+        <child name="additionalInfoBlock" cascade="persist"/>
+        <field name="publishable" type="boolean"/>
+        <field name="publishStartDate" type="date"/>
+        <field name="publishEndDate" type="date"/>
+        <referrers name="routes" referring-document="Symfony\Cmf\Bundle\RoutingBundle\Document\Route" referenced-by="routeContent" cascade="persist"/>
+        <referrers name="menus" referring-document="Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode" referenced-by="weakContent" cascade="persist"/>
+    </document>
+
+</doctrine-mapping>
+
