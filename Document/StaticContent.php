@@ -2,12 +2,17 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Document;
 
+use Doctrine\Common\Persistence\Event\LoadClassMetadataEventArgs;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
+
+use Doctrine\ODM\PHPCR\Mapping\ClassMetadata;
+use PHPCR\NodeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodWriteInterface;
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
+use Symfony\Cmf\Bundle\RoutingBundle\Document\Route;
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
 
 class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterface, PublishableWriteInterface
@@ -270,7 +275,7 @@ class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterf
     }
 
     /**
-     * @param \Symfony\Cmf\Bundle\RoutingBundle\Document\Route $route
+     * @param Route $route
      */
     public function addRoute($route)
     {
@@ -278,7 +283,7 @@ class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterf
     }
 
     /**
-     * @param \Symfony\Cmf\Bundle\RoutingBundle\Document\Route $route
+     * @param Route $route
      */
     public function removeRoute($route)
     {
@@ -286,7 +291,7 @@ class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterf
     }
 
     /**
-     * @return \Symfony\Component\Routing\Route[] Route instances that point to this content
+     * @return Route[] Route instances that point to this content
      */
     public function getRoutes()
     {
@@ -320,11 +325,18 @@ class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterf
     /**
      * Get the underlying PHPCR node of this document
      *
-     * @return \PHPCR\NodeInterface
+     * @return NodeInterface
      */
     public function getNode()
     {
         return $this->node;
+    }
+
+    public function loadClassMetadata(LoadClassMetadataEventArgs $args)
+    {
+        /** @var $meta ClassMetadata */
+        $meta = $args->getClassMetadata();
+        // TODO: dynamically add metadata
     }
 
     public function __toString()
