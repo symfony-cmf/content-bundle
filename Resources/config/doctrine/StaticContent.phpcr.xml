@@ -9,7 +9,9 @@
             name="Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent"
             referenceable="true"
             >
-
+        <lifecycle-callbacks>
+            <lifecycle-callback type="loadClassMetadata" method="loadClassMetadata"/>
+        </lifecycle-callbacks>
         <id name="path">
             <generator strategy="PARENT"/>
         </id>
