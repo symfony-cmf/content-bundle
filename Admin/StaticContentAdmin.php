@@ -33,16 +33,17 @@ class StaticContentAdmin extends Admin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper
-            ->with('form.group_general')
-                ->add('parent', 'doctrine_phpcr_odm_tree', array('root_node' => $this->contentRoot, 'choice_list' => array(), 'select_root_node' => true))
-                ->add('name', 'text')
-                ->add('title', 'text')
-                ->add('body', 'textarea', array('required' => false))
-            ->end()
-            ->with('form.group_routes')
-                ->add(
-                    'routes',
+        /** @var \Doctrine\ODM\PHPCR\Mapping\ClassMetadata $documentMetaData */
+        $documentMetaData = $this->getModelManager()->getMetadata($this->getClass());
+
+        $routesFieldName = 'routes';
+        if ($documentMetaData->hasAssociation($routesFieldName)) {
+            $routesAssociation = $documentMetaData->getAssociation($routesFieldName);
+            if (null !== $this->getConfigurationPool()->getAdminByClass($routesAssociation['referringDocument'])) {
+                $formMapper
+                    ->with('form.group_routes')
+                    ->add(
+                    $routesFieldName,
                     'sonata_type_collection',
                     array(
                         'by_reference' => false
@@ -50,11 +51,21 @@ class StaticContentAdmin extends Admin
                     array(
                         'edit' => 'inline',
                         'inline' => 'table',
-                    ))
-            ->end()
-            ->with('form.group_menus')
-                ->add(
-                    'menus',
+                    )
+                )
+                    ->end()
+                ;
+            }
+        }
+
+        $menusFieldName = 'menus';
+        if ($documentMetaData->hasAssociation($menusFieldName)) {
+            $menuAssociation = $documentMetaData->getAssociation($menusFieldName);
+            if (null !== $this->getConfigurationPool()->getAdminByClass($menuAssociation['referringDocument'])) {
+                $formMapper
+                    ->with('form.group_menus')
+                    ->add(
+                    $menusFieldName,
                     'sonata_type_collection',
                     array(
                         'by_reference' => false,
@@ -62,7 +73,19 @@ class StaticContentAdmin extends Admin
                     array(
                         'edit' => 'inline',
                         'inline' => 'table',
-                    ))
+                    )
+                )
+                    ->end()
+                ;
+            }
+        }
+
+        $formMapper
+            ->with('form.group_general')
+            ->add('parent', 'doctrine_phpcr_odm_tree', array('root_node' => $this->contentRoot, 'choice_list' => array(), 'select_root_node' => true))
+            ->add('name', 'text')
+            ->add('title', 'text')
+            ->add('body', 'textarea', array('required' => false))
             ->end()
         ;
     }
