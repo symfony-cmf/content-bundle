@@ -5,11 +5,12 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Document;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Doctrine\Common\Collections\ArrayCollection;
 
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodWriteInterface;
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
-use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishWorkflowInterface;
 
-class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
+class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterface, PublishableWriteInterface
 {
     /**
      * to create the document at the specified location. read only for existing documents.
@@ -64,7 +65,7 @@ class StaticContent implements RouteAwareInterface, PublishWorkflowInterface
     /**
      * If the document should be publishable
      */
-    protected $publishable;
+    protected $publishable = true;
 
     /**
      * Date to start publishing from
