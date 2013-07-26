@@ -45,7 +45,7 @@ class StaticContentAdmin extends Admin
                     'routes',
                     'sonata_type_collection',
                     array(
-                        'by_reference' => false
+                        'by_reference' => false,
                     ),
                     array(
                         'edit' => 'inline',
