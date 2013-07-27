@@ -1,0 +1,4 @@
+cmf_routing:
+    dynamic:
+        enabled: true
+        phpcr_provider: ~
