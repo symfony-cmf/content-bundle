@@ -24,7 +24,7 @@
         <field name="publishable" type="boolean"/>
         <field name="publishStartDate" type="date"/>
         <field name="publishEndDate" type="date"/>
-        <referrers name="routes" referring-document="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route" referenced-by="routeContent" cascade="persist"/>
+        <referrers name="routes" referring-document="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route" referenced-by="content" cascade="persist"/>
         <referrers name="menus" referring-document="Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode" referenced-by="content" cascade="persist"/>
     </document>
 
