@@ -6,14 +6,19 @@
         >
 
     <document
-            name="Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent"
-            translator="child"
+            name="Symfony\Cmf\Bundle\ContentBundle\Document\StaticContentBase"
             referenceable="true"
-            >
-        <locale name="locale"/>
-        <field name="title" type="string" translated="true"/>
-        <field name="body" type="string" translated="true"/>
-        <field name="tags" type="string" translated="true" multivalue="true"/>
+        >
+
+        <id name="path">
+            <generator strategy="PARENT"/>
+        </id>
+        <node name="node"/>
+        <nodename name="name"/>
+        <parent-document name="parent"/>
+        <field name="title" type="string"/>
+        <field name="body" type="string"/>
+
     </document>
 
 </doctrine-mapping>
