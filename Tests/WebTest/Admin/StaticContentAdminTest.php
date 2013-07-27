@@ -19,15 +19,15 @@ class ContentAdminTest extends BaseTestCase
         $crawler = $this->client->request('GET', '/admin/cmf/content/staticcontent/list');
         $res = $this->client->getResponse();
         $this->assertEquals(200, $res->getStatusCode());
-        $this->assertCount(1, $crawler->filter('html:contains("test-content")'));
+        $this->assertCount(1, $crawler->filter('html:contains("Content 1")'));
     }
 
     public function testContentEdit()
     {
-        $crawler = $this->client->request('GET', '/admin/cmf/content/staticcontent/test/contents/test-content/edit');
+        $crawler = $this->client->request('GET', '/admin/cmf/content/staticcontent/test/contents/content-1/edit');
         $res = $this->client->getResponse();
         $this->assertEquals(200, $res->getStatusCode());
-        $this->assertCount(1, $crawler->filter('input[value="test-content"]'));
+        $this->assertCount(1, $crawler->filter('input[value="content-1"]'));
     }
 
     public function testContentCreate()
@@ -44,7 +44,7 @@ class ContentAdminTest extends BaseTestCase
 
         $form[$uniqId.'[parent]'] = '/test/contents';
         $form[$uniqId.'[name]'] = 'foo-test';
-        $form[$uniqId.'[label]'] = 'Foo Test';
+        $form[$uniqId.'[title]'] = 'Foo Test';
 
         $this->client->submit($form);
         $res = $this->client->getResponse();

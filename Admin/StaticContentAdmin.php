@@ -15,6 +15,8 @@ use Symfony\Cmf\Bundle\RoutingBundle\Document\Route;
 
 class StaticContentAdmin extends Admin
 {
+    protected $baseRouteName = 'cmf_content_staticcontent';
+    protected $baseRoutePattern = '/cmf/content/staticcontent';
     protected $translationDomain = 'CmfContentBundle';
 
     /**
