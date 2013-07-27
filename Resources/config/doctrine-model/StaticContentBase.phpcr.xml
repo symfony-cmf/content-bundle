@@ -6,7 +6,7 @@
         >
 
     <document
-            name="Symfony\Cmf\Bundle\ContentBundle\Document\StaticContentBase"
+            name="Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase"
             referenceable="true"
         >
 
