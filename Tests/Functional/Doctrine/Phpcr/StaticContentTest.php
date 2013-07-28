@@ -1,11 +1,9 @@
 <?php
 
-namespace Symfony\Cmf\Bundle\ContentBundle\Tests\Functional\Document;
+namespace Symfony\Cmf\Bundle\ContentBundle\Tests\Functional\Doctrine\Phpcr;
 
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
-use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
-use Symfony\Cmf\Component\Testing\Document\Content;
-use Doctrine\ODM\PHPCR\Model\Generic;
+use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 
 class StaticContentTest extends BaseTestCase
 {
