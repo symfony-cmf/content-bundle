@@ -2,47 +2,62 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Document;
 
-use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Doctrine\Common\Collections\ArrayCollection;
-
-use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
+use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodWriteInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
 
-class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterface, PublishableWriteInterface
+/**
+ * Standard implementation of StaticContent:
+ *
+ * Standard features:
+ *
+ * - Publish workflow
+ * - Translatable
+ * - RouteAware
+ * - MenuAware
+ * 
+ * Bundle specific:
+ *
+ * - Tags
+ * - Additional Info Block
+ */
+class StaticContent extends StaticContentBase implements 
+    RouteAwareInterface, 
+    PublishTimePeriodWriteInterface, 
+    PublishableWriteInterface
 {
     /**
-     * to create the document at the specified location. read only for existing documents.
-     *
-     * Identifier
+     * @{@inheritDoc}
      */
-    protected $path;
+    protected $publishable = true;
 
     /**
-     * Node
+     * @{@inheritDoc}
      */
-    protected $node;
+    protected $publishStartDate;
 
     /**
-     * Parent Document
+     * @{@inheritDoc}
      */
-    protected $parent;
+    protected $publishEndDate;
 
     /**
-     * Node Name
+     * Locale
      */
-    protected $name;
+    protected $locale;
 
     /**
-     * Document Title
+     * {@inheritDoc}
      */
-    protected $title;
+    protected $routes;
 
     /**
-     * Body Text
+     * {@inheritDoc}
      */
-    protected $body;
+    protected $menus;
 
     /**
      * Tags
@@ -62,89 +77,20 @@ class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterf
      */
     protected $additionalInfoBlock;
 
-    /**
-     * If the document should be publishable
-     */
-    protected $publishable = true;
-
-    /**
-     * Date to start publishing from
-     */
-    protected $publishStartDate;
-
-    /**
-     * Date to stop publishing from
-     */
-    protected $publishEndDate;
-
-    /**
-     * List of referring routes
-     */
-    protected $routes;
-
-    /**
-     * List of referring menus
-     * If the menu is built with hard references, then referencedBy would be "strongContent".
-     */
-    protected $menus;
-
     public function __construct()
     {
         $this->routes = new ArrayCollection();
         $this->menus = new ArrayCollection();
     }
 
-    /**
-     * Set repository path of this navigation item for creation
-     */
-    public function setPath($path)
+    public function getLocale()
     {
-      $this->path = $path;
+        return $this->locale;
     }
 
-    public function getPath()
+    public function setLocale($locale)
     {
-      return $this->path;
-    }
-
-    public function setParent($parent)
-    {
-        $this->parent = $parent;
-    }
-
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    public function getBody()
-    {
-        return $this->body;
-    }
-
-    public function setBody($body)
-    {
-        $this->body = $body;
+        $this->locale = $locale;
     }
 
     public function getTags()
@@ -317,18 +263,4 @@ class StaticContent implements RouteAwareInterface, PublishTimePeriodWriteInterf
         return $this->menus;
     }
 
-    /**
-     * Get the underlying PHPCR node of this document
-     *
-     * @return \PHPCR\NodeInterface
-     */
-    public function getNode()
-    {
-        return $this->node;
-    }
-
-    public function __toString()
-    {
-        return (string) $this->name;
-    }
 }
