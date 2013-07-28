@@ -25,9 +25,7 @@ list:
 form:
     group_general: Allgemein
     group_routes: Routes
-    group_menus: Menu
     label_routes: Routes
-    label_menus: Menu
     label_locale: Sprache
     label_parent: Übergeordnet
     label_title: Titel

@@ -10,8 +10,6 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
 
 use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
-use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
-use Symfony\Cmf\Bundle\RoutingBundle\Document\Route;
 
 class StaticContentAdmin extends Admin
 {
@@ -20,7 +18,7 @@ class StaticContentAdmin extends Admin
     protected $translationDomain = 'CmfContentBundle';
 
     /**
-     * Root path for the route content selection
+     * Root path for the content selection
      * @var string
      */
     protected $contentRoot;
@@ -45,18 +43,6 @@ class StaticContentAdmin extends Admin
             ->with('form.group_routes')
                 ->add(
                     'routes',
-                    'sonata_type_collection',
-                    array(
-                        'by_reference' => false,
-                    ),
-                    array(
-                        'edit' => 'inline',
-                        'inline' => 'table',
-                    ))
-            ->end()
-            ->with('form.group_menus')
-                ->add(
-                    'menus',
                     'sonata_type_collection',
                     array(
                         'by_reference' => false,
