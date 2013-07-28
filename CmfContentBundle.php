@@ -2,7 +2,9 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Doctrine\Bundle\PHPCRBundle\DependencyInjection\Compiler\DoctrinePhpcrMappingsPass;
 
 class CmfContentBundle extends Bundle
 {
@@ -15,7 +17,7 @@ class CmfContentBundle extends Bundle
                         realpath(__DIR__ . '/Resources/config/doctrine-model') => 'Symfony\Cmf\Bundle\MenuBundle\Model',
                         realpath(__DIR__ . '/Resources/config/doctrine-phpcr') => 'Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr',
                     ),
-                    array('cmf_menu.document_manager_name')
+                    array('cmf_menu.manager_name')
                 )
             );
         }

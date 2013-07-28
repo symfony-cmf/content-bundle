@@ -17,8 +17,8 @@ class CmfContentExtension extends Extension
         $loader->load('services.xml');
 
         $keys = array(
-            'document_class', 
-            'document_manager_name', 
+            'document_class',
+            'manager_name',
             'default_template',
             'content_basepath',
             'static_basepath',
@@ -45,7 +45,7 @@ class CmfContentExtension extends Extension
         if ('auto' === $config['use_sonata_admin'] && !isset($bundles['SonataDoctrinePHPCRAdminBundle'])) {
             return;
         }
-        
+
         $loader->load('admin.xml');
 
         if (isset($config['admin_class'])) {
