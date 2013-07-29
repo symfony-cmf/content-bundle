@@ -1,106 +1,77 @@
 <?php
 
-namespace Symfony\Cmf\Bundle\ContentBundle\Document;
+namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
 
 class StaticContentBase
 {
     /**
-     * to create the document at the specified location. read only for existing documents.
-     *
-     * Identifier
+     * Primary identifier, details depend on storage layer.
      */
-    protected $path;
+    protected $id;
 
     /**
-     * Node
-     */
-    protected $node;
-
-    /**
-     * Parent Document
-     */
-    protected $parent;
-
-    /**
-     * Node Name
-     */
-    protected $name;
-
-    /**
-     * Document Title
+     * @var string
      */
     protected $title;
 
     /**
-     * Body Text
+     * @var string
      */
     protected $body;
 
     /**
-     * Set repository path of this navigation item for creation
+     * Explicitly set the primary id, if the storage layer permits this.
+     *
+     * @param mixed $id
      */
-    public function setPath($path)
+    public function setId($id)
     {
-      $this->path = $path;
+      $this->id = $id;
     }
 
-    public function getPath()
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
-      return $this->path;
+      return $this->id;
     }
 
-    public function setParent($parent)
-    {
-        $this->parent = $parent;
-    }
-
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
+    /**
+     * @return string
+     */
     public function getTitle()
     {
         return $this->title;
     }
 
+    /**
+     * @param string $title
+     */
     public function setTitle($title)
     {
         $this->title = $title;
     }
 
+    /**
+     * @return string
+     */
     public function getBody()
     {
         return $this->body;
     }
 
+    /**
+     * @param string $body
+     */
     public function setBody($body)
     {
         $this->body = $body;
     }
-    /**
-     * Get the underlying PHPCR node of this document
-     *
-     * @return \PHPCR\NodeInterface
-     */
-    public function getNode()
-    {
-        return $this->node;
-    }
 
     public function __toString()
     {
-        return (string) $this->name;
+        return 'Static Content ' . $this->id;
     }
 }

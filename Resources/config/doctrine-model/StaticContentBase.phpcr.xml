@@ -10,12 +10,9 @@
             referenceable="true"
         >
 
-        <id name="path">
+        <id name="id">
             <generator strategy="PARENT"/>
         </id>
-        <node name="node"/>
-        <nodename name="name"/>
-        <parent-document name="parent"/>
         <field name="title" type="string"/>
         <field name="body" type="string"/>
 

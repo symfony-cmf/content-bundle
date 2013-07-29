@@ -17,7 +17,7 @@ class CmfContentBundle extends Bundle
                         realpath(__DIR__ . '/Resources/config/doctrine-model') => 'Symfony\Cmf\Bundle\MenuBundle\Model',
                         realpath(__DIR__ . '/Resources/config/doctrine-phpcr') => 'Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr',
                     ),
-                    array('cmf_menu.manager_name')
+                    array('cmf_content.manager_name')
                 )
             );
         }

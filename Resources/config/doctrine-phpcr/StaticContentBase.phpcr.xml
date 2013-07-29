@@ -8,6 +8,9 @@
     <document
         name="Symfony\Cmf\Bundle\ContentBundle\Model\Doctrine\Phpcr\StaticContentBase"
         >
+        <node name="node"/>
+        <nodename name="name"/>
+        <parent-document name="parent"/>
     </document>
 
 </doctrine-mapping>
