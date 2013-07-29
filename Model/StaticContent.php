@@ -1,13 +1,14 @@
 <?php
 
-namespace Symfony\Cmf\Bundle\ContentBundle\Document;
+namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodWriteInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
-use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
+use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
 use Symfony\Cmf\Component\Routing\RouteAwareInterface;
+use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 
 /**
  * Standard implementation of StaticContent:
@@ -18,54 +19,55 @@ use Symfony\Cmf\Component\Routing\RouteAwareInterface;
  * - Translatable
  * - RouteAware
  * - MenuAware
- * 
+ *
  * Bundle specific:
  *
  * - Tags
  * - Additional Info Block
  */
-class StaticContent extends StaticContentBase implements 
-    RouteAwareInterface, 
-    PublishTimePeriodWriteInterface, 
+class StaticContent extends StaticContentBase implements
+    RouteAwareInterface,
+    PublishTimePeriodWriteInterface,
     PublishableWriteInterface
 {
     /**
-     * @{@inheritDoc}
+     * @var boolean whether this content is publishable
      */
     protected $publishable = true;
 
     /**
-     * @{@inheritDoc}
+     * @var \DateTime|null publication start time
      */
     protected $publishStartDate;
 
     /**
-     * @{@inheritDoc}
+     * @var \DateTime|null publication end time
      */
     protected $publishEndDate;
 
     /**
-     * Locale
+     * @var string
      */
     protected $locale;
 
     /**
-     * {@inheritDoc}
+     * @var RouteObjectInterface[]
      */
     protected $routes;
 
     /**
-     * {@inheritDoc}
+     * MenuNode[]
      */
     protected $menus;
 
     /**
-     * Tags
+     * @var string[]
      */
     protected $tags = array();
 
     /**
-     * Hashmap for application data associated to this document
+     * Hashmap for application data associated to this document. Both keys and
+     * values must be strings.
      */
     protected $extras;
 

@@ -18,7 +18,7 @@ filter:
     label_name: Name
 
 list:
-    label_path: Path
+    label_id: Path
     label_title: Title
     label_locales: Locales
 

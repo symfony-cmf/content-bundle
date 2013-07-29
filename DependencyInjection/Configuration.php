@@ -15,6 +15,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('admin_class')->defaultNull()->end()
                 ->scalarNode('document_class')->defaultNull()->end()
+                ->scalarNode('manager_name')->defaultNull()->end()
                 ->scalarNode('default_template')->defaultNull()->end()
                 ->scalarNode('content_basepath')->defaultValue('/cms/content')->end()
                 ->scalarNode('static_basepath')->defaultValue('/cms/content/static')->end()
