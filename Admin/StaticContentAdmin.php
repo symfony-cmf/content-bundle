@@ -9,7 +9,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
 
-use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
+use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 
 class StaticContentAdmin extends Admin
 {
@@ -39,18 +39,6 @@ class StaticContentAdmin extends Admin
                 ->add('name', 'text')
                 ->add('title', 'text')
                 ->add('body', 'textarea', array('required' => false))
-            ->end()
-            ->with('form.group_routes')
-                ->add(
-                    'routes',
-                    'sonata_type_collection',
-                    array(
-                        'by_reference' => false,
-                    ),
-                    array(
-                        'edit' => 'inline',
-                        'inline' => 'table',
-                    ))
             ->end()
         ;
     }

@@ -2,13 +2,17 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
+
+use Doctrine\Common\Collections\ArrayCollection;
+
+use Symfony\Cmf\Component\Routing\RouteAwareInterface;
+use Symfony\Cmf\Component\Routing\RouteObjectInterface;
+use Symfony\Cmf\Component\Routing\RouteReferrersWriteInterface;
+
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodWriteInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
-use Symfony\Cmf\Component\Routing\RouteAwareInterface;
-use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 
 /**
  * Standard implementation of StaticContent:
@@ -27,6 +31,8 @@ use Symfony\Cmf\Component\Routing\RouteObjectInterface;
  */
 class StaticContent extends StaticContentBase implements
     RouteAwareInterface,
+    MenuReferrersWriteInterface,
+    RouteReferrersWriteInterface,
     PublishTimePeriodWriteInterface,
     PublishableWriteInterface
 {
