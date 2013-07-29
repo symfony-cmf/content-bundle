@@ -18,7 +18,7 @@ filter:
     label_name: Nazwa
 
 list:
-    label_path: Ścieżka
+    label_id: Ścieżka
     label_title: Tytuł
     label_locales: Język
 

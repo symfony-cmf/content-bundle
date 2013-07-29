@@ -18,7 +18,7 @@ filter:
     label_name: Nom
 
 list:
-    label_path: Chemin
+    label_id: Chemin
     label_title: Titre
     label_locales: Langues
 

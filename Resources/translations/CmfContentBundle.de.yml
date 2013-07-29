@@ -18,7 +18,7 @@ filter:
     label_name: Name
 
 list:
-    label_path: Pfad
+    label_id: Pfad
     label_title: Titel
     label_locales: Sprachen
 
