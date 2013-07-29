@@ -16,31 +16,38 @@ class CmfContentExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-        if ($config['use_sonata_admin']) {
-            $this->loadSonataAdmin($config, $loader, $container);
+        if (!empty($config['persistence']['phpcr']['enabled'])) {
+            $this->loadPhpcr($config['persistence']['phpcr'], $loader, $container);
         }
 
         if (isset($config['multilang'])) {
-            if ($config['multilang']['use_sonata_admin']) {
-                $this->loadSonataAdmin($config['multilang'], $loader, $container, 'multilang.');
-            }
-            if (isset($config['multilang']['document_class'])) {
-                $container->setParameter($this->getAlias() . '.multilang.document_class', $config['multilang']['document_class']);
-            }
-
             $container->setParameter($this->getAlias() . '.multilang.locales', $config['multilang']['locales']);
         }
 
-        if (isset($config['document_class'])) {
-            $container->setParameter($this->getAlias() . '.document_class', $config['document_class']);
-        }
         if (isset($config['default_template'])) {
             $container->setParameter($this->getAlias() . '.default_template', $config['default_template']);
         }
-
-        $container->setParameter($this->getAlias() . '.content_basepath', $config['content_basepath']);
-        $container->setParameter($this->getAlias() . '.static_basepath', $config['static_basepath']);
     }
+
+    public function loadPhpcr($config, XmlFileLoader $loader, ContainerBuilder $container)
+    {
+        $keys = array(
+            'document_class' => 'document.class',
+            'manager_name' => 'manager_name',
+            'content_basepath' => 'content_basepath',
+        );
+
+        foreach ($keys as $sourceKey => $targetKey) {
+            if (isset($config[$sourceKey])) {
+                $container->setParameter($this->getAlias() . '.persistence.phpcr.'.$targetKey, $config[$sourceKey]);
+            }
+        }
+
+        if ($config['use_sonata_admin']) {
+            $this->loadSonataAdmin($config, $loader, $container);
+        }
+    }
+
 
     public function loadSonataAdmin($config, XmlFileLoader $loader, ContainerBuilder $container, $prefix = '')
     {
@@ -48,8 +55,8 @@ class CmfContentExtension extends Extension
         if ('auto' === $config['use_sonata_admin'] && !isset($bundles['SonataDoctrinePHPCRAdminBundle'])) {
             return;
         }
-        
-        $loader->load($prefix . 'admin.xml');
+
+        $loader->load('admin.xml');
 
         if (isset($config['admin_class'])) {
             $container->setParameter($this->getAlias() . '.' . $prefix . 'admin_class', $config['admin_class']);

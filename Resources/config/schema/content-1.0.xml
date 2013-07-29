@@ -14,6 +14,7 @@
 
         <xsd:attribute name="admin-class" type="xsd:string" />
         <xsd:attribute name="document-class" type="xsd:string" />
+        <xsd:attribute name="manager-name" type="xsd:string" />
         <xsd:attribute name="default-template" type="xsd:string" />
         <xsd:attribute name="content-basepath" type="xsd:string" />
         <xsd:attribute name="static-basepath" type="xsd:string" />

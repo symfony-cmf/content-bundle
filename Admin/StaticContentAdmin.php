@@ -26,7 +26,7 @@ class StaticContentAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('path', 'text')
+            ->addIdentifier('id', 'text')
             ->add('title', 'text')
         ;
     }

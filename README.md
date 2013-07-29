@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/symfony-cmf/ContentBundle.png?branch=master)](https://travis-ci.org/symfony-cmf/ContentBundle)
 
-This is part of the Symfony Cmf: <https://github.com/symfony-cmf/symfony-cmf>
+This bundle is part of the [Symfony Content Management Framework (CMF)](http://cmf.symfony.com/)
+and licensed under the [MIT License](LICENSE).
 
 ## Links
 

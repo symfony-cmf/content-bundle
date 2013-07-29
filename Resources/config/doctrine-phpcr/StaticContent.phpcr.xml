@@ -6,19 +6,11 @@
         >
 
     <document
-            name="Symfony\Cmf\Bundle\ContentBundle\Document\StaticContentBase"
-            referenceable="true"
+        name="Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent"
         >
-
-        <id name="path">
-            <generator strategy="PARENT"/>
-        </id>
         <node name="node"/>
         <nodename name="name"/>
         <parent-document name="parent"/>
-        <field name="title" type="string"/>
-        <field name="body" type="string"/>
-
     </document>
 
 </doctrine-mapping>

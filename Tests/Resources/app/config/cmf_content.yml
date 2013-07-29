@@ -1,4 +1,11 @@
 cmf_routing:
     dynamic:
         enabled: true
-        phpcr_provider: ~
+        persistence:
+            phpcr:
+                enabled: true
+
+cmf_content:
+    persistence:
+        phpcr:
+            enabled: true
