@@ -8,7 +8,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\ContentNode;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\Content;
 use Doctrine\ODM\PHPCR\Document\Generic;
-use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
+use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 
 class LoadContentData implements FixtureInterface, DependentFixtureInterface
 {

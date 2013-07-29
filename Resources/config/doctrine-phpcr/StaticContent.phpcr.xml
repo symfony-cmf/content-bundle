@@ -6,7 +6,7 @@
         >
 
     <document
-        name="Symfony\Cmf\Bundle\ContentBundle\Model\Doctrine\Phpcr\StaticContent"
+        name="Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent"
         >
         <node name="node"/>
         <nodename name="name"/>
