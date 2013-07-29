@@ -16,7 +16,7 @@ class CmfContentExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-        if (!empty($config['persistence']['phpcr'])) {
+        if (!empty($config['persistence']['phpcr']['enabled'])) {
             $this->loadPhpcr($config['persistence']['phpcr'], $loader, $container);
         }
 

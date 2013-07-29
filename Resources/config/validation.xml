@@ -12,11 +12,4 @@
         </property>
     </class>
 
-    <class name="Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent">
-        <property name="locale">
-            <constraint name="NotBlank" />
-            <constraint name="Locale" />
-        </property>
-    </class>
-
 </constraint-mapping>

@@ -3,8 +3,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="cmf_content.document_class">Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent</parameter>
-        <parameter key="cmf_content.multilang.document_class">Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent</parameter>
+        <parameter key="cmf_content.document_class">Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent</parameter>
         <parameter key="cmf_content.default_template">CmfContentBundle:StaticContent:index.html.twig</parameter>
     </parameters>
 
