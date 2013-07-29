@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="pl" datatype="plaintext" original="CmfContentBundle.en.xliff">
+    <body>
+      <trans-unit id="dashboard.group_content">
+        <source>dashboard.group_content</source>
+        <target>Zawartość</target>
+      </trans-unit>
+      <trans-unit id="dashboard.label_static_content">
+        <source>dashboard.label_static_content</source>
+        <target>Strona statyczna</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_static_content_list">
+        <source>breadcrumb.link_static_content_list</source>
+        <target>Strony statyczne</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_static_content_create">
+        <source>breadcrumb.link_static_content_create</source>
+        <target>Dodaj</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_static_content_edit">
+        <source>breadcrumb.link_static_content_edit</source>
+        <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_static_content_delete">
+        <source>breadcrumb.link_static_content_delete</source>
+        <target>Usuń</target>
+      </trans-unit>
+      <trans-unit id="filter.label_title">
+        <source>filter.label_title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="filter.label_name">
+        <source>filter.label_name</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="list.label_id">
+        <source>list.label_id</source>
+        <target>Ścieżka</target>
+      </trans-unit>
+      <trans-unit id="list.label_title">
+        <source>list.label_title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="list.label_locales">
+        <source>list.label_locales</source>
+        <target>Język</target>
+      </trans-unit>
+      <trans-unit id="form.group_general">
+        <source>form.group_general</source>
+        <target>Ogólne</target>
+      </trans-unit>
+      <trans-unit id="form.group_routes">
+        <source>form.group_routes</source>
+        <target>Ścieżki</target>
+      </trans-unit>
+      <trans-unit id="form.group_menus">
+        <source>form.group_menus</source>
+        <target>Menu</target>
+      </trans-unit>
+      <trans-unit id="form.group_general">
+        <source>form.group_general</source>
+        <target>Zawartość</target>
+      </trans-unit>
+      <trans-unit id="form.group_publish_workflow">
+        <source>form.group_publish_workflow</source>
+        <target>Widoczność</target>
+      </trans-unit>
+      <trans-unit id="form.label_routes">
+        <source>form.label_routes</source>
+        <target>Ścieżki</target>
+      </trans-unit>
+      <trans-unit id="form.label_menus">
+        <source>form.label_menus</source>
+        <target>Pozycja w menu</target>
+      </trans-unit>
+      <trans-unit id="label_locale">
+        <source>label_locale</source>
+        <target>Język</target>
+      </trans-unit>
+      <trans-unit id="label_parent">
+        <source>label_parent</source>
+        <target>Nadrzędny</target>
+      </trans-unit>
+      <trans-unit id="form.label_title">
+        <source>form.label_title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="form.label_name">
+        <source>form.label_name</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="label_body">
+        <source>label_body</source>
+        <target>Treść</target>
+      </trans-unit>
+      <trans-unit id="form.label_publish_start_date">
+        <source>form.label_publish_start_date</source>
+        <target>Widoczny od</target>
+      </trans-unit>
+      <trans-unit id="form.label_publish_end_date">
+        <source>form.label_publish_end_date</source>
+        <target>Widoczny do</target>
+      </trans-unit>
+      <trans-unit id="form.label_publishable">
+        <source>form.label_publishable</source>
+        <target>Widoczny</target>
+      </trans-unit>
+      <trans-unit id="form.help_publish_start_date">
+        <source>form.help_publish_start_date</source>
+        <target>Widoczny tylko od tej daty, pozostaw puste by usunąć ograniczenie czasowe</target>
+      </trans-unit>
+      <trans-unit id="form.help_publish_end_date">
+        <source>form.help_publish_end_date</source>
+        <target>Widoczny tylko do tej daty, pozostaw puste by usunąć ograniczenie czasowe</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
