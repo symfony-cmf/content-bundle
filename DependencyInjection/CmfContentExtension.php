@@ -16,30 +16,40 @@ class CmfContentExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
+        if (!empty($config['persistence']['phpcr'])) {
+            $this->loadPhpcr($config['persistence']['phpcr'], $loader, $container);
+        }
+
+        if (isset($config['multilang'])) {
+            $container->setParameter($this->getAlias() . '.multilang.locales', $config['multilang']['locales']);
+        }
+
+        if (isset($config['default_template'])) {
+            $container->setParameter($this->getAlias() . '.default_template', $config['default_template']);
+        }
+    }
+
+    public function loadPhpcr($config, XmlFileLoader $loader, ContainerBuilder $container)
+    {
         $keys = array(
-            'document_class',
-            'manager_name',
-            'default_template',
-            'content_basepath',
-            'static_basepath',
+            'document_class' => 'document.class',
+            'manager_name' => 'manager_name',
+            'content_basepath' => 'content_basepath',
         );
 
-        foreach ($keys as $key) {
-            if (isset($config[$key])) {
-                $container->setParameter($this->getAlias() . '.'.$key, $config[$key]);
+        foreach ($keys as $sourceKey => $targetKey) {
+            if (isset($config[$sourceKey])) {
+                $container->setParameter($this->getAlias() . '.persistence.phpcr.'.$targetKey, $config[$sourceKey]);
             }
         }
 
         if ($config['use_sonata_admin']) {
             $this->loadSonataAdmin($config, $loader, $container);
         }
-
-        if (isset($config['multilang'])) {
-            $container->setParameter($this->getAlias() . '.multilang.locales', $config['multilang']['locales']);
-        }
     }
 
-    public function loadSonataAdmin($config, XmlFileLoader $loader, ContainerBuilder $container)
+
+    public function loadSonataAdmin($config, XmlFileLoader $loader, ContainerBuilder $container, $prefix = '')
     {
         $bundles = $container->getParameter('kernel.bundles');
         if ('auto' === $config['use_sonata_admin'] && !isset($bundles['SonataDoctrinePHPCRAdminBundle'])) {
