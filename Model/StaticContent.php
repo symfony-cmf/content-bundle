@@ -218,7 +218,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @param \Symfony\Cmf\Bundle\RoutingBundle\Document\Route $route
+     * @param \Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route $route
      */
     public function addRoute($route)
     {
@@ -226,7 +226,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @param \Symfony\Cmf\Bundle\RoutingBundle\Document\Route $route
+     * @param \Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route $route
      */
     public function removeRoute($route)
     {
