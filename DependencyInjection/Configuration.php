@@ -18,6 +18,7 @@ class Configuration implements ConfigurationInterface
                     ->children()
                         ->arrayNode('phpcr')
                             ->children()
+                                ->scalarNode('enabled')->defaultNull()->end()
                                 ->scalarNode('admin_class')->defaultNull()->end()
                                 ->scalarNode('document_class')->defaultNull()->end()
                                 ->scalarNode('content_basepath')->defaultValue('/cms/content')->end()
