@@ -1,17 +1,12 @@
 dashboard:
     group_content: Inhalt
     label_static_content: Statischer Inhalt
-    label_multilang_static_content: Mehrsprachiger statischer Inhalt
 
 breadcrumb:
     link_static_content_list: Statischer Inhalt
     link_static_content_create: Erstellen
     link_static_content_edit: Bearbeiten
     link_static_content_delete: Löschen
-    link_multilang_static_content_list: Mehrsprachiger statischer Inhalt
-    link_multilang_static_content_create: Erstellen
-    link_multilang_static_content_edit: Bearbeiten
-    link_multilang_static_content_delete: Löschen
 
 filter:
     label_title: Titel

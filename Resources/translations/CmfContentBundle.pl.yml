@@ -1,17 +1,12 @@
 dashboard:
     group_content: Zawartość
     label_static_content: Strona statyczna
-    label_multilang_static_content: Wielojęzyczna strona statyczna
 
 breadcrumb:
     link_static_content_list: Strony statyczne
     link_static_content_create: Dodaj
     link_static_content_edit: Edytuj
     link_static_content_delete: Usuń
-    link_multilang_static_content_list: Wielojęzyczne strony statyczne
-    link_multilang_static_content_create: Dodaj
-    link_multilang_static_content_edit: Edytuj
-    link_multilang_static_content_delete: Usuń
 
 filter:
     label_title: Tytuł
