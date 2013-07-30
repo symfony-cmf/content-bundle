@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 use Knp\Menu\NodeInterface;
 
+use Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface;
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Cmf\Component\Routing\RouteReferrersWriteInterface;
 
@@ -15,6 +16,7 @@ use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
 
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersWriteInterface;
+use Symfony\Component\Routing\Route;
 
 /**
  * Standard implementation of StaticContent:
@@ -35,7 +37,8 @@ class StaticContent extends StaticContentBase implements
     MenuNodeReferrersWriteInterface,
     RouteReferrersWriteInterface,
     PublishTimePeriodWriteInterface,
-    PublishableWriteInterface
+    PublishableWriteInterface,
+    TranslatableInterface
 {
     /**
      * @var boolean whether this content is publishable
@@ -225,7 +228,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @param \Symfony\Cmf\Bundle\RoutingBundle\Document\Route $route
+     * @param Route $route
      */
     public function addRoute($route)
     {
@@ -233,7 +236,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @param \Symfony\Cmf\Bundle\RoutingBundle\Document\Route $route
+     * @param Route $route
      */
     public function removeRoute($route)
     {
