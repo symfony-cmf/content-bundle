@@ -59,7 +59,7 @@ class CmfContentExtension extends Extension
         $loader->load('admin.xml');
 
         if (isset($config['admin_class'])) {
-            $container->setParameter($this->getAlias() . '.' . $prefix . 'admin_class', $config['admin_class']);
+            $container->setParameter($this->getAlias() . '.' . $prefix . 'admin.class', $config['admin_class']);
         }
     }
 
