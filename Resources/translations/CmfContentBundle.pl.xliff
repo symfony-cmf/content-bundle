@@ -42,41 +42,9 @@
         <source>list.label_title</source>
         <target>Tytuł</target>
       </trans-unit>
-      <trans-unit id="list.label_locales">
-        <source>list.label_locales</source>
-        <target>Język</target>
-      </trans-unit>
       <trans-unit id="form.group_general">
         <source>form.group_general</source>
         <target>Ogólne</target>
-      </trans-unit>
-      <trans-unit id="form.group_routes">
-        <source>form.group_routes</source>
-        <target>Ścieżki</target>
-      </trans-unit>
-      <trans-unit id="form.group_menus">
-        <source>form.group_menus</source>
-        <target>Menu</target>
-      </trans-unit>
-      <trans-unit id="form.group_general">
-        <source>form.group_general</source>
-        <target>Zawartość</target>
-      </trans-unit>
-      <trans-unit id="form.group_publish_workflow">
-        <source>form.group_publish_workflow</source>
-        <target>Widoczność</target>
-      </trans-unit>
-      <trans-unit id="form.label_routes">
-        <source>form.label_routes</source>
-        <target>Ścieżki</target>
-      </trans-unit>
-      <trans-unit id="form.label_menus">
-        <source>form.label_menus</source>
-        <target>Pozycja w menu</target>
-      </trans-unit>
-      <trans-unit id="label_locale">
-        <source>label_locale</source>
-        <target>Język</target>
       </trans-unit>
       <trans-unit id="label_parent">
         <source>label_parent</source>
@@ -93,26 +61,6 @@
       <trans-unit id="label_body">
         <source>label_body</source>
         <target>Treść</target>
-      </trans-unit>
-      <trans-unit id="form.label_publish_start_date">
-        <source>form.label_publish_start_date</source>
-        <target>Widoczny od</target>
-      </trans-unit>
-      <trans-unit id="form.label_publish_end_date">
-        <source>form.label_publish_end_date</source>
-        <target>Widoczny do</target>
-      </trans-unit>
-      <trans-unit id="form.label_publishable">
-        <source>form.label_publishable</source>
-        <target>Widoczny</target>
-      </trans-unit>
-      <trans-unit id="form.help_publish_start_date">
-        <source>form.help_publish_start_date</source>
-        <target>Widoczny tylko od tej daty, pozostaw puste by usunąć ograniczenie czasowe</target>
-      </trans-unit>
-      <trans-unit id="form.help_publish_end_date">
-        <source>form.help_publish_end_date</source>
-        <target>Widoczny tylko do tej daty, pozostaw puste by usunąć ograniczenie czasowe</target>
       </trans-unit>
     </body>
   </file>
