@@ -2,13 +2,19 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+use Knp\Menu\NodeInterface;
+
+use Symfony\Cmf\Component\Routing\RouteObjectInterface;
+use Symfony\Cmf\Component\Routing\RouteReferrersWriteInterface;
+
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodWriteInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
+
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
-use Symfony\Cmf\Component\Routing\RouteAwareInterface;
-use Symfony\Cmf\Component\Routing\RouteObjectInterface;
+use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersWriteInterface;
 
 /**
  * Standard implementation of StaticContent:
@@ -26,7 +32,8 @@ use Symfony\Cmf\Component\Routing\RouteObjectInterface;
  * - Additional Info Block
  */
 class StaticContent extends StaticContentBase implements
-    RouteAwareInterface,
+    MenuNodeReferrersWriteInterface,
+    RouteReferrersWriteInterface,
     PublishTimePeriodWriteInterface,
     PublishableWriteInterface
 {
@@ -58,7 +65,7 @@ class StaticContent extends StaticContentBase implements
     /**
      * MenuNode[]
      */
-    protected $menus;
+    protected $menuNodes;
 
     /**
      * @var string[]
@@ -244,25 +251,25 @@ class StaticContent extends StaticContentBase implements
     /**
      * @param MenuNode $menu
      */
-    public function addMenu($menu)
+    public function addMenuNode(NodeInterface $menu)
     {
-        $this->menus->add($menu);
+        $this->menuNodes->add($menu);
     }
 
     /**
      * @param MenuNode $menu
      */
-    public function removeMenu($menu)
+    public function removeMenuNode(NodeInterface $menu)
     {
-        $this->menus->removeElement($menu);
+        $this->menuNodes->removeElement($menu);
     }
 
     /**
      * @return ArrayCollection of MenuNode that point to this content
      */
-    public function getMenus()
+    public function getMenuNodes()
     {
-        return $this->menus;
+        return $this->menuNodes;
     }
 
 }
