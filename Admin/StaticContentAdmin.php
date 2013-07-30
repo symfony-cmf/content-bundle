@@ -9,9 +9,9 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
 
-use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
-use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
-use Symfony\Cmf\Bundle\RoutingBundle\Document\Route;
+use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
+use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
+use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route;
 
 class StaticContentAdmin extends Admin
 {
