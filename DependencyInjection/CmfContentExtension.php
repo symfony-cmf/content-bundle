@@ -5,7 +5,6 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\Config\Definition\Processor;
 
 class CmfContentExtension extends Extension
 {
@@ -47,7 +46,6 @@ class CmfContentExtension extends Extension
             $this->loadSonataAdmin($config, $loader, $container);
         }
     }
-
 
     public function loadSonataAdmin($config, XmlFileLoader $loader, ContainerBuilder $container, $prefix = '')
     {

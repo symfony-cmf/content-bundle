@@ -2,7 +2,6 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
-use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use Knp\Menu\NodeInterface;

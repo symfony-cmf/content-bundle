@@ -2,7 +2,6 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
-
 class StaticContentBase
 {
     /**

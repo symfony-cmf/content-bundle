@@ -4,7 +4,6 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr;
 
 use PHPCR\NodeInterface;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContent as ModelStaticContent;
 
 /**

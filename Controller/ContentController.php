@@ -55,8 +55,8 @@ class ContentController
      * We don't need an explicit check in this method.
      *
      * @param Request $request
-     * @param object $contentDocument
-     * @param string $contentTemplate symfony path of the template to render the
+     * @param object  $contentDocument
+     * @param string  $contentTemplate symfony path of the template to render the
      *      content document. if omitted uses the defaultTemplate as injected
      *      in constructor
      *
@@ -73,6 +73,7 @@ class ContentController
         );
 
         $params = $this->getParams($request, $contentDocument);
+
         return $this->renderResponse($contentTemplate, $params);
 
     }
@@ -82,6 +83,7 @@ class ContentController
         if ($this->viewHandler) {
             $view = new View($params);
             $view->setTemplate($contentTemplate);
+
             return $this->viewHandler->handle($view);
         }
 

@@ -74,4 +74,3 @@ class StaticContentTest extends BaseTestCase
         $this->assertEquals('fr', $content->getLocale());
     }
 }
-

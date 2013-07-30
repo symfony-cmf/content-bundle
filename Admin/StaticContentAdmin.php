@@ -2,8 +2,6 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Admin;
 
-use Doctrine\ODM\PHPCR\DocumentManager;
-
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -61,6 +59,7 @@ class StaticContentAdmin extends Admin
                 $new->setParent($this->getModelManager()->find(null, $parentId));
             }
         }
+
         return $new;
     }
 

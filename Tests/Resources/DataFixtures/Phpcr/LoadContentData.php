@@ -5,7 +5,6 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Tests\Resources\DataFixtures\Phpcr;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
-use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\ContentNode;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\Content;
 use Doctrine\ODM\PHPCR\Document\Generic;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
