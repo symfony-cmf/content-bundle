@@ -65,7 +65,7 @@ class StaticContent extends StaticContentBase implements
     /**
      * MenuNode[]
      */
-    protected $menus;
+    protected $menuNodes;
 
     /**
      * @var string[]
@@ -253,7 +253,7 @@ class StaticContent extends StaticContentBase implements
      */
     public function addMenuNode(NodeInterface $menu)
     {
-        $this->menus->add($menu);
+        $this->menuNodes->add($menu);
     }
 
     /**
@@ -261,7 +261,7 @@ class StaticContent extends StaticContentBase implements
      */
     public function removeMenuNode(NodeInterface $menu)
     {
-        $this->menus->removeElement($menu);
+        $this->menuNodes->removeElement($menu);
     }
 
     /**
@@ -269,7 +269,7 @@ class StaticContent extends StaticContentBase implements
      */
     public function getMenuNodes()
     {
-        return $this->menus;
+        return $this->menuNodes;
     }
 
 }
