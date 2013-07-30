@@ -4,7 +4,7 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Tests\WebTest\Admin\ContentNodeAdminT
 
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 
-class ContentAdminTest extends BaseTestCase
+class StaticContentAdminTest extends BaseTestCase
 {
     public function setUp()
     {
