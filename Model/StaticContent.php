@@ -10,8 +10,8 @@ use Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface;
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Cmf\Component\Routing\RouteReferrersInterface;
 
-use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodWriteInterface;
-use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableWriteInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface;
 
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface;
@@ -35,8 +35,8 @@ use Symfony\Component\Routing\Route;
 class StaticContent extends StaticContentBase implements
     MenuNodeReferrersInterface,
     RouteReferrersInterface,
-    PublishTimePeriodWriteInterface,
-    PublishableWriteInterface,
+    PublishTimePeriodInterface,
+    PublishableInterface,
     TranslatableInterface
 {
     /**
