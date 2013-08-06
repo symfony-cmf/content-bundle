@@ -17,12 +17,18 @@
         <field name="tags" type="string" translated="true" multivalue="true"/>
         <field name="tags" type="string" multivalue="true"/>
         <field name="extras" type="string" assoc=""/>
-        <child name="additionalInfoBlock" cascade="persist"/>
+        <child name="additionalInfoBlock">
+            <cascade><cascade-persist /></cascade>
+        </child>
         <field name="publishable" type="boolean"/>
         <field name="publishStartDate" type="date"/>
         <field name="publishEndDate" type="date"/>
-        <referrers name="routes" referring-document="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route" referenced-by="content" cascade="persist"/>
-        <referrers name="menuNodes" referring-document="Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode" referenced-by="content" cascade="persist"/>
+        <referrers name="routes" referring-document="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route" referenced-by="content">
+            <cascade><cascade-persist /></cascade>
+        </referrers>
+        <referrers name="menuNodes" referring-document="Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode" referenced-by="content">
+            <cascade><cascade-persist /></cascade>
+        </referrers>
     </document>
 
 </doctrine-mapping>
