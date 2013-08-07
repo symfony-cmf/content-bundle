@@ -30,12 +30,14 @@ class LoadContentData implements FixtureInterface, DependentFixtureInterface
         $content = new StaticContent;
         $content->setName('content-1');
         $content->setTitle('Content 1');
+        $content->setBody('Content 1');
         $content->setParent($contentRoot);
         $manager->persist($content);
 
         $content = new StaticContent;
         $content->setName('content-2');
         $content->setTitle('Content 2');
+        $content->setBody('Content 2');
         $content->setParent($contentRoot);
         $manager->persist($content);
 
