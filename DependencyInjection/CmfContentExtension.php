@@ -19,10 +19,6 @@ class CmfContentExtension extends Extension
             $this->loadPhpcr($config['persistence']['phpcr'], $loader, $container);
         }
 
-        if (isset($config['multilang'])) {
-            $container->setParameter($this->getAlias() . '.multilang.locales', $config['multilang']['locales']);
-        }
-
         if (isset($config['default_template'])) {
             $container->setParameter($this->getAlias() . '.default_template', $config['default_template']);
         }
