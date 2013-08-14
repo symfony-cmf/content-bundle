@@ -14,15 +14,14 @@
 
         <field name="title" type="string" translated="true"/>
         <field name="body" type="string" translated="true"/>
-        <field name="tags" type="string" translated="true" multivalue="true"/>
-        <field name="tags" type="string" multivalue="true"/>
-        <field name="extras" type="string" assoc=""/>
+        <field name="tags" type="string" translated="true" multivalue="true" nullable="true"/>
+        <field name="extras" type="string" assoc="" nullable="true"/>
         <child name="additionalInfoBlock">
             <cascade><cascade-persist /></cascade>
         </child>
         <field name="publishable" type="boolean"/>
-        <field name="publishStartDate" type="date"/>
-        <field name="publishEndDate" type="date"/>
+        <field name="publishStartDate" type="date" nullable="true"/>
+        <field name="publishEndDate" type="date" nullable="true"/>
         <referrers name="routes" referring-document="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route" referenced-by="content">
             <cascade><cascade-persist /></cascade>
         </referrers>

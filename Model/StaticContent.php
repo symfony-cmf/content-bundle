@@ -78,7 +78,7 @@ class StaticContent extends StaticContentBase implements
      * Hashmap for application data associated to this document. Both keys and
      * values must be strings.
      */
-    protected $extras;
+    protected $extras = array();
 
     /**
      * This will usually be a ContainerBlock but can be any block that will be
@@ -125,9 +125,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * Set if the content is publishable
-     *
-     * @param boolean $publishable
+     * {@inheritDoc}
      */
     public function setPublishable($publishable)
     {
@@ -135,9 +133,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * Is publishable
-     *
-     * @return boolean $publishable
+     * {@inheritDoc}
      */
     public function isPublishable()
     {
@@ -145,26 +141,32 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * Get the publish start date
+     * {@inheritDoc}
      */
     public function getPublishStartDate()
     {
         return $this->publishStartDate;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function setPublishStartDate(\DateTime $publishStartDate = null)
     {
         $this->publishStartDate = $publishStartDate;
     }
 
     /**
-     * Get the publish end date
+     * {@inheritDoc}
      */
     public function getPublishEndDate()
     {
         return $this->publishEndDate;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function setPublishEndDate(\DateTime $publishEndDate = null)
     {
         $this->publishEndDate = $publishEndDate;
