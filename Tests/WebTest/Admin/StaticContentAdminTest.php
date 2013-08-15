@@ -45,6 +45,7 @@ class StaticContentAdminTest extends BaseTestCase
         $form[$uniqId.'[parent]'] = '/test/contents';
         $form[$uniqId.'[name]'] = 'foo-test';
         $form[$uniqId.'[title]'] = 'Foo Test';
+        $form[$uniqId.'[body]'] = 'Foo Test';
 
         $this->client->submit($form);
         $res = $this->client->getResponse();
