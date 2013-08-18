@@ -26,6 +26,8 @@ class CmfContentExtension extends Extension
 
     public function loadPhpcr($config, XmlFileLoader $loader, ContainerBuilder $container)
     {
+        $container->setParameter($this->getAlias() . '.backend_type_phpcr', true);
+
         $keys = array(
             'document_class' => 'document.class',
             'manager_name' => 'manager_name',

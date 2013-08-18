@@ -16,12 +16,12 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/framework-bundle": "~2.2",
-        "symfony-cmf/core-bundle": "~1.0.0-RC1",
-        "doctrine/phpcr-bundle": "1.0.*",
-        "doctrine/phpcr-odm": "1.0.*"
+        "symfony-cmf/core-bundle": "~1.0.0-RC1"
     },
     "require-dev": {
         "symfony-cmf/testing": "1.0.*",
+        "doctrine/phpcr-bundle": "1.0.*",
+        "doctrine/phpcr-odm": "1.0.*",
         "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
         "symfony-cmf/menu-bundle": "1.0.*",
         "symfony-cmf/routing-bundle": "1.1.*",
@@ -30,7 +30,10 @@
     "suggest": {
         "symfony-cmf/menu-bundle": "Have editable menus for content",
         "symfony-cmf/routing-bundle": "Have editable routes for content",
-        "friendsofsymfony/rest-bundle": "Improved handling for different output formats"
+        "friendsofsymfony/rest-bundle": "Improved handling for different output formats",
+        "doctrine/phpcr-odm": "To persist content with the PHP content repository",
+        "doctrine/phpcr-bundle": "To integrate PHPCR-ODM with Symfony",
+        "sonata-project/doctrine-phpcr-admin-bundle": "To provide admin interfaces for the content"
     },
     "autoload":{
         "psr-0":{
