@@ -40,6 +40,8 @@ class CmfContentExtension extends Extension
             }
         }
 
+        $loader->load('persistence-phpcr.xml');
+
         if ($config['use_sonata_admin']) {
             $this->loadSonataAdmin($config, $loader, $container);
         }
