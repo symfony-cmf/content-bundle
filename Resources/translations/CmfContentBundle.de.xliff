@@ -62,6 +62,10 @@
         <source>form.label_body</source>
         <target>Textkörper</target>
       </trans-unit>
+      <trans-unit id="form.label_locale">
+        <source>form.label_locale</source>
+        <target>Sprache</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
