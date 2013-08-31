@@ -19,7 +19,7 @@
                 <argument type="service" id="sonata.admin.route.path_info_slashes" />
             </call>
 
-            <call method="setContentRoot">
+            <call method="setRootPath">
                 <argument>%cmf_content.persistence.phpcr.content_basepath%</argument>
             </call>
         </service>
