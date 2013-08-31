@@ -68,9 +68,4 @@ class StaticContentBase
     {
         $this->body = $body;
     }
-
-    public function __toString()
-    {
-        return 'Static Content ' . $this->id;
-    }
 }
