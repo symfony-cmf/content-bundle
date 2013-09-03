@@ -5,7 +5,7 @@
         https://github.com/doctrine/phpcr-odm/raw/master/doctrine-phpcr-odm-mapping.xsd"
         >
 
-    <document
+    <mapped-superclass
             name="Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase"
             referenceable="true"
         >
@@ -16,6 +16,6 @@
         <field name="title" type="string"/>
         <field name="body" type="string"/>
 
-    </document>
+    </mapped-superclass>
 
 </doctrine-mapping>

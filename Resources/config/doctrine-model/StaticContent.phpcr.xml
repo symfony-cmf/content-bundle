@@ -5,7 +5,7 @@
         https://github.com/doctrine/phpcr-odm/raw/master/doctrine-phpcr-odm-mapping.xsd"
         >
 
-    <document
+    <mapped-superclass
             name="Symfony\Cmf\Bundle\ContentBundle\Model\StaticContent"
             translator="child"
             referenceable="true"
@@ -28,6 +28,6 @@
         <referrers name="menuNodes" referring-document="Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode" referenced-by="content">
             <cascade><cascade-persist /></cascade>
         </referrers>
-    </document>
+    </mapped-superclass>
 
 </doctrine-mapping>
