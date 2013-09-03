@@ -57,9 +57,4 @@ class StaticContentBase extends ModelStaticContentBase
     {
         return $this->node;
     }
-
-    public function __toString()
-    {
-        return (string) $this->name;
-    }
 }
