@@ -6,6 +6,6 @@
     <children>
         <property property="cw:headline" identifier="title" tag-name="h1"/>
         <property property="cw:text" identifier="body" />
-        <property property="cw:keywords" identifier="tags" tag-name="ul"/>
+        <collection property="cw:keywords" identifier="tags" tag-name="ul"/>
     </children>
 </type>
