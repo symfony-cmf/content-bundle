@@ -15,6 +15,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('default_template')->defaultNull()->end()
                 ->arrayNode('persistence')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->arrayNode('phpcr')
                             ->addDefaultsIfNotSet()
