@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="CmfContentBundle.en.xliff">
+    <body>
+      <trans-unit id="dashboard.cmf">
+        <source>dashboard.cmf</source>
+        <target>Symfony CMF</target>
+      </trans-unit>
+      <trans-unit id="dashboard.label_static_content">
+        <source>dashboard.label_static_content</source>
+        <target>Statická stránka</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_static_content_list">
+        <source>breadcrumb.link_static_content_list</source>
+        <target>Statické stránky</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_static_content_create">
+        <source>breadcrumb.link_static_content_create</source>
+        <target>Vytvoriť</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_static_content_edit">
+        <source>breadcrumb.link_static_content_edit</source>
+        <target>Upraviť</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb.link_static_content_delete">
+        <source>breadcrumb.link_static_content_delete</source>
+        <target>Vymazať</target>
+      </trans-unit>
+      <trans-unit id="filter.label_title">
+        <source>filter.label_title</source>
+        <target>Názov</target>
+      </trans-unit>
+      <trans-unit id="filter.label_name">
+        <source>filter.label_name</source>
+        <target>Meno</target>
+      </trans-unit>
+      <trans-unit id="list.label_id">
+        <source>list.label_id</source>
+        <target>Cesta</target>
+      </trans-unit>
+      <trans-unit id="list.label_title">
+        <source>list.label_title</source>
+        <target>Názov</target>
+      </trans-unit>
+      <trans-unit id="list.label_locales">
+        <source>list.label_locales</source>
+        <target>Jazyk</target>
+      </trans-unit>
+      <trans-unit id="form.group_general">
+        <source>form.group_general</source>
+        <target>Všeobecný</target>
+      </trans-unit>
+      <trans-unit id="form.label_parent">
+        <source>form.label_parent</source>
+        <target>Rodič</target>
+      </trans-unit>
+      <trans-unit id="form.label_title">
+        <source>form.label_title</source>
+        <target>Názov</target>
+      </trans-unit>
+      <trans-unit id="form.label_name">
+        <source>form.label_name</source>
+        <target>Meno</target>
+      </trans-unit>
+      <trans-unit id="form.label_body">
+        <source>form.label_body</source>
+        <target>Telo</target>
+      </trans-unit>
+      <trans-unit id="form.label_locale">
+        <source>form.label_locale</source>
+        <target>Jazyk</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
