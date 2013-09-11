@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0.0-RC3
+---------
+
+* **2013-09-02**: Removed __toString() method
+* **2013-09-01**: Adopt schema.org RDFa mapping
+
 1.0.0-RC1
 ---------
 
