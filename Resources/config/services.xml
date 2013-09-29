@@ -4,7 +4,7 @@
 
     <parameters>
         <parameter key="cmf_content.document.class">Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent</parameter>
-        <parameter key="cmf_content.default_template">CmfContentBundle:StaticContent:index.html.twig</parameter>
+        <parameter key="cmf_content.default_template">null</parameter>
     </parameters>
 
     <services>

@@ -13,7 +13,7 @@ class Configuration implements ConfigurationInterface
 
         $treeBuilder->root('cmf_content')
             ->children()
-                ->scalarNode('default_template')->defaultNull()->end()
+                ->scalarNode('default_template')->end()
                 ->arrayNode('persistence')
                     ->addDefaultsIfNotSet()
                     ->children()
