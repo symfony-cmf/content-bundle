@@ -15,6 +15,25 @@ class StaticContentAdmin extends Admin
     protected $baseRoutePattern = '/cmf/content/staticcontent';
     protected $translationDomain = 'CmfContentBundle';
 
+    public function getNewInstance()
+    {
+        /** @var $new StaticContent */
+        $new = parent::getNewInstance();
+        if ($this->hasRequest()) {
+            $parentId = $this->getRequest()->query->get('parent');
+            if (null !== $parentId) {
+                $new->setParent($this->getModelManager()->find(null, $parentId));
+            }
+        }
+
+        return $new;
+    }
+
+    public function getExportFormats()
+    {
+        return array();
+    }
+
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
@@ -41,24 +60,5 @@ class StaticContentAdmin extends Admin
             ->add('title', 'doctrine_phpcr_string')
             ->add('name',  'doctrine_phpcr_nodename')
         ;
-    }
-
-    public function getNewInstance()
-    {
-        /** @var $new StaticContent */
-        $new = parent::getNewInstance();
-        if ($this->hasRequest()) {
-            $parentId = $this->getRequest()->query->get('parent');
-            if (null !== $parentId) {
-                $new->setParent($this->getModelManager()->find(null, $parentId));
-            }
-        }
-
-        return $new;
-    }
-
-    public function getExportFormats()
-    {
-        return array();
     }
 }
