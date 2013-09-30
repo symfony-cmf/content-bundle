@@ -47,7 +47,7 @@ class StaticContentAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('id', 'text')
-            ->add('title', 'text')
+            ->addIdentifier('title', 'text')
         ;
     }
 
