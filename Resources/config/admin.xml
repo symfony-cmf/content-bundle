@@ -4,15 +4,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <parameters>
-        <parameter key="cmf_content.admin.class">Symfony\Cmf\Bundle\ContentBundle\Admin\StaticContentAdmin</parameter>
-    </parameters>
-
     <services>
-        <service id="cmf_content.admin" class="%cmf_content.admin.class%">
+        <service id="cmf_content.admin" class="%cmf_content.persistence.phpcr.admin.class%">
             <tag name="sonata.admin" manager_type="doctrine_phpcr" group="dashboard.cmf" label_catalogue="CmfContentBundle" label="dashboard.label_static_content" label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%cmf_content.document.class%</argument>
+            <argument>%cmf_content.persistence.phpcr.document.class%</argument>
             <argument>SonataAdminBundle:CRUD</argument>
 
             <call method="setRouteBuilder">
