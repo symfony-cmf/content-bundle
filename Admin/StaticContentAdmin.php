@@ -20,8 +20,6 @@ use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 
 class StaticContentAdmin extends Admin
 {
-    protected $baseRouteName = 'cmf_content_staticcontent';
-    protected $baseRoutePattern = '/cmf/content/staticcontent';
     protected $translationDomain = 'CmfContentBundle';
 
     public function getNewInstance()
