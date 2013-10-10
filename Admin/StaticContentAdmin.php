@@ -17,6 +17,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
 
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
+use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase;
 
 class StaticContentAdmin extends Admin
 {
@@ -66,6 +67,14 @@ class StaticContentAdmin extends Admin
         $datagridMapper
             ->add('title', 'doctrine_phpcr_string')
             ->add('name',  'doctrine_phpcr_nodename')
+        ;
+    }
+
+    public function toString($object)
+    {
+        return $object instanceof StaticContentBase && $object->getTitle()
+            ? $object->getTitle()
+            : parent::toString($object)
         ;
     }
 }
