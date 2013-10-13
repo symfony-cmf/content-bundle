@@ -74,7 +74,7 @@ class StaticContentAdmin extends Admin
     {
         return $object instanceof StaticContentBase && $object->getTitle()
             ? $object->getTitle()
-            : parent::toString($object)
+            : 'static content'
         ;
     }
 }
