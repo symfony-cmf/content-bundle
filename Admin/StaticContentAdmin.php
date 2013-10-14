@@ -74,7 +74,7 @@ class StaticContentAdmin extends Admin
     {
         return $object instanceof StaticContentBase && $object->getTitle()
             ? $object->getTitle()
-            : 'static content'
+            : $this->trans('link_add', array(), 'SonataAdminBundle')
         ;
     }
 }
