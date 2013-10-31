@@ -23,7 +23,7 @@ class StaticContent extends ModelStaticContent
     /**
      * PHPCR parent document
      *
-     * @var string
+     * @var object
      */
     protected $parent;
 
