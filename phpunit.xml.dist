@@ -5,7 +5,7 @@
     >
 
     <testsuites>
-        <testsuite name="Symfony ContentBundle Test Suite">
+        <testsuite name="phpcr">
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>
@@ -26,5 +26,9 @@
     <php>
         <server name="KERNEL_DIR" value="Tests/Resources/app" />
     </php>
+
+    <listeners>
+        <listener class="Symfony\Cmf\Component\Testing\Phpunit\DatabaseTestListener" />
+    </listeners>
 
 </phpunit>
