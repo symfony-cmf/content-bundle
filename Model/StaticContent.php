@@ -100,7 +100,7 @@ class StaticContent extends StaticContentBase implements
     public function __construct()
     {
         $this->routes = new ArrayCollection();
-        $this->menus = new ArrayCollection();
+        $this->menuNodes = new ArrayCollection();
     }
 
     public function getLocale()
