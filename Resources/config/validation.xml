@@ -7,6 +7,14 @@
     <class name="Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent">
         <constraint name="Doctrine\Bundle\PHPCRBundle\Validator\Constraints\ValidPhpcrOdm" />
 
+        <property name="routes">
+            <constraint name="Valid" />
+        </property>
+
+        <property name="menuNodes">
+            <constraint name="Valid" />
+        </property>
+        
         <property name="title">
             <constraint name="NotBlank" />
         </property>
