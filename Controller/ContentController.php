@@ -90,7 +90,14 @@ class ContentController
     protected function renderResponse($contentTemplate, $params)
     {
         if ($this->viewHandler) {
+            if (1 === count($params)) {
+                $templateVar = key($params);
+                $params = reset($params);
+            }
             $view = new View($params);
+            if (isset($templateVar)) {
+                $view->setTemplateVar($templateVar);
+            }
             $view->setTemplate($contentTemplate);
 
             return $this->viewHandler->handle($view);
