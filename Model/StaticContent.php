@@ -15,6 +15,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 use Knp\Menu\NodeInterface;
 
+use Sonata\BlockBundle\Model\BlockInterface;
 use Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface;
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Cmf\Component\Routing\RouteReferrersInterface;
@@ -103,31 +104,57 @@ class StaticContent extends StaticContentBase implements
         $this->menuNodes = new ArrayCollection();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getLocale()
     {
         return $this->locale;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function setLocale($locale)
     {
         $this->locale = $locale;
     }
 
+    /**
+     * Get the tags set on this content.
+     *
+     * @return string[]
+     */
     public function getTags()
     {
         return $this->tags;
     }
 
+    /**
+     * Set the tags of this content as an array of strings.
+     *
+     * @param string[] $tags
+     */
     public function setTags($tags)
     {
         $this->tags = $tags;
     }
 
+    /**
+     * @return BlockInterface
+     */
     public function getAdditionalInfoBlock()
     {
         return $this->additionalInfoBlock;
     }
 
+    /**
+     * Set the additional info block for this content. Usually you want this to
+     * be a container block in order to be able to add several blocks.
+     *
+     * @param BlockInterface $block must be persistable through cascade by the
+     *      persistence layer.
+     */
     public function setAdditionalInfoBlock($block)
     {
         $this->additionalInfoBlock = $block;
@@ -238,7 +265,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @param Route $route
+     * {@inheritDoc}
      */
     public function addRoute($route)
     {
@@ -246,7 +273,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @param Route $route
+     * {@inheritDoc}
      */
     public function removeRoute($route)
     {
@@ -254,7 +281,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @return \Symfony\Component\Routing\Route[] Route instances that point to this content
+     * {@inheritDoc}
      */
     public function getRoutes()
     {
@@ -262,7 +289,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @param MenuNode $menu
+     * {@inheritDoc}
      */
     public function addMenuNode(NodeInterface $menu)
     {
@@ -270,7 +297,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @param MenuNode $menu
+     * {@inheritDoc}
      */
     public function removeMenuNode(NodeInterface $menu)
     {
@@ -278,7 +305,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * @return ArrayCollection of MenuNode that point to this content
+     * {@inheritDoc}
      */
     public function getMenuNodes()
     {
