@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+
 namespace Symfony\Cmf\Bundle\ContentBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;

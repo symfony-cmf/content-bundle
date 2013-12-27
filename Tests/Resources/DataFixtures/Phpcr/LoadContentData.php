@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+
 namespace Symfony\Cmf\Bundle\ContentBundle\Tests\Resources\DataFixtures\Phpcr;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
