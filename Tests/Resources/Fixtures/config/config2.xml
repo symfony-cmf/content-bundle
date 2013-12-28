@@ -1,0 +1,12 @@
+<config xmlns="http://cmf.symfony.com/schema/dic/content"
+    default-template="::base.html.twig">
+
+    <persistence>
+        <phpcr enabled="true"
+            admin-class="Symfony\Cmf\Bundle\ContentBundle\Admin\StaticContentAdmin"
+            document-class="Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent"
+            content-basepath="/cms/content"
+            use-sonata-admin="auto"
+        />
+    </persistence>
+</config>
