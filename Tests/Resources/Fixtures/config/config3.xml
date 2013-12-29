@@ -1,0 +1,7 @@
+<config xmlns="http://cmf.symfony.com/schema/dic/content"
+    default-template="::base.html.twig">
+
+    <persistence>
+        <phpcr/>
+    </persistence>
+</config>
