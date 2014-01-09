@@ -18,7 +18,7 @@ The ContentBundle provides a document for static content and the controller to r
 
 For the install guide and reference, see:
 
-* [ContentBundle documentation](http://symfony.com/doc/master/cmf/bundles/content.html)
+* [ContentBundle documentation](http://symfony.com/doc/master/cmf/bundles/content/index.html)
 
 See also:
 
