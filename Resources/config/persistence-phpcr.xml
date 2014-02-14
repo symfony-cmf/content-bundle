@@ -5,6 +5,7 @@
     <services>
 
         <service id="cmf_content.initializer" class="Doctrine\Bundle\PHPCRBundle\Initializer\GenericInitializer">
+            <argument>CmfContentBundle</argument>
             <argument type="collection">
                 <argument>%cmf_content.persistence.phpcr.content_basepath%</argument>
             </argument>
