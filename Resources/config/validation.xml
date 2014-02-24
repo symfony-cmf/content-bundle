@@ -19,6 +19,10 @@
             <constraint name="NotBlank" />
         </property>
 
+        <property name="body">
+            <constraint name="NotBlank" />
+        </property>
+
         <property name="locale">
             <constraint name="Locale"/>
         </property>
