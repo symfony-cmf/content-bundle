@@ -14,8 +14,9 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr;
 
 use PHPCR\NodeInterface;
 use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase as ModelStaticContentBase;
+use Symfony\Cmf\Bundle\CoreBundle\Model\ChildInterface;
 
-class StaticContentBase extends ModelStaticContentBase
+class StaticContentBase extends ModelStaticContentBase implements ChildInterface
 {
     /**
      * PHPCR parent document
@@ -38,12 +39,34 @@ class StaticContentBase extends ModelStaticContentBase
      */
     protected $node;
 
+    /**
+     * @deprecated Use setParentDocument instead.
+     */
     public function setParent($parent)
+    {
+        $this->setParentDocument($parent);
+    }
+
+    /**
+     * @deprecated Use getParentDocument instead.
+     */
+    public function getParent()
+    {
+        return $this->getParentDocument();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setParentDocument($parent)
     {
         $this->parent = $parent;
     }
 
-    public function getParent()
+    /**
+     * {@inheritDoc}
+     */
+    public function getParentDocument()
     {
         return $this->parent;
     }

@@ -38,7 +38,7 @@ class StaticContentTest extends BaseTestCase
         $content = new StaticContent;
         $refl = new \ReflectionClass($content);
 
-        $content->setParent($this->base);
+        $content->setParentDocument($this->base);
 
         foreach ($data as $key => $value) {
             $refl = new \ReflectionClass($content);
