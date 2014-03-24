@@ -42,12 +42,34 @@ class StaticContent extends ModelStaticContent
      */
     protected $node;
 
+    /**
+     * @deprecated Use setParentDocument instead.
+     */
     public function setParent($parent)
+    {
+        $this->setParentDocument($parent);
+    }
+
+    /**
+     * @deprecated Use getParentDocument instead.
+     */
+    public function getParent()
+    {
+        return $this->getParentDocument();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setParentDocument($parent)
     {
         $this->parent = $parent;
     }
 
-    public function getParent()
+    /**
+     * {@inheritDoc}
+     */
+    public function getParentDocument()
     {
         return $this->parent;
     }
