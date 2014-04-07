@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.1
+1.0.1
 -----
 
 * **2013-11-26**: Improve json/xml output when params contain a single variable
