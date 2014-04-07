@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.1.0-RC1
+---------
+
 * **2014-03-24**: setParent() and getParent() are now deprecated.
   Use setParentDocument() and getParentDocument() instead.
   Moreover, you should now enable the ChildExtension from the CoreBundle.
