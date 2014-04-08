@@ -16,19 +16,14 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\ODM\PHPCR\Document\Generic;
+use PHPCR\Util\NodeHelper;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 
-class LoadContentData implements FixtureInterface, DependentFixtureInterface
+class LoadContentData implements FixtureInterface
 {
-    public function getDependencies()
-    {
-        return array(
-            'Symfony\Cmf\Component\Testing\DataFixtures\PHPCR\LoadBaseData',
-        );
-    }
-
     public function load(ObjectManager $manager)
     {
+        NodeHelper::createPath($manager->getPhpcrSession(), '/test');
         $root = $manager->find(null, '/test');
 
         $contentRoot = new Generic;
