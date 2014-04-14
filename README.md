@@ -11,7 +11,7 @@ The ContentBundle provides a document for static content and the controller to r
 
 ## Requirements
 
-* Symfony 2.2.x
+* Symfony 2.3+
 * See also the `require` section of [composer.json](composer.json)
 
 ## Documentation
