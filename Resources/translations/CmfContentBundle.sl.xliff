@@ -42,10 +42,6 @@
         <source>list.label_title</source>
         <target>Naslov</target>
       </trans-unit>
-      <trans-unit id="list.label_locales">
-        <source>list.label_locales</source>
-        <target>Lokalizacije</target>
-      </trans-unit>
       <trans-unit id="form.group_general">
         <source>form.group_general</source>
         <target>Splošno</target>
@@ -65,10 +61,6 @@
       <trans-unit id="form.label_body">
         <source>form.label_body</source>
         <target>Telo (body)</target>
-      </trans-unit>
-      <trans-unit id="form.label_locale">
-        <source>form.label_locale</source>
-        <target>Lokalizacija</target>
       </trans-unit>
     </body>
   </file>

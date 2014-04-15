@@ -42,10 +42,6 @@
         <source>list.label_title</source>
         <target>Title</target>
       </trans-unit>
-      <trans-unit id="list.label_locales">
-        <source>list.label_locales</source>
-        <target>Locales</target>
-      </trans-unit>
       <trans-unit id="form.group_general">
         <source>form.group_general</source>
         <target>General</target>
@@ -65,10 +61,6 @@
       <trans-unit id="form.label_body">
         <source>form.label_body</source>
         <target>Body</target>
-      </trans-unit>
-      <trans-unit id="form.label_locale">
-        <source>form.label_locale</source>
-        <target>Locale</target>
       </trans-unit>
     </body>
   </file>
