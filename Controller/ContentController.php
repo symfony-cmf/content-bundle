@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Symfony\Cmf\Bundle\ContentBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
@@ -43,11 +42,13 @@ class ContentController
     /**
      * Instantiate the content controller.
      *
-     * @param EngineInterface $templating the templating instance to render the
-     *      template
-     * @param string $defaultTemplate default template to use in case none is
-     *      specified explicitly
-     * @param ViewHandlerInterface $viewHandler optional view handler instance
+     * @param EngineInterface      $templating      The templating instance to
+     *                                              render the template.
+     * @param string               $defaultTemplate Default template to use in
+     *                                              case none is specified by
+     *                                              the request.
+     * @param ViewHandlerInterface $viewHandler     Optional view handler
+     *                                              instance.
      */
     public function __construct(EngineInterface $templating, $defaultTemplate, ViewHandlerInterface $viewHandler = null)
     {
@@ -66,9 +67,9 @@ class ContentController
      *
      * @param Request $request
      * @param object  $contentDocument
-     * @param string  $contentTemplate symfony path of the template to render the
-     *      content document. if omitted uses the defaultTemplate as injected
-     *      in constructor
+     * @param string  $contentTemplate Symfony path of the template to render
+     *                                 the content document. If omitted, the
+     *                                 default template is used.
      *
      * @return Response
      */
@@ -107,6 +108,17 @@ class ContentController
         return $this->templating->renderResponse($contentTemplate, $params);
     }
 
+    /**
+     * Determine the parameters for rendering the template.
+     *
+     * This is mainly meant as a possible extension point in a custom
+     * controller.
+     *
+     * @param Request $request
+     * @param object  $contentDocument
+     *
+     * @return array
+     */
     protected function getParams(Request $request, $contentDocument)
     {
         return array(

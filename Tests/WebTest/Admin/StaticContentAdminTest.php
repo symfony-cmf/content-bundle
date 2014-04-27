@@ -9,8 +9,7 @@
  * file that was distributed with this source code.
  */
 
-
-namespace Symfony\Cmf\Bundle\ContentBundle\Tests\WebTest\Admin\ContentNodeAdminTest;
+namespace Symfony\Cmf\Bundle\ContentBundle\Tests\WebTest\Admin;
 
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 

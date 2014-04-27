@@ -14,7 +14,7 @@
         <property name="menuNodes">
             <constraint name="Valid" />
         </property>
-        
+
         <property name="title">
             <constraint name="NotBlank" />
         </property>

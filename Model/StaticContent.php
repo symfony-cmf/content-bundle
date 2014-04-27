@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -154,7 +153,7 @@ class StaticContent extends StaticContentBase implements
      * be a container block in order to be able to add several blocks.
      *
      * @param BlockInterface $block must be persistable through cascade by the
-     *      persistence layer.
+     *                              persistence layer.
      */
     public function setAdditionalInfoBlock($block)
     {
