@@ -11,11 +11,11 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr;
 
+use Doctrine\ODM\PHPCR\HierarchyInterface;
 use PHPCR\NodeInterface;
 use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase as ModelStaticContentBase;
-use Symfony\Cmf\Bundle\CoreBundle\Model\ChildInterface;
 
-class StaticContentBase extends ModelStaticContentBase implements ChildInterface
+class StaticContentBase extends ModelStaticContentBase implements HierarchyInterface
 {
     /**
      * PHPCR parent document

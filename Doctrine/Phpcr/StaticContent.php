@@ -11,6 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr;
 
+use Doctrine\ODM\PHPCR\HierarchyInterface;
 use PHPCR\NodeInterface;
 
 use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContent as ModelStaticContent;
@@ -18,7 +19,7 @@ use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContent as ModelStaticContent;
 /**
  * PHPCR specific static content.
  */
-class StaticContent extends ModelStaticContent
+class StaticContent extends ModelStaticContent implements HierarchyInterface
 {
     /**
      * PHPCR parent document
