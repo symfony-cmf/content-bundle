@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandlerInterface;
+use JMS\Serializer\SerializationContext;
 
 /**
  * The content controller is a simple controller that calls a template with
@@ -38,6 +39,11 @@ class ContentController
      * @var ViewHandlerInterface
      */
     protected $viewHandler;
+    
+    /**
+     * @var SerializationContext
+     */
+    protected $serializationContext = null;
 
     /**
      * Instantiate the content controller.
@@ -101,7 +107,11 @@ class ContentController
                 $view->setTemplateVar($templateVar);
             }
             $view->setTemplate($contentTemplate);
-
+            
+            if ($this->serializationContext !== null) {
+            	$view->setSerializationContext($this->serializationContext);
+            }
+            
             return $this->viewHandler->handle($view);
         }
 
