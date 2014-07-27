@@ -108,7 +108,8 @@ class ContentController
         return $this->templating->renderResponse($contentTemplate, $params);
     }
     
-    protected function getView($params) {
+    protected function getView($params) 
+    {
     	return new View($params);
     }
 
