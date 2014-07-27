@@ -108,6 +108,12 @@ class ContentController
         return $this->templating->renderResponse($contentTemplate, $params);
     }
     
+    /**
+     * Prepares the View
+     * 
+     * @param array $params
+     * @return \FOS\RestBundle\View\View
+     */
     protected function getView($params) 
     {
     	return new View($params);
