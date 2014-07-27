@@ -96,7 +96,7 @@ class ContentController
                 $templateVar = key($params);
                 $params = reset($params);
             }
-            $view = new View($params);
+            $view = $this->getView($params);
             if (isset($templateVar)) {
                 $view->setTemplateVar($templateVar);
             }
@@ -106,6 +106,17 @@ class ContentController
         }
 
         return $this->templating->renderResponse($contentTemplate, $params);
+    }
+
+    /**
+     * Prepare the REST View to render the response in the correct format.
+     *
+     * @param array $params
+     * @return View
+     */
+    protected function getView($params)
+    {
+    	return new View($params);
     }
 
     /**
