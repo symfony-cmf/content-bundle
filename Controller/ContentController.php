@@ -38,7 +38,7 @@ class ContentController
      * @var ViewHandlerInterface
      */
     protected $viewHandler;
-    
+
     /**
      * Instantiate the content controller.
      *
@@ -101,20 +101,20 @@ class ContentController
                 $view->setTemplateVar($templateVar);
             }
             $view->setTemplate($contentTemplate);
-            
+
             return $this->viewHandler->handle($view);
         }
 
         return $this->templating->renderResponse($contentTemplate, $params);
     }
-    
+
     /**
-     * Prepares the View
-     * 
+     * Prepare the REST View to render the response in the correct format.
+     *
      * @param array $params
-     * @return \FOS\RestBundle\View\View
+     * @return View
      */
-    protected function getView($params) 
+    protected function getView($params)
     {
     	return new View($params);
     }
