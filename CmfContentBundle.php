@@ -27,7 +27,8 @@ class CmfContentBundle extends Bundle
                         realpath(__DIR__ . '/Resources/config/doctrine-phpcr') => 'Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr',
                     ),
                     array('cmf_content.manager_name'),
-                    'cmf_content.backend_type_phpcr'
+                    'cmf_content.backend_type_phpcr',
+                    array('CmfContentBundle' => 'Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr')
                 )
             );
         }
