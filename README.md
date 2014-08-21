@@ -1,6 +1,6 @@
 # Symfony CMF Content Bundle
 
-[![Build Status](https://secure.travis-ci.org/symfony-cmf/ContentBundle.png?branch=1.1)](http://travis-ci.org/symfony-cmf/ContentBundle)
+[![Build Status](https://secure.travis-ci.org/symfony-cmf/ContentBundle.png?branch=master)](http://travis-ci.org/symfony-cmf/ContentBundle)
 [![Latest Stable Version](https://poser.pugx.org/symfony-cmf/content-bundle/version.png)](https://packagist.org/packages/symfony-cmf/content-bundle)
 [![Total Downloads](https://poser.pugx.org/symfony-cmf/content-bundle/d/total.png)](https://packagist.org/packages/symfony-cmf/content-bundle)
 
