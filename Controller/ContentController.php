@@ -116,7 +116,7 @@ class ContentController
      */
     protected function getView($params)
     {
-    	return new View($params);
+        return new View($params);
     }
 
     /**
