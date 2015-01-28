@@ -42,8 +42,8 @@
         <source>list.label_title</source>
         <target>Tytuł</target>
       </trans-unit>
-      <trans-unit id="form.group_general">
-        <source>form.group_general</source>
+      <trans-unit id="form.tab_general">
+        <source>form.tab_general</source>
         <target>Ogólne</target>
       </trans-unit>
       <trans-unit id="form.label_parent">

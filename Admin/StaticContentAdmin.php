@@ -38,12 +38,25 @@ class StaticContentAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('form.group_general')
-                ->add('parent', 'doctrine_phpcr_odm_tree', array('root_node' => $this->getRootPath(), 'choice_list' => array(), 'select_root_node' => true))
-                ->add('name', 'text')
-                ->add('title', 'text')
-                ->add('body', 'textarea')
-            ->end()
+            ->tab('form.tab_general')
+                ->with('form.group_location', array('class' => 'col-md-3'))
+                    ->add('parent', 'doctrine_phpcr_odm_tree', array(
+                        'root_node' => $this->getRootPath(),
+                        'choice_list' => array(),
+                        'select_root_node' => true)
+                    )
+                    ->add('name', 'text')
+                ->end() // group location
+
+                ->with('form.group_general', array('class' => 'col-md-9'))
+                    ->add('title', 'text')
+                    ->add('body', 'textarea', array(
+                        'attr' => array(
+                            'style' => 'height:200px'
+                        ),
+                    ))
+                ->end() // group general
+            ->end() // tab general
         ;
     }
 
