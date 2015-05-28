@@ -25,7 +25,6 @@ use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface;
 
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface;
-use Symfony\Component\Routing\Route;
 
 /**
  * Standard implementation of StaticContent:
@@ -75,7 +74,7 @@ class StaticContent extends StaticContentBase implements
     protected $routes;
 
     /**
-     * MenuNode[]
+     * @var MenuNode[]
      */
     protected $menuNodes;
 
@@ -87,6 +86,8 @@ class StaticContent extends StaticContentBase implements
     /**
      * Hashmap for application data associated to this document. Both keys and
      * values must be strings.
+     *
+     * @var array
      */
     protected $extras = array();
 
