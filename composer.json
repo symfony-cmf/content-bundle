@@ -16,18 +16,16 @@
     "require": {
         "php": ">=5.3.9",
         "symfony/framework-bundle": "~2.3",
-        "symfony-cmf/core-bundle": "~1.1"
+        "symfony-cmf/core-bundle": "~1.1",
+        "symfony-cmf/menu-bundle": "~1.1",
+        "symfony-cmf/routing-bundle": "~1.2"
     },
     "require-dev": {
         "symfony-cmf/testing": "~1.2,>=1.2.6",
         "sonata-project/doctrine-phpcr-admin-bundle": "~1.1",
-        "symfony-cmf/menu-bundle": "~1.1",
-        "symfony-cmf/routing-bundle": "~1.2",
         "symfony/monolog-bundle": "~2.3"
     },
     "suggest": {
-        "symfony-cmf/menu-bundle": "Have editable menus for content",
-        "symfony-cmf/routing-bundle": "Have editable routes for content",
         "friendsofsymfony/rest-bundle": "Improved handling for different output formats",
         "doctrine/phpcr-odm": "To persist content with the PHP content repository",
         "doctrine/phpcr-bundle": "To integrate PHPCR-ODM with Symfony",
