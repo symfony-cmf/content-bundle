@@ -9,4 +9,6 @@
             use-sonata-admin="auto"
         />
     </persistence>
+
+    <ivory-ckeditor config-name="my_custom_toolbar"/>
 </config>
