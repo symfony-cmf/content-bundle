@@ -42,9 +42,17 @@
         <source>list.label_title</source>
         <target>Title</target>
       </trans-unit>
+      <trans-unit id="form.tab_general">
+        <source>form.tab_general</source>
+        <target>General</target>
+      </trans-unit>
+      <trans-unit id="form.group_location">
+        <source>form.group_location</source>
+        <target>Location</target>
+      </trans-unit>
       <trans-unit id="form.group_general">
         <source>form.group_general</source>
-        <target>General</target>
+        <target>Content</target>
       </trans-unit>
       <trans-unit id="form.label_parent">
         <source>form.label_parent</source>
