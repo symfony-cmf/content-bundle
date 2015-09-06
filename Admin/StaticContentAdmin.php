@@ -22,6 +22,13 @@ class StaticContentAdmin extends Admin
 {
     protected $translationDomain = 'CmfContentBundle';
 
+    private $ivoryCkeditor = array();
+
+    public function setIvoryCkeditor($config)
+    {
+        $this->ivoryCkeditor = (array) $config;
+    }
+
     public function getExportFormats()
     {
         return array();
@@ -42,7 +49,11 @@ class StaticContentAdmin extends Admin
                 ->add('parent', 'doctrine_phpcr_odm_tree', array('root_node' => $this->getRootPath(), 'choice_list' => array(), 'select_root_node' => true))
                 ->add('name', 'text')
                 ->add('title', 'text')
-                ->add('body', 'textarea')
+                ->add(
+                    'body',
+                    $this->ivoryCkeditor ? 'ckeditor' : 'textarea',
+                    $this->ivoryCkeditor
+                )
             ->end()
         ;
     }
