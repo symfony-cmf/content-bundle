@@ -12,22 +12,18 @@
 namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
-
 use Knp\Menu\NodeInterface;
-
 use Sonata\BlockBundle\Model\BlockInterface;
 use Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface;
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Cmf\Component\Routing\RouteReferrersInterface;
-
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface;
-
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface;
 
 /**
- * Standard implementation of StaticContent:
+ * Standard implementation of StaticContent:.
  *
  * Standard features:
  *
@@ -49,7 +45,7 @@ class StaticContent extends StaticContentBase implements
     TranslatableInterface
 {
     /**
-     * @var boolean whether this content is publishable
+     * @var bool whether this content is publishable
      */
     protected $publishable = true;
 
@@ -106,7 +102,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getLocale()
     {
@@ -114,7 +110,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setLocale($locale)
     {
@@ -162,7 +158,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setPublishable($publishable)
     {
@@ -170,7 +166,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function isPublishable()
     {
@@ -178,7 +174,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getPublishStartDate()
     {
@@ -186,7 +182,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setPublishStartDate(\DateTime $publishStartDate = null)
     {
@@ -194,7 +190,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getPublishEndDate()
     {
@@ -202,7 +198,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setPublishEndDate(\DateTime $publishEndDate = null)
     {
@@ -210,7 +206,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * Get the application information associated with this document
+     * Get the application information associated with this document.
      *
      * @return array
      */
@@ -220,7 +216,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * Get a single application information value
+     * Get a single application information value.
      *
      * @param string      $name
      * @param string|null $default
@@ -233,7 +229,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * Set the application information
+     * Set the application information.
      *
      * @param array $extras
      *
@@ -266,7 +262,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addRoute($route)
     {
@@ -274,7 +270,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function removeRoute($route)
     {
@@ -282,7 +278,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRoutes()
     {
@@ -290,7 +286,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addMenuNode(NodeInterface $menu)
     {
@@ -298,7 +294,7 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function removeMenuNode(NodeInterface $menu)
     {
@@ -306,11 +302,10 @@ class StaticContent extends StaticContentBase implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMenuNodes()
     {
         return $this->menuNodes;
     }
-
 }

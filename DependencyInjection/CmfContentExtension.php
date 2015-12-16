@@ -30,7 +30,7 @@ class CmfContentExtension extends Extension
         }
 
         if (isset($config['default_template'])) {
-            $container->setParameter($this->getAlias() . '.default_template', $config['default_template']);
+            $container->setParameter($this->getAlias().'.default_template', $config['default_template']);
         }
 
         $this->loadIvoryCKEditor($config['ivory_ckeditor'], $container);
@@ -38,7 +38,7 @@ class CmfContentExtension extends Extension
 
     protected function loadIvoryCKEditor(array $config, ContainerBuilder $container)
     {
-        $container->setParameter($this->getAlias() . '.ivory_ckeditor.config', array());
+        $container->setParameter($this->getAlias().'.ivory_ckeditor.config', array());
 
         $bundles = $container->getParameter('kernel.bundles');
         if ('auto' === $config['enabled'] && !isset($bundles['IvoryCKEditorBundle'])) {
@@ -59,14 +59,14 @@ class CmfContentExtension extends Extension
             return;
         }
 
-        $container->setParameter($this->getAlias() . '.ivory_ckeditor.config', array(
+        $container->setParameter($this->getAlias().'.ivory_ckeditor.config', array(
             'config_name' => $config['config_name'],
         ));
-     }
+    }
 
     public function loadPhpcr($config, XmlFileLoader $loader, ContainerBuilder $container)
     {
-        $container->setParameter($this->getAlias() . '.backend_type_phpcr', true);
+        $container->setParameter($this->getAlias().'.backend_type_phpcr', true);
 
         $keys = array(
             'document_class' => 'document.class',
@@ -77,7 +77,7 @@ class CmfContentExtension extends Extension
 
         foreach ($keys as $sourceKey => $targetKey) {
             if (isset($config[$sourceKey])) {
-                $container->setParameter($this->getAlias() . '.persistence.phpcr.'.$targetKey, $config[$sourceKey]);
+                $container->setParameter($this->getAlias().'.persistence.phpcr.'.$targetKey, $config[$sourceKey]);
             }
         }
 
