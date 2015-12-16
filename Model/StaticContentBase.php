@@ -35,7 +35,7 @@ class StaticContentBase
      */
     public function setId($id)
     {
-      $this->id = $id;
+        $this->id = $id;
     }
 
     /**
@@ -43,7 +43,7 @@ class StaticContentBase
      */
     public function getId()
     {
-      return $this->id;
+        return $this->id;
     }
 
     /**

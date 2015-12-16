@@ -34,7 +34,7 @@ class StaticContentTest extends BaseTestCase
             'publishEndDate' => new \DateTime('2013-06-18'),
         );
 
-        $content = new StaticContent;
+        $content = new StaticContent();
         $refl = new \ReflectionClass($content);
 
         $content->setParentDocument($this->base);

@@ -18,21 +18,21 @@ use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase as ModelStaticConte
 class StaticContentBase extends ModelStaticContentBase implements HierarchyInterface
 {
     /**
-     * PHPCR parent document
+     * PHPCR parent document.
      *
      * @var string
      */
     protected $parent;
 
     /**
-     * PHPCR document name
+     * PHPCR document name.
      *
      * @var string
      */
     protected $name;
 
     /**
-     * PHPCR node
+     * PHPCR node.
      *
      * @var NodeInterface
      */
@@ -55,7 +55,7 @@ class StaticContentBase extends ModelStaticContentBase implements HierarchyInter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setParentDocument($parent)
     {
@@ -63,7 +63,7 @@ class StaticContentBase extends ModelStaticContentBase implements HierarchyInter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getParentDocument()
     {
@@ -81,7 +81,7 @@ class StaticContentBase extends ModelStaticContentBase implements HierarchyInter
     }
 
     /**
-     * Get the underlying PHPCR node of this document
+     * Get the underlying PHPCR node of this document.
      *
      * @return NodeInterface
      */

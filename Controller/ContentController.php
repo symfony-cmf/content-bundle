@@ -14,7 +14,6 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandlerInterface;
 
@@ -86,7 +85,6 @@ class ContentController
         $params = $this->getParams($request, $contentDocument);
 
         return $this->renderResponse($contentTemplate, $params);
-
     }
 
     protected function renderResponse($contentTemplate, $params)
@@ -112,6 +110,7 @@ class ContentController
      * Prepare the REST View to render the response in the correct format.
      *
      * @param array $params
+     *
      * @return View
      */
     protected function getView($params)
