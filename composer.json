@@ -29,7 +29,7 @@
         "doctrine/phpcr-odm": "To persist content with the PHP content repository",
         "doctrine/phpcr-bundle": "To integrate PHPCR-ODM with Symfony",
         "sonata-project/doctrine-phpcr-admin-bundle": "To provide admin interfaces for the content (^1.1)",
-        "ivory/ckeditor-bundle": "to provide a CKEditor in the admin interface"
+        "egeloen/ckeditor-bundle": "to provide a CKEditor in the admin interface"
     },
     "autoload": {
         "psr-4": {
