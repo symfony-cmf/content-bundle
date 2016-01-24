@@ -51,7 +51,7 @@ class Configuration implements ConfigurationInterface
                             ->values(array(true, false, 'auto'))
                             ->defaultValue('auto')
                         ->end()
-                        ->scalarNode('config_name')->defaultValue('cmf_simple_cms')->end()
+                        ->scalarNode('config_name')->defaultValue('cmf_content')->end()
                     ->end()
                 ->end()
             ->end()
