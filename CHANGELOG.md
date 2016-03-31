@@ -1,8 +1,15 @@
 Changelog
 =========
 
+1.3.0
+-----
+
+* Support PHP 7
 * **2015-08-31**: Added IvoryCKEditorBundle integration and added the
   `ivory_ckeditor` settings.
+
+1.2.0
+-----
 
 1.2.0-RC1
 ---------
