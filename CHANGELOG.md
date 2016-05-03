@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.0.0 (unreleased)
+------------------
+
+* **2016-05-05**: REST write and delete support enabled
+
 1.3.0
 -----
 

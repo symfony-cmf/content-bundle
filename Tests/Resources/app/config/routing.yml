@@ -1,0 +1,25 @@
+# need to be replaced by the enhancer fundtion of our routing
+rest_get:
+  path: /content-1
+  methods: ['get']
+  defaults: { _controller: cmf_content.rest_controller:getAction }
+
+rest_post:
+  path: /content-1
+  methods: ['post']
+  defaults: { _controller: cmf_content.rest_controller:postAction }
+
+rest_put:
+  path: /content-1
+  methods: ['put']
+  defaults: { _controller: cmf_content.rest_controller:putAction }
+
+rest_patch:
+  path: /content-1
+  methods: ['patch']
+  defaults: { _controller: cmf_content.rest_controller:patchAction }
+
+rest_delete:
+  path: /content-1
+  methods: ['delete']
+  defaults: { _controller: cmf_content.rest_controller:deleteAction }
