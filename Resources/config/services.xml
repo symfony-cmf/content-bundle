@@ -14,6 +14,13 @@
             <argument type="service" id="fos_rest.view_handler" on-invalid="ignore"/>
         </service>
 
+        <service id="cmf_content.rest_controller" class="Symfony\Cmf\Bundle\ContentBundle\Controller\RESTContentController">
+            <argument type="service" id="templating" />
+            <argument>%cmf_content.default_template%</argument>
+            <argument type="service" id="cmf_content.phpcr.manager"/>
+            <argument type="service" id="fos_rest.view_handler" on-invalid="ignore"/>
+        </service>
+
     </services>
 
 </container>

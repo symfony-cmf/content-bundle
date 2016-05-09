@@ -8,6 +8,7 @@ cmf_routing:
         persistence:
             phpcr:
                 enabled: true
+                route_basepaths: /test/routes
 
 cmf_content:
     persistence:

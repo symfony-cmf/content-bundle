@@ -12,6 +12,10 @@
             <tag name="doctrine_phpcr.initializer"/>
         </service>
 
+        <service id="cmf_content.phpcr.manager" class="Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\ModelManager">
+
+        </service>
+
     </services>
 
 </container>

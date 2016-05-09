@@ -16,6 +16,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ODM\PHPCR\Document\Generic;
 use PHPCR\Util\NodeHelper;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
+use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route;
 
 class LoadContentData implements FixtureInterface
 {
@@ -29,12 +30,23 @@ class LoadContentData implements FixtureInterface
         $contentRoot->setParent($root);
         $manager->persist($contentRoot);
 
+        $routeRoot = new Generic();
+        $routeRoot->setNodename('routes');
+        $routeRoot->setParent($root);
+        $manager->persist($routeRoot);
+
         $content = new StaticContent();
         $content->setName('content-1');
         $content->setTitle('Content 1');
         $content->setBody('Content 1');
         $content->setParentDocument($contentRoot);
         $manager->persist($content);
+
+        $route = new Route();
+        $route->setContent($content);
+        $route->setParentDocument($routeRoot);
+        $route->setName('content-1');
+        $manager->persist($route);
 
         $content = new StaticContent();
         $content->setName('content-2');
