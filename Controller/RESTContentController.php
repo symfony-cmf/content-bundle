@@ -27,10 +27,10 @@ class RESTContentController extends ContentController
         ViewHandlerInterface $viewHandler = null
     ) {
         parent::__construct($templating, $defaultTemplate, $viewHandler);
-        
+
         $this->manager = $manager;
     }
-    
+
     /**
      * The GET action should behave as the normal ContentController::indexAction().
      *
@@ -60,7 +60,7 @@ class RESTContentController extends ContentController
      */
     public function putAction(Request $request, $contentDocument, $contentTemplate = null)
     {
-
+        return new Response('', Response::HTTP_OK);
     }
 
     /**
@@ -80,6 +80,7 @@ class RESTContentController extends ContentController
             return new Response('', Response::HTTP_NOT_FOUND);
         }
 
+        return new Response('', Response::HTTP_CREATED);
     }
 
     /**
@@ -96,7 +97,7 @@ class RESTContentController extends ContentController
      */
     public function deleteAction(Request $request, $contentDocument, $contentTemplate = null)
     {
-
+        return new Response('', Response::HTTP_NO_CONTENT);
     }
 
     /**
@@ -112,6 +113,6 @@ class RESTContentController extends ContentController
      */
     public function patchAction(Request $request, $contentDocument, $contentTemplate = null)
     {
-
+        return new Response('', Response::HTTP_OK);
     }
 }
