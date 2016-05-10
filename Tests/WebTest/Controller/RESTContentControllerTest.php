@@ -28,7 +28,7 @@ class RESTContentControllerTest extends BaseTestCase
 
     public function testGET()
     {
-        $this->client->request('GET', '/content-1');
+        $this->client->request('GET', '/content-1', array(), array(), array('HTTP_ACCEPT'=> 'application/json'));
         $res = $this->client->getResponse();
         $this->assertEquals(200, $res->getStatusCode());
     }

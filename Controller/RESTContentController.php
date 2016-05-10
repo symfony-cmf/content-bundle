@@ -2,6 +2,7 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Controller;
 
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Cmf\Bundle\ContentBundle\Model\Collection;
 use Symfony\Cmf\Bundle\ContentBundle\Model\ManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,10 +27,10 @@ class RESTContentController extends ContentController
         ViewHandlerInterface $viewHandler = null
     ) {
         parent::__construct($templating, $defaultTemplate, $viewHandler);
-
+        
         $this->manager = $manager;
     }
-
+    
     /**
      * The GET action should behave as the normal ContentController::indexAction().
      *

@@ -2,72 +2,103 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr;
 
+use Doctrine\ODM\PHPCR\DocumentManager;
 use Symfony\Cmf\Bundle\ContentBundle\Model\ManagerInterface;
+use Symfony\Cmf\Bundle\ContentBundle\Model\ModelManagerException;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
  */
 class ModelManager implements ManagerInterface
 {
+    /**
+     * @var DocumentManager
+     */
+    private $documentManager;
 
     /**
-     * @param mixed $object
+     * ModelManager constructor.
      *
-     * @return mixed
+     * @param DocumentManager $documentManager
+     */
+    public function __construct(DocumentManager $documentManager)
+    {
+        $this->documentManager = $documentManager;
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @throws ModelManagerException if the document manager throws any exception
      */
     public function create($object)
     {
-        // TODO: Implement create() method.
+        try {
+            $this->documentManager->persist($object);
+            $this->documentManager->flush();
+        } catch (\Exception $e) {
+            throw new ModelManagerException('', 0, $e);
+        }
     }
 
     /**
-     * @param mixed $object
+     * {@inheritdoc}
      *
-     * @return mixed
+     * @throws ModelManagerException if the document manager throws any exception
      */
     public function update($object)
     {
-        // TODO: Implement update() method.
+        try {
+            $this->documentManager->persist($object);
+            $this->documentManager->flush();
+        } catch (\Exception $e) {
+            throw new ModelManagerException('', 0, $e);
+        }
     }
 
     /**
-     * @param object $object
+     * {@inheritdoc}
+     *
+     * @throws ModelManagerException if the document manager throws any exception
      */
     public function delete($object)
     {
-        // TODO: Implement delete() method.
+        try {
+            $this->documentManager->remove($object);
+            $this->documentManager->flush();
+        } catch (\Exception $e) {
+            throw new ModelManagerException('', 0, $e);
+        }
     }
 
     /**
-     * @param string $class
-     * @param array $criteria
-     *
-     * @return array all objects matching the criteria
+     * {@inheritdoc}
      */
     public function findBy($class, array $criteria = array())
     {
-        // TODO: Implement findBy() method.
+        return $this->documentManager->getRepository($class)->findBy($criteria);
     }
-
     /**
-     * @param string $class
-     * @param array $criteria
-     *
-     * @return object an object matching the criteria or null if none match
+     * {@inheritdoc}
      */
     public function findOneBy($class, array $criteria = array())
     {
-        // TODO: Implement findOneBy() method.
+        return $this->documentManager->getRepository($class)->findOneBy($criteria);
     }
 
     /**
-     * @param string $class
-     * @param mixed $id
+     * Find one object from the given class repository.
      *
-     * @return object the object with id or null if not found
+     * {@inheritdoc}
      */
     public function find($class, $id)
     {
-        // TODO: Implement find() method.
+        if (!isset($id)) {
+            return;
+        }
+        if (null === $class) {
+            return $this->documentManager->find(null, $id);
+        }
+        return $this->documentManager->getRepository($class)->find($id);
     }
 }

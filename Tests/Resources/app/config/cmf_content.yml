@@ -3,15 +3,45 @@ cmf_core:
         locales: ['en', 'de', 'fr']
 
 cmf_routing:
+    chain:
+        routers_by_id:
+            cmf_routing.dynamic_router: 20
+            router.default: 100
     dynamic:
         enabled: true
         persistence:
             phpcr:
                 enabled: true
                 route_basepaths: /test/routes
+        controllers_by_class:
+            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: cmf_content.rest_controller:getAction
 
 cmf_content:
     persistence:
         phpcr:
             enabled: true
             content_basepath: /test/contents
+
+jms_serializer:
+    metadata:
+        auto_detection: true
+        directories:
+            CmfContentBundle:
+                namespace_prefix: 'Symfony\Cmf\Bundle\ContentBundle'
+                path: '@CmfContentBundle/Resources/config/serializer/cmf'
+
+fos_rest:
+    view:
+        force_redirects:
+            html: true
+        formats:
+            json: true
+            xml: true
+        templating_formats:
+            html: true
+    allowed_methods_listener: true
+    access_denied_listener:
+        json: true
+    format_listener:
+        rules:
+            - { path: ^/, priorities: [ html, json, xml, css ], fallback_format: html, prefer_extension: false }
