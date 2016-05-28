@@ -15,21 +15,25 @@
         {
             "type": "vcs",
             "url": "https://github.com/ElectricMaxxx/RestBundle.git"
+        },
+        {
+            "type": "path",
+            "url": "https://github.com/dantleech/Sylius/tree/phpcrodm_form_builder/src/Sylius/Bundle/ResourceBundle"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": "^5.3.9|^7.0",
         "symfony/framework-bundle": "^2.3|3.*",
         "symfony-cmf/core-bundle": "^1.1",
         "symfony-cmf/menu-bundle": "^1.1|2.*",
-        "symfony-cmf/routing-bundle": "^1.2"
+        "symfony-cmf/routing-bundle": "^1.2",
+        "sylius/resource-bundle": "*"
     },
     "require-dev": {
         "symfony-cmf/testing": "^1.3",
         "sonata-project/doctrine-phpcr-admin-bundle": "^1.1",
         "symfony/monolog-bundle": "^2.3",
-        "friendsofsymfony/rest-bundle": "^1.7",
-        "jms/serializer-bundle": "^0.13|^1.0",
         "electricmaxxx/rest-bundle":"dev-master"
     },
     "suggest": {

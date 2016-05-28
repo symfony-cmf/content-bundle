@@ -41,7 +41,8 @@ class RESTContentControllerTest extends BaseTestCase
             '/content-1',
             array(),
             array(),
-            array('HTTP_ACCEPT'=> 'application/json', 'CONTENT_TYPE' => 'application/json')
+            array('HTTP_ACCEPT'=> 'application/json', 'CONTENT_TYPE' => 'application/json'),
+            file_get_contents(__DIR__ . '/../../Resources/Fixtures/json/put.json')
         );
         $res = $this->client->getResponse();
         $this->assertEquals(Response::HTTP_OK, $res->getStatusCode());

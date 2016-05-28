@@ -20,15 +20,36 @@ class RESTContentController extends ContentController
      */
     private $manager;
 
+    /**
+     * @var RepositoryRegistryInterface
+     */
+
+    private $registry;
+
+    /**
+     * @var SerializerInterface
+     */
+    private $serializer;
+
+    /**
+     * @var ResourceRepository
+     */
+    private $repository;
+
     public function __construct(
         EngineInterface $templating,
         $defaultTemplate,
         ManagerInterface $manager,
+        SerializerInterface $serializer,
+        RepositoryRegistryInterface $registry,
         ViewHandlerInterface $viewHandler = null
     ) {
         parent::__construct($templating, $defaultTemplate, $viewHandler);
 
         $this->manager = $manager;
+        $this->registry = $registry;
+        $this->serializer = $serializer;
+        $this->repository = $this->registry->get('content');
     }
 
     /**
@@ -58,7 +79,7 @@ class RESTContentController extends ContentController
      *
      * @return Response
      */
-    public function putAction(Request $request, $contentDocument, $contentTemplate = null)
+    public function putAction(Request $request, $contentDocument, $contentTemplate = null, $put)
     {
         return new Response('', Response::HTTP_OK);
     }
