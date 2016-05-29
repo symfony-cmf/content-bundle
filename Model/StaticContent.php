@@ -14,6 +14,7 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 use Knp\Menu\NodeInterface;
 use Sonata\BlockBundle\Model\BlockInterface;
+use Sylius\Component\Resource\Model\ResourceInterface;
 use Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface;
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Cmf\Component\Routing\RouteReferrersInterface;
@@ -42,7 +43,8 @@ class StaticContent extends StaticContentBase implements
     RouteReferrersInterface,
     PublishTimePeriodInterface,
     PublishableInterface,
-    TranslatableInterface
+    TranslatableInterface,
+    ResourceInterface
 {
     /**
      * @var bool whether this content is publishable
@@ -307,5 +309,52 @@ class StaticContent extends StaticContentBase implements
     public function getMenuNodes()
     {
         return $this->menuNodes;
+    }
+
+    /**
+     * Returns a string representation of the Resource.
+     *
+     * This method is necessary to allow for resource de-duplication, for example by means
+     * of array_unique(). The string returned need not have a particular meaning, but has
+     * to be identical for different ResourceInterface instances referring to the same
+     * resource; and it should be unlikely to collide with that of other, unrelated
+     * resource instances.
+     *
+     * @return string A string representation unique to the underlying Resource
+     */
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
+    /**
+     * Returns true if the resource has not been updated since the given timestamp.
+     *
+     * @param int $timestamp The last time the resource was loaded
+     *
+     * @return bool True if the resource has not been updated, false otherwise
+     *
+     * @deprecated since 2.8, to be removed in 3.0. If your resource can check itself for
+     *             freshness implement the SelfCheckingResourceInterface instead.
+     */
+    public function isFresh($timestamp)
+    {
+        return true;
+    }
+
+    /**
+     * Returns the tied resource.
+     *
+     * @return mixed The resource
+     *
+     * @deprecated since 2.8, to be removed in 3.0. As there are many different kinds of resource,
+     *             a single getResource() method does not make sense at the interface level. You
+     *             can still call getResource() on implementing classes, probably after performing
+     *             a type check. If you know the concrete type of Resource at hand, the return value
+     *             of this method may make sense to you.
+     */
+    public function getResource()
+    {
+        return $this;
     }
 }

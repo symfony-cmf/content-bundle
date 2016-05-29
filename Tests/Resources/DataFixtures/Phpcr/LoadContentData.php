@@ -55,6 +55,21 @@ class LoadContentData implements FixtureInterface
         $content->setParentDocument($contentRoot);
         $manager->persist($content);
 
+        $collection = new StaticContent();
+        $collection->setName('collection');
+        $collection->setTitle('Collection');
+        $collection->setBody('Body of Collection');
+        $collection->setParentDocument($contentRoot);
+        $manager->persist($collection);
+
+        $collectionRoute = new Route();
+        $collectionRoute->setContent($collection);
+        $collectionRoute->setParentDocument($routeRoot);
+        $collectionRoute->setName('collection');
+        $manager->persist($collectionRoute);
+
+
+
         $manager->flush();
     }
 }

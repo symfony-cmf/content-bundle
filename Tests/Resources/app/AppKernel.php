@@ -32,6 +32,7 @@ class AppKernel extends TestKernel
             new Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle(),
+            new \Symfony\Cmf\Bundle\RestBundle\CmfRestBundle(),
         ));
     }
 

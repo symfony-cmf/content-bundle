@@ -1,0 +1,4 @@
+cmf_static_content_index:
+    path: "/collection"
+    defaults: {_controller: "cmf.controller.static_content:indexAction" }
+

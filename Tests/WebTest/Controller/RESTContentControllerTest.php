@@ -29,7 +29,7 @@ class RESTContentControllerTest extends BaseTestCase
 
     public function testGET()
     {
-        $this->client->request('GET', '/content-1', array(), array(), array('HTTP_ACCEPT'=> 'application/json'));
+        $this->client->request('GET', '/content-1', array(), array(), array('ACCEPT'=> 'application/json'));
         $res = $this->client->getResponse();
         $this->assertEquals(200, $res->getStatusCode());
     }
@@ -41,21 +41,8 @@ class RESTContentControllerTest extends BaseTestCase
             '/content-1',
             array(),
             array(),
-            array('HTTP_ACCEPT'=> 'application/json', 'CONTENT_TYPE' => 'application/json'),
+            array('ACCEPT'=> 'application/json', 'CONTENT_TYPE' => 'application/json'),
             file_get_contents(__DIR__ . '/../../Resources/Fixtures/json/put.json')
-        );
-        $res = $this->client->getResponse();
-        $this->assertEquals(Response::HTTP_OK, $res->getStatusCode());
-    }
-
-    public function testPATCH()
-    {
-        $this->client->request(
-            'PATCH',
-            '/content-1',
-            array(),
-            array(),
-            array('HTTP_ACCEPT'=> 'application/json', 'CONTENT_TYPE' => 'application/json')
         );
         $res = $this->client->getResponse();
         $this->assertEquals(Response::HTTP_OK, $res->getStatusCode());
@@ -68,22 +55,23 @@ class RESTContentControllerTest extends BaseTestCase
             '/content-1',
             array(),
             array(),
-            array('HTTP_ACCEPT'=> 'application/json')
+            array('ACCEPT'=> 'application/json')
         );
         $res = $this->client->getResponse();
-        $this->assertEquals(Response::HTTP_NO_CONTENT, $res->getStatusCode());
+        $this->assertEquals(Response::HTTP_FOUND, $res->getStatusCode());
     }
 
     public function testPOST()
     {
         $this->client->request(
             'POST',
-            '/',
+            '/collection',
             array(),
             array(),
-            array('HTTP_ACCEPT'=> 'application/json', 'CONTENT_TYPE' => 'application/json')
+            array('ACCEPT'=> 'application/json', 'CONTENT_TYPE' => 'application/json'),
+            file_get_contents(__DIR__ . '/../../Resources/Fixtures/json/post.json')
         );
         $res = $this->client->getResponse();
-        $this->assertEquals(Response::HTTP_CREATED, $res->getStatusCode());
+        $this->assertEquals(Response::HTTP_OK, $res->getStatusCode());
     }
 }

@@ -12,10 +12,6 @@
             <tag name="doctrine_phpcr.initializer"/>
         </service>
 
-        <service id="cmf_content.model_manager" class="Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\ModelManager">
-            <argument type="service" id="doctrine_phpcr.odm.default_document_manager"/>
-        </service>
-
     </services>
 
 </container>
