@@ -11,11 +11,15 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Admin;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
+use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
 use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class StaticContentAdmin extends Admin
 {
@@ -45,12 +49,16 @@ class StaticContentAdmin extends Admin
     {
         $formMapper
             ->with('form.group_general')
-                ->add('parent', 'doctrine_phpcr_odm_tree', array('root_node' => $this->getRootPath(), 'choice_list' => array(), 'select_root_node' => true))
-                ->add('name', 'text')
-                ->add('title', 'text')
+                ->add('parent', TreeModelType::class, array(
+                    'root_node' => $this->getRootPath(),
+                    'choice_list' => array(),
+                    'select_root_node' => true,
+                ))
+                ->add('name', TextType::class)
+                ->add('title', TextType::class)
                 ->add(
                     'body',
-                    $this->ivoryCkeditor ? 'ckeditor' : 'textarea',
+                    $this->ivoryCkeditor ? CKEditorType::class : TextareaType::class,
                     $this->ivoryCkeditor
                 )
             ->end()
