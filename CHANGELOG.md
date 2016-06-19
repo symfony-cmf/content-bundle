@@ -1,6 +1,9 @@
 Changelog
 =========
 
+* **2016-06-19**: [BC BREAK] Removed `setParent()`/`getParent()` from PHPCR
+  `StaticContent` and `StaticContentBase`.
+
 1.3.0
 -----
 
