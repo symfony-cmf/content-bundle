@@ -46,6 +46,8 @@ class StaticContent extends ModelStaticContent implements HierarchyInterface
      */
     public function setParent($parent)
     {
+        @trigger_error(__METHOD__.' is deprecated since 1.1 and will be removed in 2.0. Use setParentDocument() instead.');
+
         $this->setParentDocument($parent);
     }
 
@@ -54,6 +56,8 @@ class StaticContent extends ModelStaticContent implements HierarchyInterface
      */
     public function getParent()
     {
+        @trigger_error(__METHOD__.' is deprecated since 1.1 and will be removed in 2.0. Use getParentDocument() instead.');
+
         return $this->getParentDocument();
     }
 
