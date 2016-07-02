@@ -39,22 +39,6 @@ class StaticContentBase extends ModelStaticContentBase implements HierarchyInter
     protected $node;
 
     /**
-     * @deprecated Use setParentDocument instead.
-     */
-    public function setParent($parent)
-    {
-        $this->setParentDocument($parent);
-    }
-
-    /**
-     * @deprecated Use getParentDocument instead.
-     */
-    public function getParent()
-    {
-        return $this->getParentDocument();
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function setParentDocument($parent)
