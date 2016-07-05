@@ -49,7 +49,7 @@ class StaticContentAdmin extends Admin
     {
         $formMapper
             ->with('form.group_general')
-                ->add('parent', TreeModelType::class, array(
+                ->add('parentDocument', TreeModelType::class, array(
                     'root_node' => $this->getRootPath(),
                     'choice_list' => array(),
                     'select_root_node' => true,
