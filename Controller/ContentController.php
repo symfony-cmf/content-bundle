@@ -3,11 +3,12 @@
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2015 Symfony CMF
+ * (c) 2011-2016 Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Controller;
 
@@ -42,12 +43,12 @@ class ContentController
      * Instantiate the content controller.
      *
      * @param EngineInterface      $templating      The templating instance to
-     *                                              render the template.
+     *                                              render the template
      * @param string               $defaultTemplate Default template to use in
      *                                              case none is specified by
-     *                                              the request.
+     *                                              the request
      * @param ViewHandlerInterface $viewHandler     Optional view handler
-     *                                              instance.
+     *                                              instance
      */
     public function __construct(EngineInterface $templating, $defaultTemplate, ViewHandlerInterface $viewHandler = null)
     {
@@ -68,7 +69,7 @@ class ContentController
      * @param object  $contentDocument
      * @param string  $contentTemplate Symfony path of the template to render
      *                                 the content document. If omitted, the
-     *                                 default template is used.
+     *                                 default template is used
      *
      * @return Response
      */

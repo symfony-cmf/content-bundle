@@ -3,11 +3,12 @@
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2015 Symfony CMF
+ * (c) 2011-2016 Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
@@ -150,7 +151,7 @@ class StaticContent extends StaticContentBase implements
      * be a container block in order to be able to add several blocks.
      *
      * @param BlockInterface $block must be persistable through cascade by the
-     *                              persistence layer.
+     *                              persistence layer
      */
     public function setAdditionalInfoBlock($block)
     {
