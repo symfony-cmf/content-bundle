@@ -9,29 +9,18 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Symfony\Cmf\Bundle\ContentBundle\Admin;
 
-use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
+use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\Form\Type\StaticContentType;
 use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class StaticContentAdmin extends Admin
 {
     protected $translationDomain = 'CmfContentBundle';
-
-    private $ivoryCkeditor = array();
-
-    public function setIvoryCkeditor($config)
-    {
-        $this->ivoryCkeditor = (array) $config;
-    }
 
     public function getExportFormats()
     {
@@ -48,20 +37,16 @@ class StaticContentAdmin extends Admin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $builder = $formMapper->getFormBuilder()->getFormFactory()->createBuilder(StaticContentType::class, null, [
+            'readonly_parent_document' => (bool) $this->id($this->getSubject()),
+        ]);
+
         $formMapper
             ->with('form.group_general')
-                ->add('parentDocument', TreeModelType::class, array(
-                    'root_node' => $this->getRootPath(),
-                    'choice_list' => array(),
-                    'select_root_node' => true,
-                ))
-                ->add('name', TextType::class)
-                ->add('title', TextType::class)
-                ->add(
-                    'body',
-                    $this->ivoryCkeditor ? CKEditorType::class : TextareaType::class,
-                    $this->ivoryCkeditor
-                )
+                ->add($builder->get('parentDocument'))
+                ->add($builder->get('name'))
+                ->add($builder->get('title'))
+                ->add($builder->get('body'))
             ->end()
         ;
     }

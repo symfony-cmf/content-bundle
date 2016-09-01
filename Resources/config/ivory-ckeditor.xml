@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="cmf_content.form.extension.ivory_ckeditor"
+            class="Symfony\Cmf\Bundle\ContentBundle\Form\Extension\IvoryCKEditorExtension">
+            <argument>%cmf_content.ivory_ckeditor.config%</argument>
+            <tag name="form.type_extension"
+                extended_type="Symfony\Cmf\Bundle\ContentBundle\Form\Type\StaticContentType"
+            />
+        </service>
+    </services>
+</container>

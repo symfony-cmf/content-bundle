@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="cmf_content.doctrine.phpcr.form.type.static_content"
+            class="Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\Form\Type\StaticContentType">
+
+            <argument type="service" id="doctrine_phpcr.odm.document_manager" />
+            <argument>%cmf_content.persistence.phpcr.content_basepath%</argument>
+            <tag name="form.type" />
+        </service>
+    </services>
+</container>
