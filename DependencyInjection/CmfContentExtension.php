@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Symfony\Cmf\Bundle\ContentBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -34,18 +33,24 @@ class CmfContentExtension extends Extension
             $container->setParameter($this->getAlias().'.default_template', $config['default_template']);
         }
 
-        $this->loadIvoryCKEditor($config['ivory_ckeditor'], $container);
+        if ($this->isIvoryCKEditorEnabled($config['ivory_ckeditor'], $container)) {
+            $loader->load('ivory-ckeditor.xml');
+            $container->setParameter($this->getAlias().'.ivory_ckeditor.config', [
+                'config_name' => $config['ivory_ckeditor']['config_name'],
+            ]);
+        }
     }
 
-    protected function loadIvoryCKEditor(array $config, ContainerBuilder $container)
+    private function isIvoryCKEditorEnabled(array $config, ContainerBuilder $container)
     {
-        $container->setParameter($this->getAlias().'.ivory_ckeditor.config', array());
-
         $bundles = $container->getParameter('kernel.bundles');
-        if ('auto' === $config['enabled'] && !isset($bundles['IvoryCKEditorBundle'])) {
-            return;
+
+        // Explicitely disabled
+        if (false === $config['enabled']) {
+            return false;
         }
 
+        // Explicitely enabled but not available
         if (true === $config['enabled'] && !isset($bundles['IvoryCKEditorBundle'])) {
             $message = 'IvoryCKEditorBundle integration was explicitely enabled, but the bundle is not available';
 
@@ -56,13 +61,7 @@ class CmfContentExtension extends Extension
             throw new \LogicException($message.'.');
         }
 
-        if (false === $config['enabled'] || !isset($bundles['IvoryCKEditorBundle'])) {
-            return;
-        }
-
-        $container->setParameter($this->getAlias().'.ivory_ckeditor.config', array(
-            'config_name' => $config['config_name'],
-        ));
+        return isset($bundles['IvoryCKEditorBundle']);
     }
 
     public function loadPhpcr($config, XmlFileLoader $loader, ContainerBuilder $container)
@@ -83,6 +82,7 @@ class CmfContentExtension extends Extension
         }
 
         $loader->load('persistence-phpcr.xml');
+        $loader->load('forms-phpcr.xml');
 
         if ($config['use_sonata_admin']) {
             $this->loadSonataAdmin($config, $loader, $container);

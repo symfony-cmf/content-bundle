@@ -18,10 +18,6 @@
             <call method="setRootPath">
                 <argument>%cmf_content.persistence.phpcr.content_basepath%</argument>
             </call>
-
-            <call method="setIvoryCkeditor">
-                <argument>%cmf_content.ivory_ckeditor.config%</argument>
-            </call>
         </service>
     </services>
 </container>

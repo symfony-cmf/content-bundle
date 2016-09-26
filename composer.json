@@ -22,7 +22,9 @@
         "doctrine/phpcr-odm": "^2.0@dev",
         "symfony-cmf/testing": "^2.0@dev",
         "sonata-project/doctrine-phpcr-admin-bundle": "^2.0@dev",
-        "symfony/monolog-bundle": "^2.8|^3.0"
+        "sonata-project/admin-bundle": "^3.6",
+        "symfony/monolog-bundle": "^2.8|^3.0",
+        "egeloen/ckeditor-bundle": "^4.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -31,6 +33,7 @@
         "doctrine/phpcr-odm": "To persist content with the PHP content repository",
         "doctrine/phpcr-bundle": "To integrate PHPCR-ODM with Symfony",
         "sonata-project/doctrine-phpcr-admin-bundle": "To provide admin interfaces for the content (^1.1)",
+        "sonata-project/admin-bundle": "To provide admin interfaces for the content (^3.6)",
         "egeloen/ckeditor-bundle": "to provide a CKEditor in the admin interface"
     },
     "autoload": {
