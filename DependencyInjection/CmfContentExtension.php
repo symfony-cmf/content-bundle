@@ -70,7 +70,6 @@ class CmfContentExtension extends Extension
 
         $keys = array(
             'document_class' => 'document.class',
-            'admin_class' => 'admin.class',
             'manager_name' => 'manager_name',
             'content_basepath' => 'content_basepath',
         );
@@ -83,20 +82,6 @@ class CmfContentExtension extends Extension
 
         $loader->load('persistence-phpcr.xml');
         $loader->load('forms-phpcr.xml');
-
-        if ($config['use_sonata_admin']) {
-            $this->loadSonataAdmin($config, $loader, $container);
-        }
-    }
-
-    public function loadSonataAdmin($config, XmlFileLoader $loader, ContainerBuilder $container)
-    {
-        $bundles = $container->getParameter('kernel.bundles');
-        if ('auto' === $config['use_sonata_admin'] && !isset($bundles['SonataDoctrinePHPCRAdminBundle'])) {
-            return;
-        }
-
-        $loader->load('admin.xml');
     }
 
     /**
