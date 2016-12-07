@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-
 use Symfony\Component\Routing\RouteCollection;
 
 $collection = new RouteCollection();

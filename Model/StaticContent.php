@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-
 namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -38,12 +37,7 @@ use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface;
  * - Tags
  * - Additional Info Block
  */
-class StaticContent extends StaticContentBase implements
-    MenuNodeReferrersInterface,
-    RouteReferrersInterface,
-    PublishTimePeriodInterface,
-    PublishableInterface,
-    TranslatableInterface
+class StaticContent extends StaticContentBase implements MenuNodeReferrersInterface, RouteReferrersInterface, PublishTimePeriodInterface, PublishableInterface, TranslatableInterface
 {
     /**
      * @var bool whether this content is publishable
