@@ -16,7 +16,7 @@ env: SYMFONY_VERSION=3.2.*
 
 matrix:
   include:
-    - php: nightly
+    - php: 7.1
       env: DEPS=dev
     - php: 5.5
       env: SYMFONY_VERSION=2.8.* COMPOSER_FLAGS="--prefer-lowest"
