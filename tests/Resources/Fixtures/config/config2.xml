@@ -2,10 +2,7 @@
     default-template="::base.html.twig">
 
     <persistence>
-        <phpcr enabled="true"
-            document-class="Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent"
-            content-basepath="/cms/content"
-        />
+        <phpcr enabled="true" content-basepath="/cms/content" />
     </persistence>
 
     <ivory-ckeditor config-name="my_custom_toolbar"/>

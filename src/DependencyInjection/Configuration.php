@@ -30,7 +30,7 @@ class Configuration implements ConfigurationInterface
                             ->addDefaultsIfNotSet()
                             ->canBeEnabled()
                             ->children()
-                                ->scalarNode('document_class')->defaultValue('Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent')->end()
+                                ->scalarNode('manager_name')->defaultNull()->end()
                                 ->scalarNode('content_basepath')->defaultValue('/cms/content')->end()
                             ->end()
                         ->end()
