@@ -22,7 +22,6 @@
         "doctrine/phpcr-odm": "^2.0",
         "symfony-cmf/testing": "^2.0",
         "symfony-cmf/tree-browser-bundle": "^2.0",
-        "symfony/phpunit-bridge": "^3.2",
         "egeloen/ckeditor-bundle": "^4.0",
         "symfony/phpunit-bridge": "^3.2"
     },
