@@ -74,9 +74,7 @@ class CmfContentExtension extends Extension
         );
 
         foreach ($keys as $key) {
-            if (isset($config[$key])) {
-                $container->setParameter($this->getAlias().'.persistence.phpcr.'.$key, $config[$sourceKey]);
-            }
+            $container->setParameter($this->getAlias().'.persistence.phpcr.'.$key, $config[$key]);
         }
 
         $loader->load('persistence-phpcr.xml');
