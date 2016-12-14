@@ -30,6 +30,7 @@ class Configuration implements ConfigurationInterface
                             ->addDefaultsIfNotSet()
                             ->canBeEnabled()
                             ->children()
+                                ->scalarNode('manager_name')->defaultNull()->end()
                                 ->scalarNode('content_basepath')->defaultValue('/cms/content')->end()
                             ->end()
                         ->end()

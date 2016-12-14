@@ -64,18 +64,18 @@ class CmfContentExtension extends Extension
         return isset($bundles['IvoryCKEditorBundle']);
     }
 
-    public function loadPhpcr($config, XmlFileLoader $loader, ContainerBuilder $container)
+    public function loadPhpcr(array $config, XmlFileLoader $loader, ContainerBuilder $container)
     {
         $container->setParameter($this->getAlias().'.backend_type_phpcr', true);
 
         $keys = array(
-            'manager_name' => 'manager_name',
-            'content_basepath' => 'content_basepath',
+            'manager_name',
+            'content_basepath',
         );
 
-        foreach ($keys as $sourceKey => $targetKey) {
-            if (isset($config[$sourceKey])) {
-                $container->setParameter($this->getAlias().'.persistence.phpcr.'.$targetKey, $config[$sourceKey]);
+        foreach ($keys as $key) {
+            if (isset($config[$key])) {
+                $container->setParameter($this->getAlias().'.persistence.phpcr.'.$key, $config[$sourceKey]);
             }
         }
 
