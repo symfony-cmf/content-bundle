@@ -5,13 +5,12 @@ UPGRADE FROM 1.x to 2.0
 
  * The Admin for `Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent`
    was moved into `symfony-cmf/sonata-admin-integration-bundle`. With the move, the admin service names also changed.
-   If you are using the admin, you need to adjust your configuration, i.e the sonata dashboard:
+   If you are using the admin, you need to adjust your configuration, i.e. in the sonata dashboard::
    
    Before:
    
    ```yaml
         # app/config/config.yml
-     
         sonata_admin:
             dashboard:
                groups:
@@ -26,8 +25,6 @@ UPGRADE FROM 1.x to 2.0
        
    ```yaml
         # app/config/config.yml
-                
-     
         sonata_admin:
            dashboard:
                groups:
