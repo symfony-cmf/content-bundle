@@ -3,9 +3,9 @@ UPGRADE FROM 1.x to 2.0
 
 ### SonataAdmin Support
 
- * The Admin for `` was moved into `symfony-cmf/sonata-admin-integration-bundle`.
-   With the move, the admin service names also changed. If you are using the admin,
-   you need to adjust your configuration, i.e the sonata dashboard:
+ * The Admin for `Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent`
+   was moved into `symfony-cmf/sonata-admin-integration-bundle`. With the move, the admin service names also changed.
+   If you are using the admin, you need to adjust your configuration, i.e the sonata dashboard:
    
    Before:
    
