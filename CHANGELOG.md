@@ -4,8 +4,6 @@ Changelog
 * **2016-12-07**: [BC BREAK] Moved all Sonata admin integration to the
   CmfSonataAdminIntegrationBundle
 * **2016-09-26**: Added StaticContentType to create and edit static content objects
-* **2016-06-19**: [BC BREAK] Removed `setParent()`/`getParent()` from PHPCR
-  `StaticContent` and `StaticContentBase`.
 
 1.3.0
 -----

@@ -25,7 +25,7 @@
         "egeloen/ckeditor-bundle": "^4.0",
         "symfony/phpunit-bridge": "^3.2"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "RC",
     "prefer-stable": true,
     "suggest": {
         "friendsofsymfony/rest-bundle": "Improved handling for different output formats",
