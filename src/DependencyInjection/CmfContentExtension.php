@@ -11,10 +11,10 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\DependencyInjection;
 
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\Config\FileLocator;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class CmfContentExtension extends Extension
 {
@@ -68,10 +68,10 @@ class CmfContentExtension extends Extension
     {
         $container->setParameter($this->getAlias().'.backend_type_phpcr', true);
 
-        $keys = array(
+        $keys = [
             'manager_name',
             'content_basepath',
-        );
+        ];
 
         foreach ($keys as $key) {
             $container->setParameter($this->getAlias().'.persistence.phpcr.'.$key, $config[$key]);

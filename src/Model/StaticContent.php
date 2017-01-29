@@ -14,13 +14,13 @@ namespace Symfony\Cmf\Bundle\ContentBundle\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 use Knp\Menu\NodeInterface;
 use Sonata\BlockBundle\Model\BlockInterface;
-use Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface;
-use Symfony\Cmf\Component\Routing\RouteObjectInterface;
-use Symfony\Cmf\Component\Routing\RouteReferrersInterface;
-use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface;
+use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface;
+use Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface;
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface;
+use Symfony\Cmf\Component\Routing\RouteObjectInterface;
+use Symfony\Cmf\Component\Routing\RouteReferrersInterface;
 
 /**
  * Standard implementation of StaticContent:.
@@ -77,7 +77,7 @@ class StaticContent extends StaticContentBase implements
     /**
      * @var string[]
      */
-    protected $tags = array();
+    protected $tags = [];
 
     /**
      * Hashmap for application data associated to this document. Both keys and
@@ -85,7 +85,7 @@ class StaticContent extends StaticContentBase implements
      *
      * @var array
      */
-    protected $extras = array();
+    protected $extras = [];
 
     /**
      * This will usually be a ContainerBlock but can be any block that will be

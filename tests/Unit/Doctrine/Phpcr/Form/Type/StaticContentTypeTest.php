@@ -11,13 +11,13 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Tests\Unit\Doctrine\Phpcr\Form\Type;
 
-use Doctrine\ODM\PHPCR\DocumentManager;
 use Doctrine\ODM\PHPCR\Document\Generic;
+use Doctrine\ODM\PHPCR\DocumentManager;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\Form\Type\StaticContentType;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
-use Symfony\Component\Form\PreloadedExtension;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\PreloadedExtension;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 class StaticContentTypeTest extends TypeTestCase

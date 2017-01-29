@@ -11,11 +11,11 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Controller;
 
+use FOS\RestBundle\View\View;
+use FOS\RestBundle\View\ViewHandlerInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use FOS\RestBundle\View\View;
-use FOS\RestBundle\View\ViewHandlerInterface;
 
 /**
  * The content controller is a simple controller that calls a template with
@@ -77,8 +77,8 @@ class ContentController
         $contentTemplate = $contentTemplate ?: $this->defaultTemplate;
 
         $contentTemplate = str_replace(
-            array('{_format}', '{_locale}'),
-            array($request->getRequestFormat(), $request->getLocale()),
+            ['{_format}', '{_locale}'],
+            [$request->getRequestFormat(), $request->getLocale()],
             $contentTemplate
         );
 
@@ -131,8 +131,8 @@ class ContentController
      */
     protected function getParams(Request $request, $contentDocument)
     {
-        return array(
+        return [
             'cmfMainContent' => $contentDocument,
-        );
+        ];
     }
 }

@@ -12,12 +12,12 @@
 namespace Symfony\Cmf\Bundle\ContentBundle\Tests\Unit\Form\Extension;
 
 use Ivory\CKEditorBundle\Form\Type\CKEditorType;
-use Ivory\CKEditorBundle\Model\PluginManagerInterface;
 use Ivory\CKEditorBundle\Model\ConfigManagerInterface;
-use Ivory\CKEditorBundle\Model\TemplateManagerInterface;
+use Ivory\CKEditorBundle\Model\PluginManagerInterface;
 use Ivory\CKEditorBundle\Model\StylesSetManagerInterface;
-use Symfony\Cmf\Bundle\ContentBundle\Form\Type\StaticContentType;
+use Ivory\CKEditorBundle\Model\TemplateManagerInterface;
 use Symfony\Cmf\Bundle\ContentBundle\Form\Extension\IvoryCKEditorExtension;
+use Symfony\Cmf\Bundle\ContentBundle\Form\Type\StaticContentType;
 use Symfony\Component\Form\PreloadedExtension;
 use Symfony\Component\Form\Test\TypeTestCase;
 

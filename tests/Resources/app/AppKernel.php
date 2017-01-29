@@ -16,19 +16,19 @@ class AppKernel extends TestKernel
 {
     public function configure()
     {
-        $this->requireBundleSets(array(
+        $this->requireBundleSets([
             'default',
             'phpcr_odm',
-        ));
+        ]);
 
-        $this->addBundles(array(
+        $this->addBundles([
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 
             new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
-        ));
+        ]);
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)
