@@ -11,8 +11,8 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Tests\Functional\Doctrine\Phpcr;
 
-use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
+use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 
 class StaticContentTest extends BaseTestCase
 {
@@ -25,14 +25,14 @@ class StaticContentTest extends BaseTestCase
 
     public function testStaticContent()
     {
-        $data = array(
+        $data = [
             'name' => 'test-node',
             'title' => 'test-title',
             'body' => 'test-body',
             'publishable' => false,
             'publishStartDate' => new \DateTime('2013-06-18'),
             'publishEndDate' => new \DateTime('2013-06-18'),
-        );
+        ];
 
         $content = new StaticContent();
         $refl = new \ReflectionClass($content);
