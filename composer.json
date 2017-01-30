@@ -21,11 +21,6 @@
     "require-dev": {
         "doctrine/phpcr-odm": "^1.4|^2.0",
         "symfony-cmf/testing": "^2.0",
-        "symfony-cmf/tree-browser-bundle": "^2.0@dev",
-        "symfony-cmf/resource-rest-bundle": "^1.0@dev",
-        "symfony-cmf/resource-bundle": "^1.0@dev",
-        "symfony-cmf/resource": "^1.0@dev",
-        "egeloen/ckeditor-bundle": "^4.0",
         "symfony/phpunit-bridge": "^3.2"
     },
     "minimum-stability": "RC",
@@ -34,8 +29,7 @@
         "friendsofsymfony/rest-bundle": "Improved handling for different output formats",
         "doctrine/phpcr-odm": "To persist content with the PHP content repository",
         "doctrine/phpcr-bundle": "To integrate PHPCR-ODM with Symfony",
-        "symfony-cmf/sonata-admin-integration-bundle": "To provide admin interfaces for the content",
-        "egeloen/ckeditor-bundle": "to provide a CKEditor in the form type"
+        "symfony-cmf/sonata-admin-integration-bundle": "To provide admin interfaces for the content"
     },
     "autoload": {
         "psr-4": {

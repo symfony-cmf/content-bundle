@@ -4,6 +4,4 @@
     <persistence>
         <phpcr enabled="true" content-basepath="/cms/content" />
     </persistence>
-
-    <ivory-ckeditor config-name="my_custom_toolbar"/>
 </config>

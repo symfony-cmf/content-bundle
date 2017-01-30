@@ -10,15 +10,9 @@
     <xsd:complexType name="config">
         <xsd:sequence>
             <xsd:element name="persistence" type="persistence" minOccurs="0" />
-            <xsd:element name="ivory-ckeditor" type="ivory_ckeditor" minOccurs="0" />
         </xsd:sequence>
 
         <xsd:attribute name="default-template" type="xsd:string" />
-    </xsd:complexType>
-
-    <xsd:complexType name="ivory_ckeditor">
-        <xsd:attribute name="enabled" type="enable_auto" />
-        <xsd:attribute name="config-name" type="xsd:string" />
     </xsd:complexType>
 
     <xsd:complexType name="persistence">
@@ -32,12 +26,4 @@
         <xsd:attribute name="document-class" type="xsd:string" />
         <xsd:attribute name="content-basepath" type="xsd:string" />
     </xsd:complexType>
-
-    <xsd:simpleType name="enable_auto">
-        <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="true" />
-            <xsd:enumeration value="false" />
-            <xsd:enumeration value="auto" />
-        </xsd:restriction>
-    </xsd:simpleType>
 </xsd:schema>
