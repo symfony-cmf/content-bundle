@@ -6,11 +6,11 @@
 
     <testsuites>
         <testsuite name="phpcr">
-            <directory>./Tests/Functional</directory>
+            <directory>./tests/Functional</directory>
         </testsuite>
 
         <testsuite name="unit">
-            <directory>./Tests/Unit</directory>
+            <directory>./tests/Unit</directory>
         </testsuite>
     </testsuites>
 
@@ -21,14 +21,14 @@
                 <file>*Bundle.php</file>
                 <directory>Resources/</directory>
                 <directory>Admin/</directory>
-                <directory>Tests/</directory>
+                <directory>tests/</directory>
                 <directory>vendor/</directory>
             </exclude>
         </whitelist>
     </filter>
 
     <php>
-        <server name="KERNEL_DIR" value="Tests/Resources/app" />
+        <server name="KERNEL_DIR" value="tests/Resources/app" />
     </php>
 
     <listeners>

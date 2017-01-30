@@ -32,36 +32,6 @@ class CmfContentExtension extends Extension
         if (isset($config['default_template'])) {
             $container->setParameter($this->getAlias().'.default_template', $config['default_template']);
         }
-
-        if ($this->isIvoryCKEditorEnabled($config['ivory_ckeditor'], $container)) {
-            $loader->load('ivory-ckeditor.xml');
-            $container->setParameter($this->getAlias().'.ivory_ckeditor.config', [
-                'config_name' => $config['ivory_ckeditor']['config_name'],
-            ]);
-        }
-    }
-
-    private function isIvoryCKEditorEnabled(array $config, ContainerBuilder $container)
-    {
-        $bundles = $container->getParameter('kernel.bundles');
-
-        // Explicitely disabled
-        if (false === $config['enabled']) {
-            return false;
-        }
-
-        // Explicitely enabled but not available
-        if (true === $config['enabled'] && !isset($bundles['IvoryCKEditorBundle'])) {
-            $message = 'IvoryCKEditorBundle integration was explicitely enabled, but the bundle is not available';
-
-            if (class_exists('Ivory\CKEditorBundle\IvoryCKEditorBundle')) {
-                $message .= ' (did you forget to register the bundle in the AppKernel?)';
-            }
-
-            throw new \LogicException($message.'.');
-        }
-
-        return isset($bundles['IvoryCKEditorBundle']);
     }
 
     public function loadPhpcr(array $config, XmlFileLoader $loader, ContainerBuilder $container)
@@ -78,7 +48,6 @@ class CmfContentExtension extends Extension
         }
 
         $loader->load('persistence-phpcr.xml');
-        $loader->load('forms-phpcr.xml');
     }
 
     /**
