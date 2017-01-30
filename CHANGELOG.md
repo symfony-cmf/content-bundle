@@ -1,9 +1,11 @@
 Changelog
 =========
 
+2.0.0-RC1
+---------
+
 * **2016-12-07**: [BC BREAK] Moved all Sonata admin integration to the
   CmfSonataAdminIntegrationBundle
-* **2016-09-26**: Added StaticContentType to create and edit static content objects
 
 1.3.0
 -----
