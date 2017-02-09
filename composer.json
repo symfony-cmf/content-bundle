@@ -19,7 +19,7 @@
         "symfony-cmf/routing-bundle": "^1.2|^2.0"
     },
     "require-dev": {
-        "doctrine/phpcr-odm": "^1.4|^2.0",
+        "doctrine/phpcr-odm": "^1.4",
         "symfony-cmf/testing": "^2.0",
         "symfony/phpunit-bridge": "^3.2"
     },
