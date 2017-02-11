@@ -18,8 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * The content controller is a simple controller that calls a template with
- * the specified content.
+ * This controller renders the content object with a template defined on the route.
  */
 class ContentController
 {
@@ -66,15 +65,15 @@ class ContentController
      *
      * @param Request $request
      * @param object  $contentDocument
-     * @param string  $contentTemplate Symfony path of the template to render
+     * @param string  $template        Symfony path of the template to render
      *                                 the content document. If omitted, the
      *                                 default template is used
      *
      * @return Response
      */
-    public function indexAction(Request $request, $contentDocument, $contentTemplate = null)
+    public function indexAction(Request $request, $contentDocument, $template = null)
     {
-        $contentTemplate = $contentTemplate ?: $this->defaultTemplate;
+        $contentTemplate = $template ?: $this->defaultTemplate;
 
         $contentTemplate = str_replace(
             ['{_format}', '{_locale}'],
