@@ -1,7 +1,10 @@
 Changelog
 =========
 
-* **2017-02-06**: [BC BREAK] Controller excpects the template to be called 
+2.0.0-RC2
+---------
+
+* **2017-02-06**: [BC BREAK] Controller excpects the template to be called
   `$template` and no longer `$contentTemplate`. If you use the CmfRoutingBundle,
   you don't need to do anything as it was renamed there as well. If you extend
   this controller or have a different routing, you need to adjust.
