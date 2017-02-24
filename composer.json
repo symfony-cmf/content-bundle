@@ -14,8 +14,8 @@
     "require": {
         "php": "^5.6|^7.0",
         "symfony/framework-bundle": "^2.8|^3.0",
-        "symfony-cmf/core-bundle": "^1.1|^2.0",
-        "symfony-cmf/menu-bundle": "^1.1|^2.0",
+        "symfony-cmf/core-bundle": "^2.0",
+        "symfony-cmf/menu-bundle": "^2.0",
         "symfony-cmf/routing-bundle": "^2.0"
     },
     "require-dev": {
@@ -23,8 +23,6 @@
         "symfony-cmf/testing": "^2.0",
         "symfony/phpunit-bridge": "^3.2"
     },
-    "minimum-stability": "RC",
-    "prefer-stable": true,
     "suggest": {
         "friendsofsymfony/rest-bundle": "Improved handling for different output formats",
         "doctrine/phpcr-odm": "To persist content with the PHP content repository",
