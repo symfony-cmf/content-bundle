@@ -37,7 +37,7 @@
     "autoload-dev": {
         "psr-4": {
             "Symfony\\Cmf\\Bundle\\ContentBundle\\Tests\\": "tests/",
-            "Symfony\\Cmf\\Bundle\\ContentBundle\\Tests\\App": "tests/Resources/app"
+            "Symfony\\Cmf\\Bundle\\ContentBundle\\Tests\\App\\": "tests/Resources/app"
         }
     },
     "extra": {
