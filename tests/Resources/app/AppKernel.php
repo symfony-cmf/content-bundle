@@ -11,6 +11,11 @@
 
 namespace Symfony\Cmf\Bundle\ContentBundle\Tests\App;
 
+use Knp\Bundle\MenuBundle\KnpMenuBundle;
+use Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle;
+use Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle;
+use Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle;
+use Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle;
 use Symfony\Cmf\Component\Testing\HttpKernel\TestKernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
@@ -24,12 +29,11 @@ class AppKernel extends TestKernel
         ]);
 
         $this->addBundles([
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-
-            new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
-            new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
-            new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
-            new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
+            new KnpMenuBundle(),
+            new CmfContentBundle(),
+            new CmfRoutingBundle(),
+            new CmfMenuBundle(),
+            new CmfCoreBundle(),
         ]);
     }
 

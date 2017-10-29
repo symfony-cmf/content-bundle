@@ -20,7 +20,7 @@
     },
     "require-dev": {
         "doctrine/phpcr-odm": "^1.4",
-        "symfony-cmf/testing": "^2.1@dev",
+        "symfony-cmf/testing": "dev-be_aware_of_deprecations",
         "symfony/phpunit-bridge": "^3.2"
     },
     "suggest": {
@@ -44,5 +44,7 @@
         "branch-alias": {
             "dev-master": "2.1-dev"
         }
-    }
+    },
+    "minimum-stability":"dev",
+    "prefer-stable": true
 }
