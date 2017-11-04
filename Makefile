@@ -13,7 +13,7 @@
 # file that was distributed with this source code.                         #
 ############################################################################
 
-TESTING_SCRIPTS_DIR=bin
+TESTING_SCRIPTS_DIR=vendor/symfony-cmf/testing/bin
 CONSOLE=${TESTING_SCRIPTS_DIR}/console
 VERSION=dev-master
 ifdef BRANCH
