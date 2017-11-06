@@ -16,8 +16,7 @@
         "symfony/framework-bundle": "^2.8|^3.0",
         "symfony-cmf/core-bundle": "^2.0",
         "symfony-cmf/menu-bundle": "^2.0",
-        "symfony-cmf/routing-bundle": "^2.0",
-        "symfony/symfony": "^3.3"
+        "symfony-cmf/routing-bundle": "^2.0"
     },
     "require-dev": {
         "doctrine/phpcr-odm": "^1.4",
