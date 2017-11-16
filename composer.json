@@ -13,10 +13,10 @@
     ],
     "require": {
         "php": "^7.1",
-        "symfony/framework-bundle": "^2.8|^3.0",
-        "symfony-cmf/core-bundle": "^2.0",
-        "symfony-cmf/menu-bundle": "^2.0",
-        "symfony-cmf/routing-bundle": "^2.0"
+        "symfony/framework-bundle": "^2.8|^3.3",
+        "symfony-cmf/core-bundle": "^2.1",
+        "symfony-cmf/menu-bundle": "^2.1",
+        "symfony-cmf/routing-bundle": "^2.1"
     },
     "require-dev": {
         "doctrine/phpcr-odm": "^1.4|^2.0",
