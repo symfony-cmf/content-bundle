@@ -21,7 +21,7 @@ The ContentBundle provides a document for static content and the controller to r
 ## Requirements
 
 * PHP 7.1
-* Symfony 2.8 / 3.3 / ^3.4 / ^4.0
+* Symfony 2.8 / 3.3 / 3.4 / 4.0
 * See also the `require` section of [composer.json](composer.json)
 
 ## Documentation
