@@ -2,7 +2,9 @@
     "name": "symfony-cmf/content-bundle",
     "type": "symfony-bundle",
     "description": "Symfony CMF Content Bundle",
-    "keywords": ["Symfony CMF"],
+    "keywords": [
+        "Symfony CMF"
+    ],
     "homepage": "http://cmf.symfony.com",
     "license": "MIT",
     "authors": [
@@ -12,7 +14,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.0",
         "symfony/framework-bundle": "^2.8|^3.3",
         "symfony-cmf/core-bundle": "^2.1",
         "symfony-cmf/menu-bundle": "^2.1",
@@ -44,6 +46,6 @@
             "dev-master": "2.1-dev"
         }
     },
-    "minimum-stability":"dev",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
