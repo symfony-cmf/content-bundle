@@ -8,7 +8,7 @@
 
     <services>
 
-        <service id="cmf_content.controller" class="Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController">
+        <service id="cmf_content.controller" class="Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController" public="true">
             <argument type="service" id="templating" />
             <argument>%cmf_content.default_template%</argument>
             <argument type="service" id="fos_rest.view_handler" on-invalid="ignore"/>
