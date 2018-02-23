@@ -48,7 +48,7 @@ class ContentController
      * @param ViewHandlerInterface $viewHandler     Optional view handler
      *                                              instance
      */
-    public function __construct(EngineInterface $templating, $defaultTemplate, ViewHandlerInterface $viewHandler = null)
+    public function __construct(EngineInterface $templating, $defaultTemplate = null, ViewHandlerInterface $viewHandler = null)
     {
         $this->templating = $templating;
         $this->defaultTemplate = $defaultTemplate;
