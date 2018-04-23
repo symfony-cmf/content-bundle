@@ -16,6 +16,7 @@ use FOS\RestBundle\View\ViewHandlerInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Twig\Environment;
 
 /**
  * This controller renders the content object with a template defined on the route.
@@ -23,9 +24,14 @@ use Symfony\Component\HttpFoundation\Response;
 class ContentController
 {
     /**
-     * @var EngineInterface
+     * @var EngineInterface|null
      */
     protected $templating;
+
+    /**
+     * @var Environment|null
+     */
+    protected $twig;
 
     /**
      * @var string
@@ -48,11 +54,15 @@ class ContentController
      * @param ViewHandlerInterface $viewHandler     Optional view handler
      *                                              instance
      */
-    public function __construct(EngineInterface $templating, $defaultTemplate = null, ViewHandlerInterface $viewHandler = null)
+    public function __construct(EngineInterface $templating = null, $defaultTemplate = null, ViewHandlerInterface $viewHandler = null, Environment $twig = null)
     {
+        if (is_null($templating) && is_null($twig)) {
+            throw new \InvalidArgumentException('One of Templating or Twig must be specified');
+        }
         $this->templating = $templating;
         $this->defaultTemplate = $defaultTemplate;
         $this->viewHandler = $viewHandler;
+        $this->twig = $twig;
     }
 
     /**
@@ -102,7 +112,14 @@ class ContentController
             return $this->viewHandler->handle($view);
         }
 
-        return $this->templating->renderResponse($contentTemplate, $params);
+        if (is_null($this->templating)) {
+            $response = new Response();
+            $response->setContent($this->twig->render($contentTemplate, $params));
+        } else {
+            $response = $this->templating->renderResponse($contentTemplate, $params);
+        }
+
+        return $response;
     }
 
     /**
