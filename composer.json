@@ -25,8 +25,8 @@
     },
     "require-dev": {
         "doctrine/phpcr-odm": "^1.4|^2.0",
-        "symfony-cmf/testing": "^2.1.8",
-        "symfony/phpunit-bridge": "^3.3 || ^4.0"
+        "symfony-cmf/testing": "^2.1.11",
+        "symfony/phpunit-bridge": "^4.2.2"
     },
     "suggest": {
         "friendsofsymfony/rest-bundle": "Improved handling for different output formats",
