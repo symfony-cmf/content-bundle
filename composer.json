@@ -15,10 +15,10 @@
     ],
     "require": {
         "php": "^7.1",
-        "symfony/framework-bundle": "^3.4 || ^4.0",
-        "symfony/templating": "^3.4 || ^4.0",
-        "symfony/twig-bundle": "^3.4 || ^4.0",
-        "symfony/validator": "^3.4 || ^4.0",
+        "symfony/framework-bundle": "^3.4 || ^4.1",
+        "symfony/templating": "^3.4 || ^4.1",
+        "symfony/twig-bundle": "^3.4 || ^4.1",
+        "symfony/validator": "^3.4 || ^4.1",
         "symfony-cmf/core-bundle": "^2.1",
         "symfony-cmf/menu-bundle": "^2.1",
         "symfony-cmf/routing-bundle": "^2.1"
