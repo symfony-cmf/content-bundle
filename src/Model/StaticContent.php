@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -37,12 +39,7 @@ use Symfony\Cmf\Component\Routing\RouteReferrersInterface;
  * - Tags
  * - Additional Info Block
  */
-class StaticContent extends StaticContentBase implements
-    MenuNodeReferrersInterface,
-    RouteReferrersInterface,
-    PublishTimePeriodInterface,
-    PublishableInterface,
-    TranslatableInterface
+class StaticContent extends StaticContentBase implements MenuNodeReferrersInterface, RouteReferrersInterface, PublishTimePeriodInterface, PublishableInterface, TranslatableInterface
 {
     /**
      * @var bool whether this content is publishable
@@ -252,7 +249,7 @@ class StaticContent extends StaticContentBase implements
      */
     public function setExtra($name, $value)
     {
-        if (is_null($value)) {
+        if (null === $value) {
             unset($this->extras[$name]);
         } else {
             $this->extras[$name] = $value;

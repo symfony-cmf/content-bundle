@@ -21,12 +21,15 @@
         "symfony/validator": "^3.4 || ^4.1",
         "symfony-cmf/core-bundle": "^2.1",
         "symfony-cmf/menu-bundle": "^2.1",
-        "symfony-cmf/routing-bundle": "^2.1"
+        "symfony-cmf/routing-bundle": "^2.1",
+        "symfony/translation": "^3.4 || ^4.1",
+        "symfony/form": "^3.4 || ^4.1"
     },
     "require-dev": {
-        "doctrine/phpcr-odm": "^1.4|^2.0",
+        "doctrine/phpcr-odm": "^1.4 || ^2.0",
         "symfony-cmf/testing": "^2.1.11",
-        "symfony/phpunit-bridge": "^4.2.2"
+        "symfony/phpunit-bridge": "^4.2.2",
+        "symfony/yaml": "^3.4 || ^4.1"
     },
     "suggest": {
         "friendsofsymfony/rest-bundle": "Improved handling for different output formats",
