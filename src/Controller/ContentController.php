@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -56,7 +58,7 @@ class ContentController
      */
     public function __construct(EngineInterface $templating = null, $defaultTemplate = null, ViewHandlerInterface $viewHandler = null, Environment $twig = null)
     {
-        if (is_null($templating) && is_null($twig)) {
+        if (null === $templating && null === $twig) {
             throw new \InvalidArgumentException('One of Templating or Twig must be specified');
         }
         $this->templating = $templating;
@@ -99,7 +101,7 @@ class ContentController
     protected function renderResponse($contentTemplate, $params)
     {
         if ($this->viewHandler) {
-            if (1 === count($params)) {
+            if (1 === \count($params)) {
                 $templateVar = key($params);
                 $params = reset($params);
             }
@@ -112,7 +114,7 @@ class ContentController
             return $this->viewHandler->handle($view);
         }
 
-        if (is_null($this->templating)) {
+        if (null === $this->templating) {
             $response = new Response();
             $response->setContent($this->twig->render($contentTemplate, $params));
         } else {

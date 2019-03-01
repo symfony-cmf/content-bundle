@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.2.0 (unreleased)
+-----------------
+
+* **2019-02-28**: Symfony 4.2 support without warnings
+
 2.1.0
 -----
 
